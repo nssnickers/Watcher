@@ -10,12 +10,24 @@
 		4109C7D33CE28F67F8B64FB2 /* Pods_Watcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CCA055E1F77FE6F65F4D6137 /* Pods_Watcher.framework */; };
 		B253DB0322109C56001A1EDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253DB0222109C56001A1EDF /* AppDelegate.swift */; };
 		B253DB0522109C56001A1EDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253DB0422109C56001A1EDF /* ViewController.swift */; };
-		B253DB0822109C56001A1EDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B253DB0622109C56001A1EDF /* Main.storyboard */; };
+		B253DB0822109C56001A1EDF /* AuthUserStory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B253DB0622109C56001A1EDF /* AuthUserStory.storyboard */; };
 		B253DB0A22109C57001A1EDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B253DB0922109C57001A1EDF /* Assets.xcassets */; };
 		B253DB0D22109C57001A1EDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */; };
 		B253DB152210A1EF001A1EDF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B253DB142210A1EF001A1EDF /* Podfile */; };
 		B253DB172210A7A8001A1EDF /* installPods.command in Resources */ = {isa = PBXBuildFile; fileRef = B253DB162210A7A8001A1EDF /* installPods.command */; };
 		B253DB192210A7B1001A1EDF /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B253DB182210A7B1001A1EDF /* .swiftlint.yml */; };
+		B253DB322210E0CD001A1EDF /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB262210E0CC001A1EDF /* SourceSansPro-Light.ttf */; };
+		B253DB332210E0CD001A1EDF /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB272210E0CC001A1EDF /* SourceSansPro-Bold.ttf */; };
+		B253DB342210E0CD001A1EDF /* SourceSansPro-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB282210E0CC001A1EDF /* SourceSansPro-SemiBold.ttf */; };
+		B253DB352210E0CD001A1EDF /* SourceSansPro-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB292210E0CC001A1EDF /* SourceSansPro-Italic.ttf */; };
+		B253DB362210E0CD001A1EDF /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2A2210E0CC001A1EDF /* SourceSansPro-ExtraLight.ttf */; };
+		B253DB372210E0CD001A1EDF /* SourceSansPro-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2B2210E0CD001A1EDF /* SourceSansPro-ExtraLightItalic.ttf */; };
+		B253DB382210E0CD001A1EDF /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2C2210E0CD001A1EDF /* SourceSansPro-Black.ttf */; };
+		B253DB392210E0CD001A1EDF /* SourceSansPro-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2D2210E0CD001A1EDF /* SourceSansPro-BoldItalic.ttf */; };
+		B253DB3A2210E0CD001A1EDF /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2E2210E0CD001A1EDF /* SourceSansPro-Regular.ttf */; };
+		B253DB3B2210E0CD001A1EDF /* SourceSansPro-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB2F2210E0CD001A1EDF /* SourceSansPro-LightItalic.ttf */; };
+		B253DB3C2210E0CD001A1EDF /* SourceSansPro-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB302210E0CD001A1EDF /* SourceSansPro-SemiBoldItalic.ttf */; };
+		B253DB3D2210E0CD001A1EDF /* SourceSansPro-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B253DB312210E0CD001A1EDF /* SourceSansPro-BlackItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,13 +36,25 @@
 		B253DAFF22109C56001A1EDF /* Watcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Watcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B253DB0222109C56001A1EDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B253DB0422109C56001A1EDF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		B253DB0722109C56001A1EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B253DB0722109C56001A1EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AuthUserStory.storyboard; sourceTree = "<group>"; };
 		B253DB0922109C57001A1EDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B253DB0C22109C57001A1EDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B253DB0E22109C57001A1EDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B253DB142210A1EF001A1EDF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		B253DB162210A7A8001A1EDF /* installPods.command */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = installPods.command; sourceTree = "<group>"; };
 		B253DB182210A7B1001A1EDF /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
+		B253DB262210E0CC001A1EDF /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		B253DB272210E0CC001A1EDF /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		B253DB282210E0CC001A1EDF /* SourceSansPro-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBold.ttf"; sourceTree = "<group>"; };
+		B253DB292210E0CC001A1EDF /* SourceSansPro-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Italic.ttf"; sourceTree = "<group>"; };
+		B253DB2A2210E0CC001A1EDF /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		B253DB2B2210E0CD001A1EDF /* SourceSansPro-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		B253DB2C2210E0CD001A1EDF /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		B253DB2D2210E0CD001A1EDF /* SourceSansPro-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldItalic.ttf"; sourceTree = "<group>"; };
+		B253DB2E2210E0CD001A1EDF /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		B253DB2F2210E0CD001A1EDF /* SourceSansPro-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightItalic.ttf"; sourceTree = "<group>"; };
+		B253DB302210E0CD001A1EDF /* SourceSansPro-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		B253DB312210E0CD001A1EDF /* SourceSansPro-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackItalic.ttf"; sourceTree = "<group>"; };
 		CCA055E1F77FE6F65F4D6137 /* Pods_Watcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Watcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -115,6 +139,7 @@
 		B253DB1D2210C2AC001A1EDF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B253DB3E2210E0DD001A1EDF /* Fonts */,
 				B253DB0922109C57001A1EDF /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -126,7 +151,6 @@
 				B253DB212210C38D001A1EDF /* User Story */,
 				B253DB0422109C56001A1EDF /* ViewController.swift */,
 				B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */,
-				B253DB0622109C56001A1EDF /* Main.storyboard */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -152,6 +176,7 @@
 		B253DB212210C38D001A1EDF /* User Story */ = {
 			isa = PBXGroup;
 			children = (
+				B253DB252210D028001A1EDF /* Auth */,
 			);
 			path = "User Story";
 			sourceTree = "<group>";
@@ -175,6 +200,33 @@
 			children = (
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B253DB252210D028001A1EDF /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB0622109C56001A1EDF /* AuthUserStory.storyboard */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
+		B253DB3E2210E0DD001A1EDF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB2C2210E0CD001A1EDF /* SourceSansPro-Black.ttf */,
+				B253DB312210E0CD001A1EDF /* SourceSansPro-BlackItalic.ttf */,
+				B253DB272210E0CC001A1EDF /* SourceSansPro-Bold.ttf */,
+				B253DB2D2210E0CD001A1EDF /* SourceSansPro-BoldItalic.ttf */,
+				B253DB2A2210E0CC001A1EDF /* SourceSansPro-ExtraLight.ttf */,
+				B253DB2B2210E0CD001A1EDF /* SourceSansPro-ExtraLightItalic.ttf */,
+				B253DB292210E0CC001A1EDF /* SourceSansPro-Italic.ttf */,
+				B253DB262210E0CC001A1EDF /* SourceSansPro-Light.ttf */,
+				B253DB2F2210E0CD001A1EDF /* SourceSansPro-LightItalic.ttf */,
+				B253DB2E2210E0CD001A1EDF /* SourceSansPro-Regular.ttf */,
+				B253DB282210E0CC001A1EDF /* SourceSansPro-SemiBold.ttf */,
+				B253DB302210E0CD001A1EDF /* SourceSansPro-SemiBoldItalic.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,12 +290,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B253DB3D2210E0CD001A1EDF /* SourceSansPro-BlackItalic.ttf in Resources */,
+				B253DB3C2210E0CD001A1EDF /* SourceSansPro-SemiBoldItalic.ttf in Resources */,
 				B253DB192210A7B1001A1EDF /* .swiftlint.yml in Resources */,
 				B253DB0D22109C57001A1EDF /* LaunchScreen.storyboard in Resources */,
+				B253DB382210E0CD001A1EDF /* SourceSansPro-Black.ttf in Resources */,
+				B253DB322210E0CD001A1EDF /* SourceSansPro-Light.ttf in Resources */,
+				B253DB342210E0CD001A1EDF /* SourceSansPro-SemiBold.ttf in Resources */,
+				B253DB3A2210E0CD001A1EDF /* SourceSansPro-Regular.ttf in Resources */,
+				B253DB352210E0CD001A1EDF /* SourceSansPro-Italic.ttf in Resources */,
 				B253DB0A22109C57001A1EDF /* Assets.xcassets in Resources */,
+				B253DB392210E0CD001A1EDF /* SourceSansPro-BoldItalic.ttf in Resources */,
 				B253DB152210A1EF001A1EDF /* Podfile in Resources */,
-				B253DB0822109C56001A1EDF /* Main.storyboard in Resources */,
+				B253DB0822109C56001A1EDF /* AuthUserStory.storyboard in Resources */,
+				B253DB3B2210E0CD001A1EDF /* SourceSansPro-LightItalic.ttf in Resources */,
+				B253DB372210E0CD001A1EDF /* SourceSansPro-ExtraLightItalic.ttf in Resources */,
+				B253DB362210E0CD001A1EDF /* SourceSansPro-ExtraLight.ttf in Resources */,
 				B253DB172210A7A8001A1EDF /* installPods.command in Resources */,
+				B253DB332210E0CD001A1EDF /* SourceSansPro-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,12 +390,12 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		B253DB0622109C56001A1EDF /* Main.storyboard */ = {
+		B253DB0622109C56001A1EDF /* AuthUserStory.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				B253DB0722109C56001A1EDF /* Base */,
 			);
-			name = Main.storyboard;
+			name = AuthUserStory.storyboard;
 			sourceTree = "<group>";
 		};
 		B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */ = {
