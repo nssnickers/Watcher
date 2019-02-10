@@ -60,7 +60,6 @@
 				6F72D893D19D2FFED0656759 /* Pods-Watcher.debug.xcconfig */,
 				0962D2560557BB9F8192CA28 /* Pods-Watcher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -88,14 +87,94 @@
 		B253DB0122109C56001A1EDF /* Watcher */ = {
 			isa = PBXGroup;
 			children = (
-				B253DB0222109C56001A1EDF /* AppDelegate.swift */,
-				B253DB0422109C56001A1EDF /* ViewController.swift */,
-				B253DB0622109C56001A1EDF /* Main.storyboard */,
-				B253DB0922109C57001A1EDF /* Assets.xcassets */,
-				B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */,
-				B253DB0E22109C57001A1EDF /* Info.plist */,
+				B253DB1B2210C283001A1EDF /* Classes */,
+				B253DB1D2210C2AC001A1EDF /* Resources */,
+				B253DB1C2210C29F001A1EDF /* Supporting Files */,
 			);
 			path = Watcher;
+			sourceTree = "<group>";
+		};
+		B253DB1B2210C283001A1EDF /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB1F2210C311001A1EDF /* Application */,
+				B253DB202210C345001A1EDF /* Business Logic */,
+				B253DB1E2210C302001A1EDF /* Presentation */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		B253DB1C2210C29F001A1EDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB0E22109C57001A1EDF /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		B253DB1D2210C2AC001A1EDF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB0922109C57001A1EDF /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B253DB1E2210C302001A1EDF /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB212210C38D001A1EDF /* User Story */,
+				B253DB0422109C56001A1EDF /* ViewController.swift */,
+				B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */,
+				B253DB0622109C56001A1EDF /* Main.storyboard */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		B253DB1F2210C311001A1EDF /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB0222109C56001A1EDF /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B253DB202210C345001A1EDF /* Business Logic */ = {
+			isa = PBXGroup;
+			children = (
+				B253DB242210C540001A1EDF /* Common */,
+				B253DB222210C4AD001A1EDF /* Model */,
+				B253DB232210C4B8001A1EDF /* Service */,
+			);
+			path = "Business Logic";
+			sourceTree = "<group>";
+		};
+		B253DB212210C38D001A1EDF /* User Story */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "User Story";
+			sourceTree = "<group>";
+		};
+		B253DB222210C4AD001A1EDF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B253DB232210C4B8001A1EDF /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		B253DB242210C540001A1EDF /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,7 +468,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2M678956L;
-				INFOPLIST_FILE = Watcher/Info.plist;
+				INFOPLIST_FILE = "Watcher/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +487,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2M678956L;
-				INFOPLIST_FILE = Watcher/Info.plist;
+				INFOPLIST_FILE = "Watcher/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
