@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-SemiBold.ttf">
+            <string>SourceSansPro-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="Watcher" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-L4-3m9">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edu-Vg-xXx">
+                            <rect key="frame" x="335" y="29" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="edu-Vg-xXx" secondAttribute="height" multiplier="1:1" id="poH-Ig-vYW"/>
+                            </constraints>
+                            <state key="normal" image="icnCalendar"/>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-0n-25w">
+                            <rect key="frame" x="16" y="29" width="24" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="xbn-0n-25w" secondAttribute="height" multiplier="1:1" id="hd7-qS-cw8"/>
+                            </constraints>
+                            <state key="normal" image="icnProfile"/>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учет времени" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-IX-cSo">
+                            <rect key="frame" x="132.5" y="30" width="110" height="23"/>
+                            <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="0.2274509804" green="0.23529411759999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="xbn-0n-25w" firstAttribute="leading" secondItem="vLv-L4-3m9" secondAttribute="leading" constant="16" id="2gQ-5O-dgA"/>
+                        <constraint firstAttribute="height" constant="64" id="BUT-D3-zvR"/>
+                        <constraint firstAttribute="bottom" secondItem="VQg-IX-cSo" secondAttribute="bottom" constant="11" id="CCh-Wl-nLE"/>
+                        <constraint firstItem="VQg-IX-cSo" firstAttribute="centerX" secondItem="vLv-L4-3m9" secondAttribute="centerX" id="Wlj-zy-Dpq"/>
+                        <constraint firstAttribute="trailing" secondItem="edu-Vg-xXx" secondAttribute="trailing" constant="16" id="lc0-rx-xuf"/>
+                        <constraint firstAttribute="bottom" secondItem="xbn-0n-25w" secondAttribute="bottom" constant="11" id="sSS-My-NoV"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szD-50-lSf">
+                    <rect key="frame" x="16" y="319.5" width="343" height="48"/>
+                    <color key="backgroundColor" red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="xh7-dl-FL2"/>
+                    </constraints>
+                    <state key="normal" image="icnPlus"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="addNewPeriodButtonDidPress:" destination="-1" eventType="touchUpInside" id="w1t-pc-OVg"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="szD-50-lSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Bd3-dK-xfr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="vLv-L4-3m9" secondAttribute="top" constant="20" id="H3Y-kx-gRf"/>
+                <constraint firstItem="vLv-L4-3m9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Mlq-HI-C16"/>
+                <constraint firstItem="VQg-IX-cSo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="NUN-9U-8ZC"/>
+                <constraint firstItem="szD-50-lSf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="TL0-pD-3AP"/>
+                <constraint firstItem="szD-50-lSf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="WSy-Je-Vgv"/>
+                <constraint firstItem="vLv-L4-3m9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="i7i-li-Vdh"/>
+                <constraint firstItem="vLv-L4-3m9" firstAttribute="bottom" secondItem="edu-Vg-xXx" secondAttribute="bottom" constant="11" id="ibM-wE-cd9"/>
+                <constraint firstAttribute="top" secondItem="vLv-L4-3m9" secondAttribute="top" id="iqC-3l-uk7"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="55.200000000000003" y="48.125937031484263"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icnCalendar" width="24" height="24"/>
+        <image name="icnPlus" width="24" height="24"/>
+        <image name="icnProfile" width="24" height="24"/>
+    </resources>
+</document>

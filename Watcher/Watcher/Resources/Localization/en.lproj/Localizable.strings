@@ -1,0 +1,15 @@
+/* 
+  Localizable.strings
+  Watcher
+
+  Created by Маргарита on 15/02/2019.
+  Copyright © 2019 Маргарита. All rights reserved.
+*/
+"Не хватает прав для получения списка проектов" = "Not enough rights to get a list of projects";
+"Сервис временно недоступен, попробуйте авторизоваться позже." = "The service is temporarily unavailable, try logging in later.";
+"Неверный логин или пароль" = "Wrong login or password";
+"Сервис временно недоступен, попробуйте авторизоваться позже." = "The service is temporarily unavailable, try logging in later.";
+"Внимание" = "Attention";
+"ОК" = "Ok";
+"Неверный формат логина" = "Invalid login format";
+"Слишком короткий пароль" = "Password is too short";
