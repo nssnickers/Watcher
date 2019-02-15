@@ -1,0 +1,21 @@
+
+/* Class = "UIButton"; normalTitle = "Забыли пароль?"; ObjectID = "L1e-BA-bgv"; */
+"L1e-BA-bgv.normalTitle" = "Forgot your password?";
+
+/* Class = "UIButton"; normalTitle = "Вход для роботов"; ObjectID = "VRJ-E4-Olk"; */
+"VRJ-E4-Olk.normalTitle" = "Login for robots";
+
+/* Class = "UIButton"; disabledTitle = "Войти"; ObjectID = "dWP-UG-oNq"; */
+"dWP-UG-oNq.disabledTitle" = "Login";
+
+/* Class = "UIButton"; normalTitle = "Войти"; ObjectID = "dWP-UG-oNq"; */
+"dWP-UG-oNq.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Email для аутстаферов"; ObjectID = "pKc-NR-e4H"; */
+"pKc-NR-e4H.placeholder" = "Email for outstaffers";
+
+/* Class = "UIButton"; normalTitle = "Регистрация"; ObjectID = "rH6-sj-4Sc"; */
+"rH6-sj-4Sc.normalTitle" = "Registration";
+
+/* Class = "UITextField"; placeholder = "Пароль"; ObjectID = "zVM-aC-ZIU"; */
+"zVM-aC-ZIU.placeholder" = "Password";

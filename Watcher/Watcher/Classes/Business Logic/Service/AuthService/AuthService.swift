@@ -12,6 +12,7 @@ import Foundation
 // TODO: вынести ключи и константы
 // TODO: вынести настройки клиента из сервиса
 // TODO: нормальные ошибки
+// TODO: привести все сервисы к консистентному виду
 
 
 /// Тип ошибок
@@ -19,8 +20,12 @@ import Foundation
 /// - validation: неверный формат параметров
 /// - invalidCredentials: неверный логин или пароль
 enum AuthErrorType: String {
-    case validation = "Неправильный формат логина"
+    case validation = "Неверный формат логина"
     case invalidCredentials = "Неверный логин или пароль"
+    
+    var localizedString: String {
+        return NSLocalizedString(self.rawValue, comment: "")
+    }
 }
 
 
@@ -29,17 +34,26 @@ final class AuthService {
     
     // MARK: - Private Proerties
     
-    private var client = Client()
+    private let client = Client()
     
     
     // MARK: - Public Methods
     
+    /// Запрос на аутентификацию с логином и паролем
+    ///
+    /// - Parameters:
+    ///   - email: email пользователя
+    ///   - password: пароль пользователя
+    ///   - success: блок, который выполнится при успешном завершении запросы
+    ///   - failure: блок, который выполнится при ошибке, принимаемые значения AuthErrorType
+    /// [Ссылка на спецификацию](https://watcher.intern.redmadrobot.com/docs/api.html#operation/signIn)
     public func loginWithEmail(
        _ email: String,
        _ password: String,
        success: @escaping () -> Void,
        failure: @escaping (String) -> Void) {
         let parameters = ["email": email, "password": password]
+        
         client.requestResourceWithPath("auth/sign-in/", method: .post, parameters: parameters) { (response) in
             if let httpStatusCode = response.response?.statusCode {
                 switch httpStatusCode {
@@ -53,12 +67,12 @@ final class AuthService {
                     
                     success()
                 case 401:
-                    failure(AuthErrorType.invalidCredentials.rawValue)
+                    failure(AuthErrorType.invalidCredentials.localizedString)
                 default:
-                    failure(AuthErrorType.validation.rawValue)
+                    failure(AuthErrorType.validation.localizedString)
                 }
             } else {
-                failure("Сервис временно недоступен, попробуйте авторизоваться позже.")
+                failure(NSLocalizedString("Сервис временно недоступен, попробуйте авторизоваться позже.", comment: ""))
             }
         }
     }
