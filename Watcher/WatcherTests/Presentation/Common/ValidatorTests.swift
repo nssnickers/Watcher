@@ -13,47 +13,42 @@ import XCTest
 
 class ValidatorTests: XCTestCase {
     
-    var validator: Validator?
-
-    override func setUp() {
-        validator = Validator()
-    }
-
-    override func tearDown() {
-        // TODO: вспомнить, как работают тесты, не факт, что это нужно
-        validator = nil
-    }
+    let validator = Validator()
 
     func testEmptyEmailValidation() {
         //given
         let email = ""
         
         //when
-        let validatorResponse = validator!.validateString(email, for: .email)
+        let validatorResponse = validator.validateString(email, for: .email)
         
         //then
-        let errorValidatorResponse = ValidationResponse.error("Неверный формат логина")
+        let error = NSLocalizedString("Неверный формат логина", comment: "")
+        let errorValidatorResponse = ValidationResponse.error(error)
         XCTAssertEqual(validatorResponse, errorValidatorResponse, "Test empty email validation fail")
     }
+    
     
     func testWrongEmailValidation() {
         //given
         let email = "ritret@tratatata"
         
         //when
-        let validatorResponse = validator?.validateString(email, for: .email)
+        let validatorResponse = validator.validateString(email, for: .email)
         
         //then
-        let errorValidatorResponse = ValidationResponse.error("Неверный формат логина")
+        let error = NSLocalizedString("Неверный формат логина", comment: "")
+        let errorValidatorResponse = ValidationResponse.error(error)
         XCTAssertEqual(validatorResponse, errorValidatorResponse, "Test wrong email validation fail")
     }
+    
     
     func testValidEmailValidation() {
         //given
         let email = "ritret@tratatata.com"
         
         //when
-        let validatorResponse = validator?.validateString(email, for: .email)
+        let validatorResponse = validator.validateString(email, for: .email)
         
         //then
         let successValidatorResponse = ValidationResponse.success

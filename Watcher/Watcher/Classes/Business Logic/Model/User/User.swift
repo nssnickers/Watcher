@@ -23,6 +23,7 @@ enum UserRole: String, Codable {
 
 /// Класс пользователя
 struct User: Codable {
+    
     // MARK: - Public Properties
     
     var firstName: String

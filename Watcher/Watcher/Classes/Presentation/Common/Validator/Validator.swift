@@ -57,7 +57,7 @@ final class Validator {
         let emailValidator = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         
         if !emailValidator.evaluate(with: email) {
-            return .error("Неверный формат логина")
+            return .error(NSLocalizedString("Неверный формат логина", comment: ""))
         }
         
         return .success
@@ -67,7 +67,7 @@ final class Validator {
     private func validatePassword(_ password: String) -> ValidationResponse {
         
         if password.count <= 6 {
-            return .error("Слишком короткий пароль")
+            return .error(NSLocalizedString("Слишком короткий пароль", comment: ""))
         }
         
         return .success
