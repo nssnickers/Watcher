@@ -39,7 +39,7 @@ class AuthViewController: UIViewController {
         view.addSubview(activityIndicator)
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         
-        employeLoginButton.layer.borderColor = #colorLiteral(red: 1, green: 0.2666666667, blue: 0.2, alpha: 1)
+        employeLoginButton.layer.borderColor = UIColor(named: "pastelOrangeyRed")?.cgColor
         disableLoginButton()
         registerKeyboardNotifications()
     }
@@ -108,13 +108,13 @@ class AuthViewController: UIViewController {
     
     private func enableLoginButton() {
         loginButton?.isEnabled = true
-        loginButton.backgroundColor = #colorLiteral(red: 1, green: 0.2666666667, blue: 0.2, alpha: 1)
+        loginButton.backgroundColor = UIColor(named: "orangeyRed")
     }
     
     
     private func disableLoginButton() {
         loginButton?.isEnabled = false
-        loginButton.backgroundColor = #colorLiteral(red: 1, green: 0.2666666667, blue: 0.2, alpha: 0.2517925942)
+        loginButton.backgroundColor = UIColor(named: "pastelOrangeyRed")
     }
     
     
