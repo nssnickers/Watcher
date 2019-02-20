@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -52,7 +53,7 @@
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dWP-UG-oNq">
                                             <rect key="frame" x="20" y="230" width="335" height="50"/>
-                                            <color key="backgroundColor" red="1" green="0.2666666667" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="pastelOrangeyRed"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="Phk-RR-izz"/>
                                             </constraints>
@@ -78,7 +79,7 @@
                                             <inset key="titleEdgeInsets" minX="0.0" minY="13" maxX="76" maxY="14"/>
                                             <inset key="imageEdgeInsets" minX="76" minY="13" maxX="233" maxY="13"/>
                                             <state key="normal" title="Вход для роботов" image="googleLogo">
-                                                <color key="titleColor" red="0.2274509804" green="0.23529411759999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="titleColor" name="charcoalGrey"/>
                                             </state>
                                             <userDefinedRuntimeAttributes>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
@@ -91,8 +92,8 @@
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Пароль" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="zVM-aC-ZIU">
                                             <rect key="frame" x="20" y="158" width="335" height="23"/>
-                                            <color key="tintColor" red="0.72156862749999995" green="0.74509803919999995" blue="0.7725490196" alpha="0.25" colorSpace="calibratedRGB"/>
-                                            <nil key="textColor"/>
+                                            <color key="tintColor" name="cloudyBlue"/>
+                                            <color key="textColor" name="charcoalGrey"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             <connections>
@@ -103,14 +104,14 @@
                                         </textField>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lj-kl-0wZ" userLabel="Under Email line">
                                             <rect key="frame" x="20" y="123" width="335" height="1"/>
-                                            <color key="backgroundColor" red="0.72156862749999995" green="0.74509803919999995" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="cloudyBlue"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="KtG-Vl-UIu"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8nB-Fw-wJP" userLabel="Under Password line">
                                             <rect key="frame" x="20" y="191" width="335" height="1"/>
-                                            <color key="backgroundColor" red="0.72156862749999995" green="0.74509803919999995" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" name="cloudyBlue"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="Fmc-el-28S"/>
                                             </constraints>
@@ -118,12 +119,14 @@
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-BA-bgv">
                                             <rect key="frame" x="123" y="298" width="129" height="35"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                                            <state key="normal" title="Забыли пароль?"/>
+                                            <state key="normal" title="Забыли пароль?">
+                                                <color key="titleColor" name="charcoalGrey"/>
+                                            </state>
                                         </button>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email для аутстаферов" textAlignment="natural" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="pKc-NR-e4H">
                                             <rect key="frame" x="20" y="90" width="335" height="23"/>
-                                            <color key="tintColor" red="0.72156862749999995" green="0.74509803919999995" blue="0.7725490196" alpha="0.25" colorSpace="calibratedRGB"/>
-                                            <nil key="textColor"/>
+                                            <color key="tintColor" name="cloudyBlue"/>
+                                            <color key="textColor" name="charcoalGrey"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
                                             <textInputTraits key="textInputTraits"/>
                                             <connections>
@@ -135,7 +138,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-O7-hZX">
                                             <rect key="frame" x="20" y="129" width="335" height="0.0"/>
                                             <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
-                                            <color key="textColor" red="1" green="0.2666666667" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="textColor" name="orangeyRed"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -192,7 +195,9 @@
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rH6-sj-4Sc">
                     <rect key="frame" x="254" y="20" width="101" height="35"/>
                     <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
-                    <state key="normal" title="Регистрация"/>
+                    <state key="normal" title="Регистрация">
+                        <color key="titleColor" name="charcoalGrey"/>
+                    </state>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -212,5 +217,17 @@
     <resources>
         <image name="googleLogo" width="30" height="30"/>
         <image name="rmrLogo" width="180" height="36"/>
+        <namedColor name="charcoalGrey">
+            <color red="0.22699999809265137" green="0.23499999940395355" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="cloudyBlue">
+            <color red="0.72200000286102295" green="0.74500000476837158" blue="0.77300000190734863" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orangeyRed">
+            <color red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="pastelOrangeyRed">
+            <color red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="0.25" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

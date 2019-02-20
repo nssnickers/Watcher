@@ -21,21 +21,26 @@ class ProjectServiceTests: XCTestCase {
         let expectation = XCTestExpectation(description: "obtain project")
         
         //when
-        authService.loginWithEmail("hmargotret@gmail.com", "marga1Rita", success: {
-            self.projectService.obtainProjectsWithCompletion { (result) in
-                XCTAssertNotNil(result, "Не должно быть пустого ответа")
-                
+        authService.loginWithEmail(
+            "hmargotret@gmail.com",
+            password: "marga1Rita") { (result) in
                 switch result {
-                case .error(let errorType):
-                    XCTFail("Ошибка при получении списка проектов: \(errorType.rawValue)")
-                case .success(let projects):
-                    XCTAssertNotNil(projects, "Не должно быть пустого списка проектов")
+                case .success:
+                    self.projectService.obtainProjectsWithCompletion { (result) in
+                        XCTAssertNotNil(result, "Не должно быть пустого ответа")
+                        
+                        switch result {
+                        case .error(let error):
+                            XCTFail("Ошибка при получении списка проектов: \(error)")
+                        case .success(let projects):
+                            XCTAssertNotNil(projects, "Не должно быть пустого списка проектов")
+                        }
+                        expectation.fulfill()
+                    }
+                case .error(let error):
+                    XCTFail("Ошибка авторизации при тестировании: \(error)")
                 }
-                expectation.fulfill()
-            }
-        }, failure: { (errror) in
-            XCTFail("Ошибка авторизации при тестировании: \(errror)")
-        })
+        }
         
         
         //then

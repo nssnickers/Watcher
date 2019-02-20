@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -49,7 +50,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" red="0.2274509804" green="0.23529411759999999" blue="0.2470588235" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="charcoalGrey"/>
                     <constraints>
                         <constraint firstItem="xbn-0n-25w" firstAttribute="leading" secondItem="vLv-L4-3m9" secondAttribute="leading" constant="16" id="2gQ-5O-dgA"/>
                         <constraint firstAttribute="height" constant="64" id="BUT-D3-zvR"/>
@@ -61,7 +62,7 @@
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szD-50-lSf">
                     <rect key="frame" x="16" y="319.5" width="343" height="48"/>
-                    <color key="backgroundColor" red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" name="orangeyRed"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="xh7-dl-FL2"/>
                     </constraints>
@@ -96,5 +97,11 @@
         <image name="icnCalendar" width="24" height="24"/>
         <image name="icnPlus" width="24" height="24"/>
         <image name="icnProfile" width="24" height="24"/>
+        <namedColor name="charcoalGrey">
+            <color red="0.22699999809265137" green="0.23499999940395355" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orangeyRed">
+            <color red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
