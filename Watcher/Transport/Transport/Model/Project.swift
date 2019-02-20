@@ -9,21 +9,13 @@
 import Foundation
 
 /// Структура, описывающая проекты на которые можно списывать время
-struct Project: Codable {
+public struct Project: Codable {
     
     // MARK: - Pulic Properties
     
-    var id: Int
+    public var id: Int
     var isCommercial: Bool
     var isArchived: Bool
-    var name: String
-    var managers: [User]
-    
-    enum CodingKeys: String, CodingKey {
-        case id
-        case isCommercial = "is_commercial"
-        case isArchived = "is_archived"
-        case name
-        case managers
-    }
+    public var name: String
+    var managers: [User]?
 }

@@ -14,7 +14,7 @@ import Foundation
 /// - manager: менеджер
 /// - outstaff: стажер
 /// - employee: работник
-enum UserRole: String, Codable {
+public enum UserRole: String, Codable {
     case admin
     case manager
     case outstaff
@@ -22,7 +22,7 @@ enum UserRole: String, Codable {
 }
 
 /// Класс пользователя
-struct User: Codable {
+public struct User: Codable {
     
     // MARK: - Public Properties
     
@@ -32,13 +32,4 @@ struct User: Codable {
     var email: String
     var id: Int
     var isStaff: Bool
-    
-    enum CodingKeys: String, CodingKey {
-        case firstName = "first_name"
-        case lastName = "last_name"
-        case role
-        case email
-        case id
-        case isStaff = "is_staff"
-    }
 }
