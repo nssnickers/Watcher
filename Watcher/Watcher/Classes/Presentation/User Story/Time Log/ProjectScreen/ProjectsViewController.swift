@@ -6,6 +6,7 @@
 //  Copyright © 2019 Маргарита. All rights reserved.
 //
 
+import Transport
 import UIKit
 
 /// Экран выбора прокета
@@ -38,13 +39,18 @@ final class ProjectsViewController: UIViewController {
         projectService.obtainProjectsWithCompletion { (result) in
             self.activityIndicator.stopAnimating()
             switch result {
-            case .error(let errorType):
-                self.showAlertWithError(errorType.localizedString)
+            case .error(let error):
+                self.showAlertWithError(error)
             case .success(let newProjects):
                 self.projects = newProjects
                 self.projectsTableView.reloadData()
             }
         }
+    }
+    
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     
@@ -85,4 +91,16 @@ extension ProjectsViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension ProjectsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let expense = TimeLogViewController(nibName: nil, bundle: nil)
+        let project = projects[indexPath.item]
+        
+        expense.project = project
+        self.present(expense, animated: true, completion: nil)
+    }
+    
 }
