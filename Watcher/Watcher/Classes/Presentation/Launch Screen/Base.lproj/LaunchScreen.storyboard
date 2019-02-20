@@ -17,7 +17,20 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="robot" translatesAutoresizingMaskIntoConstraints="NO" id="h2l-FF-Rdf">
+                                <rect key="frame" x="16" y="215.5" width="343" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="h2l-FF-Rdf" secondAttribute="height" multiplier="79:59" id="ZTI-sY-O0F"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="h2l-FF-Rdf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="a11-nO-7S4"/>
+                            <constraint firstItem="h2l-FF-Rdf" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="nJn-RI-mgF"/>
+                            <constraint firstItem="h2l-FF-Rdf" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="zLu-Yy-daI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -26,4 +39,7 @@
             <point key="canvasLocation" x="-266" y="348"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="robot" width="790" height="590"/>
+    </resources>
 </document>
