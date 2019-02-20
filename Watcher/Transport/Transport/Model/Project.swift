@@ -10,7 +10,6 @@ import Foundation
 
 /// Структура, описывающая проекты на которые можно списывать время
 public struct Project: Codable {
-    
     // MARK: - Pulic Properties
     
     public var id: Int
@@ -19,3 +18,18 @@ public struct Project: Codable {
     public var name: String
     var managers: [User]?
 }
+
+extension Project: Equatable {
+    
+    public static func == (lhs: Project, rhs: Project) -> Bool {
+        let areEqual =
+            lhs.id == rhs.id
+            && lhs.isArchived == rhs.isArchived
+            && lhs.isCommercial == rhs.isCommercial
+            && lhs.name == rhs.name
+            && lhs.managers == rhs.managers
+        
+        return areEqual
+    }
+}
+

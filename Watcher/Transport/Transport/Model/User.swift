@@ -33,3 +33,18 @@ public struct User: Codable {
     var id: Int
     var isStaff: Bool
 }
+
+extension User: Equatable {
+    
+    public static func == (lhs: User, rhs: User) -> Bool {
+        let areEqual =
+            lhs.id == rhs.id
+                && lhs.firstName == rhs.firstName
+                && lhs.lastName == rhs.lastName
+                && lhs.role == rhs.role
+                && lhs.email == rhs.email
+                && lhs.isStaff == rhs.isStaff
+        
+        return areEqual
+    }
+}

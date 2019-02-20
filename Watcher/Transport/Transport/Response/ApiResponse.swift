@@ -8,6 +8,7 @@
 
 import Foundation
 
-struct APIResponse<Content>: Decodable where Content: Decodable {
+struct APIResponse<Content>: Codable where Content: Codable {
+    
     let data: [String: Content]
 }

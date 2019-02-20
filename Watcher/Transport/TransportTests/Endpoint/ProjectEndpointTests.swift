@@ -46,4 +46,48 @@ class ProjectEndpointTests: XCTestCase {
             XCTFail("Ошибка создания запроса списка проектов")
         }
     }
+    
+    // TODO: тут можно создать много юзкейсов, где будут мапиться разные необязательные поля + невалидные
+    func testProjectResponse() {
+        //given
+        let endpoint = ProjectEndpoint()
+        let project = Project(
+            id: 23,
+            isCommercial: true,
+            isArchived: false,
+            name: "Test Project",
+            managers: nil)
+        
+        let data = APIResponse<[Project]>(data: ["projects": [project]])
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        
+        do {
+            let raw = try encoder.encode(data)
+            
+            //when
+            do {
+                let response = try endpoint.parse(response: raw)
+                switch response {
+                case .success(let projects):
+                    //then
+                    let expectedResponse = [project]
+                    
+                    XCTAssertTrue(projects == expectedResponse, "")
+                default:
+                    XCTFail("Ошибка парсинга ответа")
+                }
+                
+                
+            } catch {
+                XCTFail("Не удалось распарсить данные")
+            }
+        } catch {
+            XCTFail("Не удалось кодировать данные")
+        }
+        
+        
+        
+        
+    }
 }
