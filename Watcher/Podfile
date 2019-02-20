@@ -1,9 +1,19 @@
 platform :ios, '12.0'
-
-target 'Watcher' do
+workspace 'Watcher'
 use_frameworks!
 
-    pod 'Alamofire', '~> 5.0.0-beta.2'
-    pod 'SwiftLint'
-
+target 'Watcher' do
+  project 'Watcher'
+  
+  pod 'Alamofire', '~> 5.0.0-beta.2'
+  pod 'SwiftLint'
+  
+  target 'Transport' do
+    project 'Transport/Transport'
+    inherit! :search_paths
+    
+    target 'TransportTests' do
+      inherit! :search_paths
+    end
+  end
 end
