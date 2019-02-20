@@ -34,6 +34,8 @@ public struct User: Codable {
     var isStaff: Bool
 }
 
+// MARK: - Equatable
+
 extension User: Equatable {
     
     public static func == (lhs: User, rhs: User) -> Bool {

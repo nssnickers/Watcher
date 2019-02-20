@@ -7,8 +7,8 @@
 //
 
 import Alamofire
-import XCTest
 @testable import Transport
+import XCTest
 
 class TimeLogEndpointTests: XCTestCase {
 

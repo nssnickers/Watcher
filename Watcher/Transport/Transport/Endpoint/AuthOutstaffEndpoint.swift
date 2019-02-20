@@ -10,12 +10,20 @@ import Alamofire
 import Foundation
 
 public struct AuthOutstaffEndpoint: Endpoint {
+    
+    // MARK: - Types
+    
     public typealias Item = User
     
+    // MARK: - Private Properties
+    
     private let outstaffAuth: OutstaffAuth
+    
     private let encoder = JSONEncoder()
+    
     private let decoder = JSONDecoder()
     
+    // MARK: - Initializers
     
     public init(outstaffAuth: OutstaffAuth) {
         self.outstaffAuth = outstaffAuth
@@ -23,6 +31,8 @@ public struct AuthOutstaffEndpoint: Endpoint {
         decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
+    
+    // MARK: - Public Methods
     
     public func request() throws -> URLRequest {
         var urlComponents = URLComponents()

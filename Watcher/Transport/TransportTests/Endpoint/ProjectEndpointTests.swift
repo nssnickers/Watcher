@@ -7,8 +7,8 @@
 //
 
 import Alamofire
-import XCTest
 @testable import Transport
+import XCTest
 
 class ProjectEndpointTests: XCTestCase {
     
@@ -85,9 +85,5 @@ class ProjectEndpointTests: XCTestCase {
         } catch {
             XCTFail("Не удалось кодировать данные")
         }
-        
-        
-        
-        
     }
 }

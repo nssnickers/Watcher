@@ -16,12 +16,19 @@ protocol KeyboardHandlerDataSource: class {
 }
 
 final class KeyboardHandler {
+    
+    // MARK: - Public Properties
+    
     public weak var delegate: KeyboardHandlerDataSource?
+    
+    // MARK: - Initializers
     
     init(withDelegate delegate: KeyboardHandlerDataSource) {
         self.delegate = delegate
     }
     
+    
+    // MARK: - Public Methods
     
     public func startKeyboardHandling() {
         registerKeyboardNotifications()
@@ -32,6 +39,8 @@ final class KeyboardHandler {
         deRegisterKeyboardNotifications()
     }
     
+    
+    // MARK: - Private Methods
     
     @objc fileprivate func registerKeyboardNotifications() {
         NotificationCenter.default.addObserver(

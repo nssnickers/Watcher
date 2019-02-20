@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Структура для сериализации запроса к серверу
 public struct TimeLog: Codable {
     let projectId: Int
     let minutesSpent: Int

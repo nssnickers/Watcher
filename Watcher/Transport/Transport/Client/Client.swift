@@ -11,6 +11,7 @@ import Alamofire
 // TODO: вынести в настройки
 // TODO: вынести константы
 // TODO: сохранять куки авторизации в приложении
+// TODO: сделать shared session
 
 /// Клиент для выполнения запросов
 public final class Client: ApiClient, EventMonitor {
@@ -27,7 +28,6 @@ public final class Client: ApiClient, EventMonitor {
             var httpRequest = try request.request()
             httpRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
         
-//            let session = Session(startRequestsImmediately: false, eventMonitors: [self])
             AF.request(httpRequest)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: ["application/json"])

@@ -19,6 +19,8 @@ public struct Project: Codable {
     var managers: [User]?
 }
 
+// MARK: - Equatable
+
 extension Project: Equatable {
     
     public static func == (lhs: Project, rhs: Project) -> Bool {
@@ -32,4 +34,3 @@ extension Project: Equatable {
         return areEqual
     }
 }
-

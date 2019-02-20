@@ -132,6 +132,7 @@ class AuthViewController: UIViewController {
     }
 }
 
+// MARK: - KeyboardHandlerDataSource
 
 extension AuthViewController: KeyboardHandlerDataSource {
     func containerScrollView() -> UIScrollView? {

@@ -7,8 +7,9 @@
 //
 
 import Alamofire
-import XCTest
 @testable import Transport
+import XCTest
+
 
 class AuthOutstaffEndpointTests: XCTestCase {
 

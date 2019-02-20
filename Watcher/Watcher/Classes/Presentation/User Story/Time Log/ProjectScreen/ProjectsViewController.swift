@@ -34,10 +34,10 @@ final class ProjectsViewController: UIViewController {
             UINib(nibName: "ProjectTableViewCell", bundle: nil),
             forCellReuseIdentifier: "ProjectTableViewReuseIdentifier")
 
-
         activityIndicator.startAnimating()
         projectService.obtainProjectsWithCompletion { (result) in
             self.activityIndicator.stopAnimating()
+            
             switch result {
             case .error(let error):
                 self.showAlertWithError(error)
@@ -74,7 +74,7 @@ final class ProjectsViewController: UIViewController {
 }
 
 
-// MARK: - Дата сорс для таблицы проектов
+// MARK: - UITableViewDataSource
 
 extension ProjectsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -92,6 +92,8 @@ extension ProjectsViewController: UITableViewDataSource {
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension ProjectsViewController: UITableViewDelegate {
     

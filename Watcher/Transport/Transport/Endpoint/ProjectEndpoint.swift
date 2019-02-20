@@ -10,17 +10,27 @@ import Alamofire
 import Foundation
 
 public struct ProjectEndpoint: Endpoint {
+    
+    // MARK: - Types
+    
     public typealias Item = [Project]
     
+    // MARK: - Private Properties
+    
     private let encoder = JSONEncoder()
+    
     private let decoder = JSONDecoder()
     
+    
+    // MARK: - Initializers
     
     public init() {
         encoder.keyEncodingStrategy = .convertToSnakeCase
         decoder.keyDecodingStrategy = .convertFromSnakeCase
     }
     
+    
+    // MARK: - Public Methods
     
     public func request() throws -> URLRequest {
         var urlComponents = URLComponents()

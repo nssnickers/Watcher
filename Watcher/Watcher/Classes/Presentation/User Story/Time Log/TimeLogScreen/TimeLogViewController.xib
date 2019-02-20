@@ -27,7 +27,9 @@
                 <outlet property="descriptionTextView" destination="dpq-5j-PQ4" id="1Kg-x5-Pht"/>
                 <outlet property="hourDatePicker" destination="juc-dm-PPE" id="4GQ-9M-m3t"/>
                 <outlet property="hourDatePickerHightConstraint" destination="X8b-OE-LFb" id="7fG-BW-hKf"/>
+                <outlet property="logTimeButton" destination="Re8-1h-kAe" id="P7x-5Q-lfz"/>
                 <outlet property="scrollView" destination="Z5B-LZ-XsJ" id="8cR-eG-qax"/>
+                <outlet property="spentTimeLabel" destination="tB0-CM-PVE" id="ALc-oU-YpR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Dya-4b-fB9"/>
             </connections>
         </placeholder>
@@ -49,6 +51,9 @@
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pzt-BJ-17V" userLabel="Close Button">
                             <rect key="frame" x="15" y="16" width="24" height="24"/>
                             <state key="normal" image="icnClose"/>
+                            <connections>
+                                <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="mGM-R8-hQz"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpina Digital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W7-R5-Dvz" userLabel="Project Name Label">
                             <rect key="frame" x="16" y="68" width="160.66666666666666" height="35.666666666666657"/>
@@ -90,6 +95,9 @@
                                                 <!--2019-02-16 21:01:00 +0000-->
                                             </date>
                                             <locale key="locale" localeIdentifier="ru"/>
+                                            <connections>
+                                                <action selector="hourDatePickerChanged:" destination="-1" eventType="valueChanged" id="Uqv-ZV-9s0"/>
+                                            </connections>
                                         </datePicker>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb0-pC-wgC">
                                             <rect key="frame" x="16" y="289" width="70" height="20.333333333333314"/>
