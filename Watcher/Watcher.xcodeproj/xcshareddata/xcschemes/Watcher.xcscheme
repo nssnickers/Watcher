@@ -42,10 +42,10 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B209499B221C9D540030D536"
+               BlueprintIdentifier = "B23C1202221CBAA300D7D2BE"
                BuildableName = "TransportTests.xctest"
                BlueprintName = "TransportTests"
-               ReferencedContainer = "container:Transport/Transport/Transport.xcodeproj">
+               ReferencedContainer = "container:Transport/Transport.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
