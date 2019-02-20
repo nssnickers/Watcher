@@ -25,6 +25,8 @@
 		B23C1234221CBEB200D7D2BE /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C122A221CBB8200D7D2BE /* ApiResponse.swift */; };
 		B2B07444221CD484005A1475 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B07443221CD484005A1475 /* Alamofire.framework */; };
 		B2B07446221CD589005A1475 /* ProjectEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B07445221CD589005A1475 /* ProjectEndpointTests.swift */; };
+		B2B07449221CD735005A1475 /* AuthOutstaffEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B07448221CD735005A1475 /* AuthOutstaffEndpointTests.swift */; };
+		B2B0744B221CDA83005A1475 /* TimeLogEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0744A221CDA83005A1475 /* TimeLogEndpointTests.swift */; };
 		D9098E498C2476FFF241F178 /* Pods_Transport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BBE6DB9A2B3082F646D8AB9 /* Pods_Transport.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +67,8 @@
 		B23C122A221CBB8200D7D2BE /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
 		B2B07443221CD484005A1475 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2B07445221CD589005A1475 /* ProjectEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectEndpointTests.swift; sourceTree = "<group>"; };
+		B2B07448221CD735005A1475 /* AuthOutstaffEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutstaffEndpointTests.swift; sourceTree = "<group>"; };
+		B2B0744A221CDA83005A1475 /* TimeLogEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogEndpointTests.swift; sourceTree = "<group>"; };
 		E11F19871AD1D824018E7830 /* Pods-TransportTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TransportTests.release.xcconfig"; path = "Target Support Files/Pods-TransportTests/Pods-TransportTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				B23C120A221CBAA300D7D2BE /* Info.plist */,
-				B2B07445221CD589005A1475 /* ProjectEndpointTests.swift */,
+				B2B07447221CD70E005A1475 /* Endpoint */,
 			);
 			path = TransportTests;
 			sourceTree = "<group>";
@@ -191,6 +195,16 @@
 				B23C122A221CBB8200D7D2BE /* ApiResponse.swift */,
 			);
 			path = Response;
+			sourceTree = "<group>";
+		};
+		B2B07447221CD70E005A1475 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				B2B07445221CD589005A1475 /* ProjectEndpointTests.swift */,
+				B2B07448221CD735005A1475 /* AuthOutstaffEndpointTests.swift */,
+				B2B0744A221CDA83005A1475 /* TimeLogEndpointTests.swift */,
+			);
+			path = Endpoint;
 			sourceTree = "<group>";
 		};
 		D861895749682A72EA446E16 /* Frameworks */ = {
@@ -381,7 +395,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B07449221CD735005A1475 /* AuthOutstaffEndpointTests.swift in Sources */,
 				B2B07446221CD589005A1475 /* ProjectEndpointTests.swift in Sources */,
+				B2B0744B221CDA83005A1475 /* TimeLogEndpointTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
