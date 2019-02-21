@@ -9,10 +9,6 @@
 import Foundation
 import Transport
 
-// TODO: вынести ключи и константы
-// TODO: нормальные ошибки
-
-
 /// Сервис авторизации
 final class AuthService {
     
