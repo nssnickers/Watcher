@@ -16,7 +16,9 @@ final class ProjectService {
     // MARK: - Private Properties
     
     private let client = Client()
+    
     private let getProjectsEndpoint = ProjectEndpoint()
+    
     
     // MARK: - Public Methods
     
@@ -26,26 +28,27 @@ final class ProjectService {
     /// [Ссылка на спецификацию](https://watcher.intern.redmadrobot.com/docs/api.html#operation/list_projects)
     public func obtainProjectsWithCompletion(_ completion: @escaping (RequestResult<[Project]>) -> Void) {
         client.request(with: getProjectsEndpoint) { (response) in
-            switch response {
-            case .success(let rawData):
-                let json = rawData.result.value
-                do {
-                    let data = try JSONSerialization.data(withJSONObject: json!)
-                    
-                    do {
-                        let projects = try self.getProjectsEndpoint.parse(response: data)
-                        completion(projects)
-                    } catch {
-                        print("Ошибка парсинга JSON: \(data)")
-                        completion(.error(NSLocalizedString("service unavailable", comment: "")))
-                    }
-                } catch {
-                    print("Ошибка сериализации JSON: \(json ?? "")")
-                    completion(.error(NSLocalizedString("service unavailable", comment: "")))
-                }
-            case .error:
-                completion(.error(NSLocalizedString("service unavailable", comment: "")))
-            }
+//            switch response {
+//            case .success(let rawData):
+//                let json = rawData.result.value
+//                do {
+//                    let data = try JSONSerialization.data(withJSONObject: json!)
+//
+//                    do {
+//                        let projects = try self.getProjectsEndpoint.parse(response: data)
+//                        completion(projects)
+//                    } catch {
+//                        print("Ошибка парсинга JSON: \(data)")
+//                        completion(.error(NSLocalizedString("service unavailable", comment: "")))
+//                    }
+//                } catch {
+//                    print("Ошибка сериализации JSON: \(json ?? "")")
+//                    completion(.error(NSLocalizedString("service unavailable", comment: "")))
+//                }
+//            case .error:
+//                completion(.error(NSLocalizedString("service unavailable", comment: "")))
+//            }
+            completion(response)
         }
     }
 }
