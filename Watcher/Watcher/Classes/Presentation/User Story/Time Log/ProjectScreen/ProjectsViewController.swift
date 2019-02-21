@@ -10,7 +10,7 @@ import Transport
 import UIKit
 
 private let projectCellNibName = "ProjectTableViewCell"
-private let projectCellReuseIdentifier = "ProjectTableViewReuseIdentifier"
+private let projectCellReuseIdentifier = "ProjectTableViewCellReuseIdentifier"
 
 /// Экран выбора прокета
 final class ProjectsViewController: UIViewController {
