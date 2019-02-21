@@ -23,6 +23,7 @@ public struct AuthOutstaffEndpoint: Endpoint {
     
     private let decoder = JSONDecoder()
     
+    
     // MARK: - Initializers
     
     public init(outstaffAuth: OutstaffAuth) {
