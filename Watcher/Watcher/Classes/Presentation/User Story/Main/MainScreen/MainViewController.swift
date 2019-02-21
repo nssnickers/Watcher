@@ -18,6 +18,10 @@ class MainViewController: UIViewController {
     }
     
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - IBAction
     
     @IBAction private func addNewPeriodButtonDidPress(_ sender: Any) {
