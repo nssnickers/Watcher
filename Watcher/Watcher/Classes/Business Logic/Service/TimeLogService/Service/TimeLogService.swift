@@ -19,13 +19,6 @@ final class TimeLogService {
     public func sendTimeLog(_ timeLog: TimeLog, _ completion: LogTimeCompletion?) {
         let timeLogEndpoint = TimeLogEndpoint(timeLog: timeLog)
         client.request(with: timeLogEndpoint) { (response) in
-//            switch response {
-//            case .success(let response):
-//                completion?(.success(response))
-//            case .error:
-//                completion?(.error(NSLocalizedString("service unavailable", comment: "")))
-//            }
-            
             completion?(response)
         }
     }
