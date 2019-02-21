@@ -318,7 +318,6 @@
 		B253DB202210C345001A1EDF /* Business Logic */ = {
 			isa = PBXGroup;
 			children = (
-				B2B0744F221E9847005A1475 /* Common */,
 				B253DB232210C4B8001A1EDF /* Service */,
 			);
 			path = "Business Logic";
@@ -394,13 +393,6 @@
 				B2B0744D221E8A82005A1475 /* PresentationConstants.swift */,
 			);
 			path = Constants;
-			sourceTree = "<group>";
-		};
-		B2B0744F221E9847005A1475 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Common;
 			sourceTree = "<group>";
 		};
 		B2E8B73E221566C4007FA08D /* MainScreen */ = {
