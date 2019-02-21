@@ -7,11 +7,12 @@
 //
 
 import Foundation
+import UIKit
 
 struct Validation {
     struct ErrorDescription {
-        static let shortPassword = "Слишком короткий пароль"
-        static let invalidLogin = "Неверный формат логина"
+        static let shortPassword = NSLocalizedString("Слишком короткий пароль", comment: "")
+        static let invalidLogin = NSLocalizedString("Неверный формат логина", comment: "")
     }
     
     struct Rules {
@@ -19,4 +20,18 @@ struct Validation {
         static let emailValidationFormat = "SELF MATCHES %@"
         static let passwordMinLength = 6
     }
+}
+
+struct Colors {
+    static let red = UIColor(named: "orangeyRed")
+    static let pastelRed = UIColor(named: "pastelOrangeyRed")
+}
+
+struct Alert {
+    static let title = NSLocalizedString("Внимание", comment: "")
+    static let actionTitle = NSLocalizedString("ОК", comment: "")
+}
+
+struct AnimationDuration {
+    static let slow = 0.5
 }

@@ -9,6 +9,9 @@
 import Transport
 import UIKit
 
+private let projectCellNibName = "ProjectTableViewCell"
+private let projectCellReuseIdentifier = "ProjectTableViewReuseIdentifier"
+
 /// Экран выбора прокета
 final class ProjectsViewController: UIViewController {
 
@@ -31,8 +34,8 @@ final class ProjectsViewController: UIViewController {
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         
         projectsTableView.register(
-            UINib(nibName: "ProjectTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "ProjectTableViewReuseIdentifier")
+            UINib(nibName: projectCellNibName, bundle: nil),
+            forCellReuseIdentifier: projectCellReuseIdentifier)
 
         activityIndicator.startAnimating()
         projectService.obtainProjectsWithCompletion { (result) in
@@ -64,11 +67,8 @@ final class ProjectsViewController: UIViewController {
     // MARK: - Private Methods
     
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Внимание", comment: ""),
-            message: error,
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }
@@ -84,7 +84,7 @@ extension ProjectsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
         let cell = projectsTableView.dequeueReusableCell(
-            withIdentifier: "ProjectTableViewReuseIdentifier",
+            withIdentifier: projectCellReuseIdentifier,
             for: indexPath) as! ProjectTableViewCell
         // swiftlint:enable force_cast
         cell.setupWithProjectName(projects[indexPath.item].name)
@@ -92,6 +92,7 @@ extension ProjectsViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
 // MARK: - UITableViewDelegate
 
@@ -104,5 +105,4 @@ extension ProjectsViewController: UITableViewDelegate {
         expense.project = project
         self.present(expense, animated: true, completion: nil)
     }
-    
 }
