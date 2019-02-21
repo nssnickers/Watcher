@@ -174,7 +174,7 @@
 		B20A7CD5221A133C00C28814 /* TimeLogService */ = {
 			isa = PBXGroup;
 			children = (
-				B20A7CEE221BFE7200C28814 /* Service */,
+				B20A7CD3221A133600C28814 /* TimeLogService.swift */,
 			);
 			path = TimeLogService;
 			sourceTree = "<group>";
@@ -185,30 +185,6 @@
 				B253DB0B22109C57001A1EDF /* LaunchScreen.storyboard */,
 			);
 			path = "Launch Screen";
-			sourceTree = "<group>";
-		};
-		B20A7CE7221BE5FE00C28814 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B253DB472212AE9D001A1EDF /* AuthService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		B20A7CE8221BEF1500C28814 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B2E8B754221595FA007FA08D /* ProjectService.swift */,
-			);
-			path = Service;
-			sourceTree = "<group>";
-		};
-		B20A7CEE221BFE7200C28814 /* Service */ = {
-			isa = PBXGroup;
-			children = (
-				B20A7CD3221A133600C28814 /* TimeLogService.swift */,
-			);
-			path = Service;
 			sourceTree = "<group>";
 		};
 		B20C367E2218CAB1007B5F6B /* TimeLogScreen */ = {
@@ -417,7 +393,7 @@
 		B2E8B752221595CB007FA08D /* AuthService */ = {
 			isa = PBXGroup;
 			children = (
-				B20A7CE7221BE5FE00C28814 /* Service */,
+				B253DB472212AE9D001A1EDF /* AuthService.swift */,
 			);
 			path = AuthService;
 			sourceTree = "<group>";
@@ -425,7 +401,7 @@
 		B2E8B753221595D9007FA08D /* ProjectService */ = {
 			isa = PBXGroup;
 			children = (
-				B20A7CE8221BEF1500C28814 /* Service */,
+				B2E8B754221595FA007FA08D /* ProjectService.swift */,
 			);
 			path = ProjectService;
 			sourceTree = "<group>";
