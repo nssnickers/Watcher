@@ -34,7 +34,6 @@
 		B253DB482212AE9D001A1EDF /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253DB472212AE9D001A1EDF /* AuthService.swift */; };
 		B253DB4C2212F789001A1EDF /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B253DB4B2212F788001A1EDF /* Validator.swift */; };
 		B2B0744E221E8A82005A1475 /* PresentationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0744D221E8A82005A1475 /* PresentationConstants.swift */; };
-		B2B07452221E9871005A1475 /* BusinessLogicConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B07451221E9871005A1475 /* BusinessLogicConstants.swift */; };
 		B2E8B74C22156AF3007FA08D /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B74A22156AF3007FA08D /* ProjectsViewController.swift */; };
 		B2E8B755221595FA007FA08D /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B754221595FA007FA08D /* ProjectService.swift */; };
 		B2E8B75922160946007FA08D /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B75722160946007FA08D /* ProjectTableViewCell.swift */; };
@@ -105,7 +104,6 @@
 		B253DB472212AE9D001A1EDF /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		B253DB4B2212F788001A1EDF /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		B2B0744D221E8A82005A1475 /* PresentationConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationConstants.swift; sourceTree = "<group>"; };
-		B2B07451221E9871005A1475 /* BusinessLogicConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessLogicConstants.swift; sourceTree = "<group>"; };
 		B2E8B74A22156AF3007FA08D /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		B2E8B754221595FA007FA08D /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		B2E8B75722160946007FA08D /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
@@ -401,17 +399,8 @@
 		B2B0744F221E9847005A1475 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				B2B07450221E9858005A1475 /* Constants */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		B2B07450221E9858005A1475 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-				B2B07451221E9871005A1475 /* BusinessLogicConstants.swift */,
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		B2E8B73E221566C4007FA08D /* MainScreen */ = {
@@ -726,7 +715,6 @@
 				B2E8B755221595FA007FA08D /* ProjectService.swift in Sources */,
 				B253DB482212AE9D001A1EDF /* AuthService.swift in Sources */,
 				B253DB4C2212F789001A1EDF /* Validator.swift in Sources */,
-				B2B07452221E9871005A1475 /* BusinessLogicConstants.swift in Sources */,
 				B2E8B75922160946007FA08D /* ProjectTableViewCell.swift in Sources */,
 				B253DB0322109C56001A1EDF /* AppDelegate.swift in Sources */,
 			);
