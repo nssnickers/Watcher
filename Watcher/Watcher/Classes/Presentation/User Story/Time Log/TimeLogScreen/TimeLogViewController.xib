@@ -28,6 +28,7 @@
                 <outlet property="hourDatePicker" destination="juc-dm-PPE" id="4GQ-9M-m3t"/>
                 <outlet property="hourDatePickerHightConstraint" destination="X8b-OE-LFb" id="7fG-BW-hKf"/>
                 <outlet property="logTimeButton" destination="Re8-1h-kAe" id="P7x-5Q-lfz"/>
+                <outlet property="projectNameLabel" destination="9W7-R5-Dvz" id="24p-pF-43Z"/>
                 <outlet property="scrollView" destination="Z5B-LZ-XsJ" id="8cR-eG-qax"/>
                 <outlet property="spentTimeLabel" destination="tB0-CM-PVE" id="ALc-oU-YpR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="Dya-4b-fB9"/>
@@ -55,17 +56,17 @@
                                 <action selector="closeButtonTapped:" destination="-1" eventType="touchUpInside" id="mGM-R8-hQz"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpina Digital" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W7-R5-Dvz" userLabel="Project Name Label">
-                            <rect key="frame" x="16" y="68" width="160.66666666666666" height="35.666666666666657"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpina Digital" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9W7-R5-Dvz" userLabel="Project Name Label">
+                            <rect key="frame" x="16" y="68" width="160.66666666666666" height="35.333333333333343"/>
                             <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="28"/>
                             <color key="textColor" name="charcoalGrey"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="Z5B-LZ-XsJ">
-                            <rect key="frame" x="0.0" y="119.66666666666669" width="375" height="600.33333333333326"/>
+                            <rect key="frame" x="0.0" y="119.33333333333331" width="375" height="600.66666666666674"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRe-Mu-a89" userLabel="Container View">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="600.33333333333337"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="600.66666666666663"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Часы" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sv-P1-xmi">
                                             <rect key="frame" x="16" y="17" width="36" height="20.333333333333329"/>
@@ -106,7 +107,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Re8-1h-kAe">
-                                            <rect key="frame" x="16" y="536.33333333333337" width="343" height="48"/>
+                                            <rect key="frame" x="16" y="536.66666666666663" width="343" height="48"/>
                                             <color key="backgroundColor" name="pastelOrangeyRed"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="48" id="vFz-rb-mpN"/>
@@ -191,6 +192,7 @@
                     <constraints>
                         <constraint firstItem="9W7-R5-Dvz" firstAttribute="leading" secondItem="ERF-Kv-2RW" secondAttribute="leading" constant="16" id="H7I-3O-zoB"/>
                         <constraint firstItem="9W7-R5-Dvz" firstAttribute="top" secondItem="Pzt-BJ-17V" secondAttribute="bottom" constant="28" id="JaH-Qz-PTo"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9W7-R5-Dvz" secondAttribute="trailing" constant="16" id="M7X-jo-Udi"/>
                         <constraint firstItem="Z5B-LZ-XsJ" firstAttribute="top" secondItem="9W7-R5-Dvz" secondAttribute="bottom" constant="16" id="MJ4-Rr-XgM"/>
                         <constraint firstItem="Z5B-LZ-XsJ" firstAttribute="centerX" secondItem="ERF-Kv-2RW" secondAttribute="centerX" id="eLI-YM-m9O"/>
                         <constraint firstItem="Pzt-BJ-17V" firstAttribute="top" secondItem="ERF-Kv-2RW" secondAttribute="top" constant="16" id="muy-6x-SxG"/>

@@ -13,6 +13,8 @@ final class TimeLogViewController: UIViewController {
     
     // MARK: - IBOutlet
     
+    @IBOutlet private weak var projectNameLabel: UILabel!
+    
     @IBOutlet private weak var scrollView: UIScrollView!
     
     @IBOutlet private weak var descriptionTextView: UITextView!
@@ -53,6 +55,11 @@ final class TimeLogViewController: UIViewController {
         keyboardHandler?.startKeyboardHandling()
         descriptionTextView.delegate = self
         logTimeButton?.isUserInteractionEnabled = false
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        projectNameLabel?.text = project?.name
     }
     
     
