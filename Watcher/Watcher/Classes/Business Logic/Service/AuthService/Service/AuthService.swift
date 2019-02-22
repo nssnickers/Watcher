@@ -9,6 +9,10 @@
 import Foundation
 import Transport
 
+// TODO: вынести ключи и константы
+// TODO: нормальные ошибки
+
+
 /// Сервис авторизации
 final class AuthService {
     
@@ -29,12 +33,39 @@ final class AuthService {
     public func loginWithEmail(
        _ email: String,
        password: String,
-       completion: @escaping (RequestResult<User>) -> Void) {
+       completion: @escaping (RequestResult<Any>) -> Void) {
         
         let authEndpoint = AuthOutstaffEndpoint(outstaffAuth: OutstaffAuth(email: email, password: password))
-        
         client.request(with: authEndpoint) { (response) in
-            completion(response)
+            switch response {
+            case .success(let rawData):
+                let json = rawData.result.value
+                do {
+                    let data = try JSONSerialization.data(withJSONObject: json!)
+                    
+                    do {
+                        let user = try authEndpoint.parse(response: data)
+                        // TODO: подумать
+                        if
+                            let headerFields = rawData.response?.allHeaderFields as? [String: String],
+                            let URL = rawData.request?.url {
+                            
+                            let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
+                            self.client.setCookies(cookies: cookies)
+                        }
+                        
+                        completion(.success(user))
+                    } catch {
+                        print("Ошибка парсинга JSON: \(data)")
+                        completion(.error(NSLocalizedString("service unavailable", comment: "")))
+                    }
+                } catch {
+                    print("Ошибка сериализации JSON: \(json ?? "")")
+                    completion(.error(NSLocalizedString("service unavailable", comment: "")))
+                }
+            case .error:
+                completion(.error(NSLocalizedString("service unavailable", comment: "")))
+            }
         }
     }
     

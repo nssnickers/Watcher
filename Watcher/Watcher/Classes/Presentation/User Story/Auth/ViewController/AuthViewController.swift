@@ -43,7 +43,7 @@ class AuthViewController: UIViewController {
         keyboardHandler = KeyboardHandler(withDelegate: self)
         keyboardHandler?.startKeyboardHandling()
         
-        employeLoginButton.layer.borderColor = Colors.pastelRed?.cgColor
+        employeLoginButton.layer.borderColor = UIColor(named: "pastelOrangeyRed")?.cgColor
         disableLoginButton()
     }
     
@@ -111,21 +111,23 @@ class AuthViewController: UIViewController {
     
     private func enableLoginButton() {
         loginButton?.isEnabled = true
-        loginButton.backgroundColor = Colors.red
+        loginButton.backgroundColor = UIColor(named: "orangeyRed")
     }
     
     
     private func disableLoginButton() {
         loginButton?.isEnabled = false
-        loginButton.backgroundColor = Colors.pastelRed
+        loginButton.backgroundColor = UIColor(named: "pastelOrangeyRed")
     }
     
     
     // TODO: вынести
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
-        
+        let alert = UIAlertController(
+            title: NSLocalizedString("Внимание", comment: ""),
+            message: error,
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+//TODO: вынести константы
 
 /// Тип валидации, который можно применить к строке
 ///
@@ -30,6 +31,7 @@ enum ValidationResponse: Equatable {
 /// Класс для валидации полей ввода
 final class Validator {
     
+    
     // MARK: - Public methods
     
     /// Функция валидирует строку
@@ -51,11 +53,11 @@ final class Validator {
     // MARK: - Private methods
     
     private func validateEmail(_ email: String) -> ValidationResponse {
-        let emailRegEx = Validation.Rules.emailPattern
-        let emailValidator = NSPredicate(format: Validation.Rules.emailValidationFormat, emailRegEx)
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailValidator = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         
         if !emailValidator.evaluate(with: email) {
-            return .error(NSLocalizedString(Validation.ErrorDescription.invalidLogin, comment: ""))
+            return .error(NSLocalizedString("Неверный формат логина", comment: ""))
         }
         
         return .success
@@ -64,8 +66,8 @@ final class Validator {
     
     private func validatePassword(_ password: String) -> ValidationResponse {
         
-        if password.count <= Validation.Rules.passwordMinLength {
-            return .error(NSLocalizedString(Validation.ErrorDescription.shortPassword, comment: ""))
+        if password.count <= 6 {
+            return .error(NSLocalizedString("Слишком короткий пароль", comment: ""))
         }
         
         return .success

@@ -56,7 +56,6 @@ final class KeyboardHandler {
             object: nil)
     }
     
-    
     @objc fileprivate func deRegisterKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
