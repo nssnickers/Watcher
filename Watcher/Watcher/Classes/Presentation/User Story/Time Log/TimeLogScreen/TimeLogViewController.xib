@@ -122,7 +122,7 @@
                                                 </userDefinedRuntimeAttribute>
                                             </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="logTimeDuttonDidTapped:" destination="-1" eventType="touchUpInside" id="EST-nr-Snp"/>
+                                                <action selector="logTimeButtonDidTapped:" destination="-1" eventType="touchUpInside" id="A0u-A6-vmW"/>
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lcY-DM-Uad" userLabel="Hour Button">

@@ -46,20 +46,14 @@ final class TimeLogViewController: UIViewController {
     private var logDescription = ""
     
     // MARK: - Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        projectNameLabel?.text = project?.name
         descriptionTextView?.contentInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         keyboardHandler = KeyboardHandler(withDelegate: self)
         keyboardHandler?.startKeyboardHandling()
         descriptionTextView.delegate = self
         logTimeButton?.isUserInteractionEnabled = false
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        projectNameLabel?.text = project?.name
     }
     
     
@@ -89,7 +83,7 @@ final class TimeLogViewController: UIViewController {
     }
     
     
-    @IBAction func logTimeDuttonDidTapped(_ sender: Any) {
+    @IBAction func logTimeButtonDidTapped(_ sender: Any) {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -110,6 +104,7 @@ final class TimeLogViewController: UIViewController {
                 self.showAlertWithError(error)
             case .success:
                 self.logTimeButton.isUserInteractionEnabled = false
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }

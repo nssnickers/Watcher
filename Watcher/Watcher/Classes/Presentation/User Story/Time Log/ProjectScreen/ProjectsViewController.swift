@@ -22,22 +22,24 @@ final class ProjectsViewController: UIViewController {
     // MARK: - Private Properties
     
     private var activityIndicator = UIActivityIndicatorView(style: .gray)
+    
     private var projectService = ProjectService()
+    
     private var projects: [Project] = []
     
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        view.addSubview(activityIndicator)
-        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         projectsTableView.register(
             UINib(nibName: projectCellNibName, bundle: nil),
             forCellReuseIdentifier: projectCellReuseIdentifier)
-
+        
+        view.addSubview(activityIndicator)
+        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         activityIndicator.startAnimating()
+        
         projectService.obtainProjectsWithCompletion { (result) in
             self.activityIndicator.stopAnimating()
             
@@ -77,9 +79,11 @@ final class ProjectsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension ProjectsViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
