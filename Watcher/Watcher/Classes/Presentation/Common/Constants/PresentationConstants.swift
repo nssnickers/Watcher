@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 
+// MARK: - Константы валидации
 
 /// Константы валидации
 struct Validation {
@@ -38,6 +39,7 @@ struct Validation {
     }
 }
 
+// MARK: - Цвета
 
 /// Цвета
 struct Colors {
@@ -49,6 +51,7 @@ struct Colors {
     static let pastelRed = UIColor(named: "pastelOrangeyRed")
 }
 
+// MARK: - Alert
 
 /// Константы для Alert
 struct Alert {
@@ -60,6 +63,7 @@ struct Alert {
     static let actionTitle = NSLocalizedString("ОК", comment: "")
 }
 
+// MARK: - Длительность анимаций
 
 /// Длительность анимаций
 struct AnimationDuration {

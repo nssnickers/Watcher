@@ -21,16 +21,28 @@ public enum UserRole: String, Codable {
     case employee
 }
 
+
 /// Класс пользователя
 public struct User: Codable {
     
     // MARK: - Public Properties
     
+    /// Имя
     var firstName: String
+    
+    /// Фамилия
     var lastName: String
+    
+    /// Роль
     var role: UserRole
+    
+    /// email
     var email: String
+    
+    /// ID пользователя
     var id: Int
+    
+    /// Робот ли или тварь дрожащая
     var isStaff: Bool
 }
 

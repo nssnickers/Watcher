@@ -8,6 +8,8 @@
 
 import Foundation
 
+// MARK: - Ключи http заголовков
+
 /// Ключи http заголовков
 struct HttpHeaderKey {
     
@@ -20,6 +22,7 @@ struct HttpHeaderKey {
     
 }
 
+// MARK: - Тип http контента
 
 /// Тип http контента
 struct HttpContentType {
@@ -29,6 +32,7 @@ struct HttpContentType {
     
 }
 
+// MARK: - Запросы к серверу
 
 /// Запросы к серверу
 struct Api {
