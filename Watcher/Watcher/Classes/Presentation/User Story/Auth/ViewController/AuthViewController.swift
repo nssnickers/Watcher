@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// TODO: вынести константы, избавиться от дублирования
+// TODO: избавиться от дублирования
 
 class AuthViewController: UIViewController {
     
