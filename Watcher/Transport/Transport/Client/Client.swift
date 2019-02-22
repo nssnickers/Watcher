@@ -9,7 +9,6 @@
 import Alamofire
 
 // TODO: вынести в настройки
-// TODO: вынести константы
 // TODO: сохранять куки авторизации в приложении
 // TODO: сделать shared session
 
@@ -27,11 +26,11 @@ public final class Client: ApiClient, EventMonitor {
         where Request: Endpoint {
         do {
             var httpRequest = try request.request()
-            httpRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            httpRequest.addValue(HttpContentType.json, forHTTPHeaderField: HttpHeaderKey.contentType)
         
             AF.request(httpRequest)
                 .validate(statusCode: 200..<300)
-                .validate(contentType: ["application/json"])
+                .validate(contentType: [HttpContentType.json])
                 .responseJSON { (response) in
                     switch response.result {
                     case .success:
@@ -73,7 +72,7 @@ public final class Client: ApiClient, EventMonitor {
         if
             let headerFields = response.response?.allHeaderFields as? [String: String],
             let URL = response.request?.url,
-            headerFields["Set-Cookie"] != nil {
+            headerFields[HttpHeaderKey.setCoookie] != nil {
             return HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
         } else {
             return nil
