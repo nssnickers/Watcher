@@ -34,7 +34,6 @@ public final class Client: ApiClient, EventMonitor {
                 .responseJSON { (response) in
                     switch response.result {
                     case .success:
-                        
                         let json = response.result.value
                         do {
                             let data = try JSONSerialization.data(withJSONObject: json!)
@@ -55,7 +54,6 @@ public final class Client: ApiClient, EventMonitor {
                             print("Ошибка сериализации JSON: \(json ?? "")")
                             completionHandler(.error(NSLocalizedString("service unavailable", comment: "")))
                         }
-
                     case .failure(let error):
                         print(error.localizedDescription)
                     }
