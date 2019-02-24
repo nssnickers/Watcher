@@ -13,10 +13,9 @@ class MainViewController: UIViewController {
 
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
-    
     
     // MARK: - IBAction
     

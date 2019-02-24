@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-// TODO: вынести константы, избавиться от дублирования
+// TODO: избавиться от дублирования
 
 class AuthViewController: UIViewController {
     
@@ -34,8 +34,8 @@ class AuthViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
         view.addSubview(activityIndicator)
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
@@ -43,7 +43,7 @@ class AuthViewController: UIViewController {
         keyboardHandler = KeyboardHandler(withDelegate: self)
         keyboardHandler?.startKeyboardHandling()
         
-        employeLoginButton.layer.borderColor = UIColor(named: "pastelOrangeyRed")?.cgColor
+        employeLoginButton.layer.borderColor = Colors.pastelRed?.cgColor
         disableLoginButton()
     }
     
@@ -111,23 +111,21 @@ class AuthViewController: UIViewController {
     
     private func enableLoginButton() {
         loginButton?.isEnabled = true
-        loginButton.backgroundColor = UIColor(named: "orangeyRed")
+        loginButton.backgroundColor = Colors.red
     }
     
     
     private func disableLoginButton() {
         loginButton?.isEnabled = false
-        loginButton.backgroundColor = UIColor(named: "pastelOrangeyRed")
+        loginButton.backgroundColor = Colors.pastelRed
     }
     
     
     // TODO: вынести
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Внимание", comment: ""),
-            message: error,
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
+        
         present(alert, animated: true, completion: nil)
     }
 }

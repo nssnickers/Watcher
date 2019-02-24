@@ -11,6 +11,5 @@ import Foundation
 
 /// Структура описывает ответ сервера для парсинга
 struct APIResponse<Content>: Codable where Content: Codable {
-    
-    let data: [String: Content]
+    let data: Content
 }

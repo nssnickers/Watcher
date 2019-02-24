@@ -9,6 +9,9 @@
 import Transport
 import UIKit
 
+private let projectCellNibName = "ProjectTableViewCell"
+private let projectCellReuseIdentifier = "ProjectTableViewCellReuseIdentifier"
+
 /// Экран выбора прокета
 final class ProjectsViewController: UIViewController {
 
@@ -19,22 +22,24 @@ final class ProjectsViewController: UIViewController {
     // MARK: - Private Properties
     
     private var activityIndicator = UIActivityIndicatorView(style: .gray)
+    
     private var projectService = ProjectService()
+    
     private var projects: [Project] = []
     
     // MARK: - Lifecycle
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        projectsTableView.register(
+            UINib(nibName: projectCellNibName, bundle: nil),
+            forCellReuseIdentifier: projectCellReuseIdentifier)
         
         view.addSubview(activityIndicator)
         activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
-        
-        projectsTableView.register(
-            UINib(nibName: "ProjectTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "ProjectTableViewReuseIdentifier")
-
         activityIndicator.startAnimating()
+        
         projectService.obtainProjectsWithCompletion { (result) in
             self.activityIndicator.stopAnimating()
             
@@ -64,11 +69,8 @@ final class ProjectsViewController: UIViewController {
     // MARK: - Private Methods
     
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Внимание", comment: ""),
-            message: error,
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
 }
@@ -77,14 +79,16 @@ final class ProjectsViewController: UIViewController {
 // MARK: - UITableViewDataSource
 
 extension ProjectsViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return projects.count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // swiftlint:disable force_cast
         let cell = projectsTableView.dequeueReusableCell(
-            withIdentifier: "ProjectTableViewReuseIdentifier",
+            withIdentifier: projectCellReuseIdentifier,
             for: indexPath) as! ProjectTableViewCell
         // swiftlint:enable force_cast
         cell.setupWithProjectName(projects[indexPath.item].name)
@@ -92,6 +96,7 @@ extension ProjectsViewController: UITableViewDataSource {
         return cell
     }
 }
+
 
 // MARK: - UITableViewDelegate
 
@@ -104,5 +109,4 @@ extension ProjectsViewController: UITableViewDelegate {
         expense.project = project
         self.present(expense, animated: true, completion: nil)
     }
-    
 }

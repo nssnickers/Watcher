@@ -26,38 +26,49 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-L4-3m9">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vLv-L4-3m9" userLabel="Black View">
+                    <rect key="frame" x="0.0" y="-20" width="375" height="79"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edu-Vg-xXx">
-                            <rect key="frame" x="335" y="29" width="24" height="24"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pli-jN-ti3" userLabel="Navigation View">
+                            <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edu-Vg-xXx" userLabel="Calendar Button">
+                                    <rect key="frame" x="335" y="9" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="edu-Vg-xXx" secondAttribute="height" multiplier="1:1" id="poH-Ig-vYW"/>
+                                    </constraints>
+                                    <state key="normal" image="icnCalendar"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-0n-25w" userLabel="Profile Button">
+                                    <rect key="frame" x="16" y="9" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="xbn-0n-25w" secondAttribute="height" multiplier="1:1" id="hd7-qS-cw8"/>
+                                    </constraints>
+                                    <state key="normal" image="icnProfile"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учет времени" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-IX-cSo">
+                                    <rect key="frame" x="132.5" y="9.5" width="110" height="23"/>
+                                    <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" secondItem="edu-Vg-xXx" secondAttribute="height" multiplier="1:1" id="poH-Ig-vYW"/>
+                                <constraint firstItem="xbn-0n-25w" firstAttribute="top" secondItem="pli-jN-ti3" secondAttribute="top" constant="9" id="4rk-YT-WAK"/>
+                                <constraint firstItem="xbn-0n-25w" firstAttribute="leading" secondItem="pli-jN-ti3" secondAttribute="leading" constant="16" id="AjY-3b-4Xw"/>
+                                <constraint firstItem="edu-Vg-xXx" firstAttribute="top" secondItem="pli-jN-ti3" secondAttribute="top" constant="9" id="JSP-gq-v24"/>
+                                <constraint firstAttribute="trailing" secondItem="edu-Vg-xXx" secondAttribute="trailing" constant="16" id="Ncm-AD-PUp"/>
+                                <constraint firstItem="VQg-IX-cSo" firstAttribute="centerX" secondItem="pli-jN-ti3" secondAttribute="centerX" id="Pmd-lB-1md"/>
+                                <constraint firstAttribute="bottom" secondItem="edu-Vg-xXx" secondAttribute="bottom" constant="11" id="RHG-mv-IIY"/>
+                                <constraint firstAttribute="bottom" secondItem="xbn-0n-25w" secondAttribute="bottom" constant="11" id="SmH-ib-Etn"/>
+                                <constraint firstItem="VQg-IX-cSo" firstAttribute="centerY" secondItem="xbn-0n-25w" secondAttribute="centerY" id="lVw-Ia-WeN"/>
                             </constraints>
-                            <state key="normal" image="icnCalendar"/>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-0n-25w">
-                            <rect key="frame" x="16" y="29" width="24" height="24"/>
-                            <constraints>
-                                <constraint firstAttribute="width" secondItem="xbn-0n-25w" secondAttribute="height" multiplier="1:1" id="hd7-qS-cw8"/>
-                            </constraints>
-                            <state key="normal" image="icnProfile"/>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Учет времени" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQg-IX-cSo">
-                            <rect key="frame" x="132.5" y="30" width="110" height="23"/>
-                            <fontDescription key="fontDescription" name="SourceSansPro-SemiBold" family="Source Sans Pro" pointSize="18"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" name="charcoalGrey"/>
                     <constraints>
-                        <constraint firstItem="xbn-0n-25w" firstAttribute="leading" secondItem="vLv-L4-3m9" secondAttribute="leading" constant="16" id="2gQ-5O-dgA"/>
-                        <constraint firstAttribute="height" constant="64" id="BUT-D3-zvR"/>
-                        <constraint firstAttribute="bottom" secondItem="VQg-IX-cSo" secondAttribute="bottom" constant="11" id="CCh-Wl-nLE"/>
-                        <constraint firstItem="VQg-IX-cSo" firstAttribute="centerX" secondItem="vLv-L4-3m9" secondAttribute="centerX" id="Wlj-zy-Dpq"/>
-                        <constraint firstAttribute="trailing" secondItem="edu-Vg-xXx" secondAttribute="trailing" constant="16" id="lc0-rx-xuf"/>
-                        <constraint firstAttribute="bottom" secondItem="xbn-0n-25w" secondAttribute="bottom" constant="11" id="sSS-My-NoV"/>
+                        <constraint firstAttribute="bottom" secondItem="pli-jN-ti3" secondAttribute="bottom" id="Shz-6f-4oL"/>
                     </constraints>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="szD-50-lSf">
@@ -79,15 +90,16 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="pli-jN-ti3" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="5ly-0R-tmD"/>
                 <constraint firstItem="szD-50-lSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="Bd3-dK-xfr"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="vLv-L4-3m9" secondAttribute="top" constant="20" id="H3Y-kx-gRf"/>
                 <constraint firstItem="vLv-L4-3m9" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Mlq-HI-C16"/>
-                <constraint firstItem="VQg-IX-cSo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="NUN-9U-8ZC"/>
                 <constraint firstItem="szD-50-lSf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="TL0-pD-3AP"/>
                 <constraint firstItem="szD-50-lSf" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="WSy-Je-Vgv"/>
+                <constraint firstItem="pli-jN-ti3" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="et4-Yy-rfn"/>
                 <constraint firstItem="vLv-L4-3m9" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="i7i-li-Vdh"/>
-                <constraint firstItem="vLv-L4-3m9" firstAttribute="bottom" secondItem="edu-Vg-xXx" secondAttribute="bottom" constant="11" id="ibM-wE-cd9"/>
-                <constraint firstAttribute="top" secondItem="vLv-L4-3m9" secondAttribute="top" id="iqC-3l-uk7"/>
+                <constraint firstItem="vLv-L4-3m9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="-20" id="iqC-3l-uk7"/>
+                <constraint firstItem="pli-jN-ti3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="kR9-LN-P9Y"/>
+                <constraint firstItem="pli-jN-ti3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="-5" id="xcw-gY-jXv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="55.200000000000003" y="48.125937031484263"/>

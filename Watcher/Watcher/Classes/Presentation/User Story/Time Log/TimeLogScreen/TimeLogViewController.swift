@@ -12,6 +12,9 @@ import UIKit
 final class TimeLogViewController: UIViewController {
     
     // MARK: - IBOutlet
+    
+    @IBOutlet private weak var projectNameLabel: UILabel!
+    
     @IBOutlet private weak var scrollView: UIScrollView!
     
     @IBOutlet private weak var descriptionTextView: UITextView!
@@ -43,10 +46,9 @@ final class TimeLogViewController: UIViewController {
     private var logDescription = ""
     
     // MARK: - Lifecycle
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    override func viewWillAppear(_ animated: Bool) {
+        projectNameLabel?.text = project?.name
         descriptionTextView?.contentInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         keyboardHandler = KeyboardHandler(withDelegate: self)
         keyboardHandler?.startKeyboardHandling()
@@ -81,7 +83,7 @@ final class TimeLogViewController: UIViewController {
     }
     
     
-    @IBAction func logTimeDuttonDidTapped(_ sender: Any) {
+    @IBAction func logTimeButtonDidTapped(_ sender: Any) {
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
@@ -102,6 +104,7 @@ final class TimeLogViewController: UIViewController {
                 self.showAlertWithError(error)
             case .success:
                 self.logTimeButton.isUserInteractionEnabled = false
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -115,11 +118,8 @@ final class TimeLogViewController: UIViewController {
     // MARK: - Private Methods
     
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Внимание", comment: ""),
-            message: error,
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
@@ -129,21 +129,23 @@ final class TimeLogViewController: UIViewController {
             logDescription.count > 0,
             logDescription.contains("Добавить описание") == false {
             logTimeButton.isUserInteractionEnabled = true
-            logTimeButton.backgroundColor = UIColor(named: "orangeyRed")
+            logTimeButton.backgroundColor = Colors.red
         } else {
             logTimeButton.isUserInteractionEnabled = false
-            logTimeButton.backgroundColor = UIColor(named: "pastelOrangeyRed")
+            logTimeButton.backgroundColor = Colors.pastelRed
         }
     }
     
 }
 
 
+// MARK: - UITextViewDelegate
+
 extension TimeLogViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         // TODO: переделать анимацию
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: AnimationDuration.slow) {
             self.hourDatePickerHightConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
@@ -155,6 +157,8 @@ extension TimeLogViewController: UITextViewDelegate {
     }
 }
 
+
+// MARK: - KeyboardHandlerDataSource
 
 extension TimeLogViewController: KeyboardHandlerDataSource {
     func containerScrollView() -> UIScrollView? {

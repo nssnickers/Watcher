@@ -6,12 +6,8 @@
 //  Copyright © 2019 Маргарита. All rights reserved.
 //
 
-import Alamofire
 import Foundation
 
-public typealias CompletionHandler = (RequestResult<DataResponse<Any>>) -> Void
-
-// TODO: подумать над неймингом
 /// Декодированный ответ API
 ///
 /// - success: удачно, вернуть контент
@@ -29,6 +25,6 @@ public protocol ApiClient {
     ///   - completionHandler: блок выполнится по завершению запроса
     func request<Request>(
         with request: Request,
-        completionHandler: @escaping CompletionHandler
+        completionHandler: @escaping (RequestResult<Request.Item>) -> Void
         ) where Request: Endpoint
 }

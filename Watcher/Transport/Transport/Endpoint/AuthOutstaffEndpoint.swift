@@ -9,6 +9,10 @@
 import Alamofire
 import Foundation
 
+struct UserAPIResponse<Content>: Codable where Content: Codable {
+    let user: Content
+}
+
 public struct AuthOutstaffEndpoint: Endpoint {
     
     // MARK: - Types
@@ -23,6 +27,7 @@ public struct AuthOutstaffEndpoint: Endpoint {
     
     private let decoder = JSONDecoder()
     
+    
     // MARK: - Initializers
     
     public init(outstaffAuth: OutstaffAuth) {
@@ -36,11 +41,12 @@ public struct AuthOutstaffEndpoint: Endpoint {
     
     public func request() throws -> URLRequest {
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "watcher.intern.redmadrobot.com"
-        urlComponents.path = "/api/v1/auth/sign-in/"
+        urlComponents.scheme = Api.Url.scheme
+        urlComponents.host = Api.Url.host
+        urlComponents.path = Api.Url.path
         
-        let url = try urlComponents.asURL()
+        var url = try urlComponents.asURL()
+        url.appendPathComponent(Api.Auth.outstaff)
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -53,8 +59,8 @@ public struct AuthOutstaffEndpoint: Endpoint {
     
     
     public func parse(response: Data) throws -> RequestResult<Item> {
-        let decodedResponse = try decoder.decode((APIResponse<Item>).self, from: response)
-        let user = decodedResponse.data["user"]!
+        let decodedResponse = try decoder.decode((APIResponse<UserAPIResponse<Item>>).self, from: response)
+        let user = decodedResponse.data.user
         
         return .success(user)
     }
