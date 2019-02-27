@@ -40,11 +40,7 @@ public final class Client: ApiClient, EventMonitor {
                             
                             do {
                                 let pointOfInteres = try request.parse(response: data)
-                                
-                                if let cookies = self.needToSetCookiesWithResponse(response) {
-                                    self.setCookies(cookies: cookies)
-                                }
-                                
+                                self.setCookiesIfNeededForResponse(response)
                                 completionHandler(pointOfInteres)
                             } catch {
                                 print("Ошибка парсинга JSON: \(data)")
@@ -66,31 +62,18 @@ public final class Client: ApiClient, EventMonitor {
     
     // MARK: - Private Methods
     
-    private func needToSetCookiesWithResponse(_ response: DataResponse<Any>) -> [HTTPCookie]? {
+    private func setCookiesIfNeededForResponse(_ response: DataResponse<Any>) {
         if
             let headerFields = response.response?.allHeaderFields as? [String: String],
-            let URL = response.request?.url,
+            let url = response.request?.url,
             headerFields[HttpHeaderKey.setCoookie] != nil {
-            return HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: URL)
-        } else {
-            return nil
+            
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+            
+            Session.default.sessionConfiguration.httpCookieStorage?.setCookies(
+                cookies,
+                for: url,
+                mainDocumentURL: url)
         }
-    }
-    
-    
-    private func setCookies(cookies: [HTTPCookie]) {
-        let domain = cookies.first?.domain
-        Session.default.sessionConfiguration.httpCookieStorage?.setCookies(
-            cookies,
-            for: URL(fileURLWithPath: domain!),
-            mainDocumentURL: URL(fileURLWithPath: domain!))
-    }
-    
-    
-    public func urlSession(
-        _ session: URLSession,
-        task: URLSessionTask,
-        didFinishCollecting metrics: URLSessionTaskMetrics) {
-        print(metrics)
     }
 }
