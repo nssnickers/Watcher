@@ -66,6 +66,9 @@ struct Api {
         /// Списать часы
         static let log = "logged-time/"
         
+        /// Получить списанные часы по дням во временном диапазоне
+        static let days = "days/"
+        
     }
     
     
@@ -75,4 +78,5 @@ struct Api {
         /// Получить список проектов
         static let obtainAll = "projects/"
     }
+    
 }
