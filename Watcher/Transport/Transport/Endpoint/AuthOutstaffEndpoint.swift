@@ -23,17 +23,18 @@ public struct AuthOutstaffEndpoint: Endpoint {
     
     private let outstaffAuth: OutstaffAuth
     
-    private let encoder = JSONEncoder()
-    
-    private let decoder = JSONDecoder()
-    
+    private let encoder: JSONEncoder
+    private let decoder: JSONDecoder
     
     // MARK: - Initializers
     
-    public init(outstaffAuth: OutstaffAuth) {
+    public init(
+        outstaffAuth: OutstaffAuth,
+        encoder: JSONEncoder = CodingManager.jsonEncoder,
+        decoder: JSONDecoder = CodingManager.jsonDecoder) {
         self.outstaffAuth = outstaffAuth
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.encoder = encoder
+        self.decoder = decoder
     }
     
     

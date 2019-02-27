@@ -21,18 +21,22 @@ public struct TimeLogEndpoint: Endpoint {
     
     // MARK: - Private Properties
     
-    private let encoder = JSONEncoder()
+    private let encoder: JSONEncoder
     
-    private let decoder = JSONDecoder()
+    private let decoder: JSONDecoder
     
     private let timeLog: TimeLog
     
+    
     // MARK: - Initializers
     
-    public init(timeLog: TimeLog) {
+    public init(
+        timeLog: TimeLog,
+        encoder: JSONEncoder = CodingManager.jsonEncoder,
+        decoder: JSONDecoder = CodingManager.jsonDecoder) {
         self.timeLog = timeLog
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.encoder = encoder
+        self.decoder = decoder
     }
     
     

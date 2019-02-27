@@ -7,3 +7,22 @@
 //
 
 import Foundation
+
+public struct CodingManager {
+    
+    public static var jsonEncoder: JSONEncoder {
+        let encoder = JSONEncoder()
+        encoder.keyEncodingStrategy = .convertToSnakeCase
+        
+        return encoder
+    }
+    
+    public static var jsonDecoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        
+        return decoder
+    }
+    
+    private init() {}
+}

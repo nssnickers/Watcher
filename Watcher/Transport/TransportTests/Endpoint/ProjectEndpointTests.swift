@@ -47,8 +47,7 @@ class ProjectEndpointTests: XCTestCase {
         
         let projects = ProjectsAPIResponse<[Project]> (projects: [project])
         let data = APIResponse<ProjectsAPIResponse<[Project]>>(data: projects)
-        let encoder = JSONEncoder()
-        encoder.keyEncodingStrategy = .convertToSnakeCase
+        let encoder = CodingManager.jsonEncoder
         let raw = try encoder.encode(data)
         
         //when
