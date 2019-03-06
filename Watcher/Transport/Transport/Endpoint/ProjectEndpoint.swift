@@ -9,6 +9,10 @@
 import Alamofire
 import Foundation
 
+struct ProjectsAPIResponse<Content>: Codable where Content: Codable {
+    let projects: Content
+}
+
 public struct ProjectEndpoint: Endpoint {
     
     // MARK: - Types
@@ -17,16 +21,12 @@ public struct ProjectEndpoint: Endpoint {
     
     // MARK: - Private Properties
     
-    private let encoder = JSONEncoder()
-    
-    private let decoder = JSONDecoder()
-    
+    private let decoder: JSONDecoder
     
     // MARK: - Initializers
     
-    public init() {
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    public init(decoder: JSONDecoder = CodingManager.jsonDecoder) {
+        self.decoder = decoder
     }
     
     
@@ -34,11 +34,12 @@ public struct ProjectEndpoint: Endpoint {
     
     public func request() throws -> URLRequest {
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "watcher.intern.redmadrobot.com"
-        urlComponents.path = "/api/v1/projects/"
+        urlComponents.scheme = Api.Url.scheme
+        urlComponents.host = Api.Url.host
+        urlComponents.path = Api.Url.path
         
-        let url = try urlComponents.asURL()
+        var url = try urlComponents.asURL()
+        url.appendPathComponent(Api.Project.obtainAll)
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.get.rawValue
@@ -48,8 +49,8 @@ public struct ProjectEndpoint: Endpoint {
     
     
     public func parse(response: Data) throws -> RequestResult<Item> {
-        let decodedResponse = try decoder.decode((APIResponse<Item>).self, from: response)
-        let projects = decodedResponse.data["projects"]!
+        let decodedResponse = try decoder.decode((APIResponse<ProjectsAPIResponse<Item>>).self, from: response)
+        let projects = decodedResponse.data.projects
         
         return .success(projects)
     }

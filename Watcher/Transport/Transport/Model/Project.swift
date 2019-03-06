@@ -8,15 +8,24 @@
 
 import Foundation
 
-/// Структура, описывающая проекты на которые можно списывать время
+/// Структура, описывающая проекты компании
 public struct Project: Codable {
     // MARK: - Pulic Properties
     
+    /// ID
     public var id: Int
-    var isCommercial: Bool
-    var isArchived: Bool
+    
+    /// За деньги?
+    public var isCommercial: Bool
+    
+    /// В архиве?
+    public var isArchived: Bool
+    
+    /// Имя
     public var name: String
-    var managers: [User]?
+    
+    /// Массив менеджеров проекта
+    public var managers: [User]?
 }
 
 // MARK: - Equatable

@@ -13,44 +13,26 @@ import XCTest
 
 class AuthOutstaffEndpointTests: XCTestCase {
 
-    func testAuthRequest() {
+    func testAuthRequest() throws {
         //given
         let user = OutstaffAuth(email: "check", password: "pek")
         let endpoint = AuthOutstaffEndpoint(outstaffAuth: user)
         
         //when
-        do {
-            let request = try endpoint.request()
+        let request = try endpoint.request()
+        let components = URLComponents(url: request.url!, resolvingAgainstBaseURL: true)
             
-            
-            //then
-            // страаашно
-            do {
-                var urlComponents = URLComponents()
-                urlComponents.scheme = "https"
-                urlComponents.host = "watcher.intern.redmadrobot.com"
-                urlComponents.path = "/api/v1/auth/sign-in/"
-                
-                let url = try urlComponents.asURL()
-                let encoder = JSONEncoder()
-                encoder.keyEncodingStrategy = .convertToSnakeCase
-                let expectedBody = try encoder.encode(user)
-                
-                do {
-                    var expectedRequest = try URLRequest(url: url, method: .post)
-                    expectedRequest.httpBody = expectedBody
-                    XCTAssertEqual(expectedRequest, request)
-                } catch {
-                    XCTFail("Ошибка при создании URLRequest авторизации")
-                }
-                
-            } catch {
-                XCTFail("Ошибка при создании URL запроса авторизации")
-            }
-            
-        } catch {
-            XCTFail("Ошибка создания запроса авторизации")
-        }
+        //then
+        var expectedComponents = URLComponents()
+        expectedComponents.scheme = "https"
+        expectedComponents.host = "watcher.intern.redmadrobot.com"
+        expectedComponents.path = "/api/v1/auth/sign-in/"
+        let expectedHttpMethod = HTTPMethod.post
+        
+        XCTAssertEqual(expectedComponents.scheme, components?.scheme)
+        XCTAssertEqual(expectedComponents.host, components?.host)
+        XCTAssertEqual(expectedComponents.path, components?.path)
+        XCTAssertEqual(request.httpMethod, expectedHttpMethod.rawValue)
     }
 
 }

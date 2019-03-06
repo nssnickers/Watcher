@@ -12,6 +12,9 @@ import UIKit
 final class TimeLogViewController: UIViewController {
     
     // MARK: - IBOutlet
+    
+    @IBOutlet private weak var projectNameLabel: UILabel!
+    
     @IBOutlet private weak var scrollView: UIScrollView!
     
     @IBOutlet private weak var descriptionTextView: UITextView!
@@ -25,6 +28,8 @@ final class TimeLogViewController: UIViewController {
     @IBOutlet private weak var logTimeButton: UIButton!
     
     // MARK: - Public Properties
+    
+    public var date: String?
     
     public var project: Project?
     
@@ -42,16 +47,42 @@ final class TimeLogViewController: UIViewController {
     
     private var logDescription = ""
     
+    public var logModel: LogViewModel?
+    
     // MARK: - Lifecycle
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         descriptionTextView?.contentInset = UIEdgeInsets(top: 8, left: 12, bottom: 8, right: 12)
         keyboardHandler = KeyboardHandler(withDelegate: self)
+        descriptionTextView?.delegate = self
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         keyboardHandler?.startKeyboardHandling()
-        descriptionTextView.delegate = self
-        logTimeButton?.isUserInteractionEnabled = false
+        
+        if let logModel = logModel {
+            // TODO: сделать вью модель для этого экрана
+            projectNameLabel?.text = logModel.projectNameLabel
+            descriptionTextView?.text = logModel.descriptionLabel
+            spentTimeLabel?.text = logModel.spentHourLabel
+            hourDatePicker?.date = DateFormatterManager.hourMinutesDateFormatter.date(
+                from: "\(logModel.spentMinutes / 60):\(logModel.spentMinutes % 60)")!
+            logTimeButton?.setTitle("Изменить", for: .normal)
+            logTimeButton?.isUserInteractionEnabled = true
+            
+            // TODO: все плохо
+            spentTime = logModel.spentMinutes
+            logDescription = logModel.descriptionLabel
+            
+        } else {
+            projectNameLabel?.text = project?.name
+            logTimeButton?.isUserInteractionEnabled = false
+        }
     }
     
     
@@ -81,27 +112,57 @@ final class TimeLogViewController: UIViewController {
     }
     
     
-    @IBAction func logTimeDuttonDidTapped(_ sender: Any) {
-        let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        let result = formatter.string(from: date)
-        
-        let timeLog = TimeLog(
+    @IBAction func logTimeButtonDidTapped(_ sender: Any) {
+        if logModel?.identifier != nil {
+            updateLog()
+        } else {
+            putLog()
+        }
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    private func putLog() {
+        let timeLog = TimeToLog(
             projectId: project?.id ?? 0,
             minutesSpent: spentTime,
-            date: result,
+            date: date ?? DateFormatterManager.baseDateFormatter.string(from: Date()),
             description: logDescription)
         
         activityIndicator.startAnimating()
         timeLogService.sendTimeLog(timeLog) { (result) in
+            
             self.activityIndicator.stopAnimating()
             
             switch result {
-            case .error(let error):
-                self.showAlertWithError(error)
+            case .error:
+                self.showAlertWithError(Alert.logTimeUnavailable)
             case .success:
                 self.logTimeButton.isUserInteractionEnabled = false
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    
+    private func updateLog() {
+        guard let logModel = logModel else {
+            return
+        }
+        
+        activityIndicator.startAnimating()
+        
+        let timeLog = TimeToUpdate(minutesSpent: spentTime, description: logDescription)
+        timeLogService.updateTimeLog(timeLog, timeIdentifier: logModel.identifier) { (result) in
+            self.activityIndicator.stopAnimating()
+            
+            switch result {
+            case .error:
+                self.showAlertWithError(Alert.updateTimeUnavailable)
+            case .success:
+                self.logTimeButton.isUserInteractionEnabled = false
+                self.dismiss(animated: true, completion: nil)
             }
         }
     }
@@ -115,11 +176,8 @@ final class TimeLogViewController: UIViewController {
     // MARK: - Private Methods
     
     private func showAlertWithError(_ error: String) {
-        let alert = UIAlertController(
-            title: NSLocalizedString("Внимание", comment: ""),
-            message: error,
-            preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("ОК", comment: ""), style: .default, handler: nil))
+        let alert = UIAlertController(title: Alert.title, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }
     
@@ -129,21 +187,23 @@ final class TimeLogViewController: UIViewController {
             logDescription.count > 0,
             logDescription.contains("Добавить описание") == false {
             logTimeButton.isUserInteractionEnabled = true
-            logTimeButton.backgroundColor = UIColor(named: "orangeyRed")
+            logTimeButton.backgroundColor = Colors.red
         } else {
             logTimeButton.isUserInteractionEnabled = false
-            logTimeButton.backgroundColor = UIColor(named: "pastelOrangeyRed")
+            logTimeButton.backgroundColor = Colors.pastelRed
         }
     }
     
 }
 
 
+// MARK: - UITextViewDelegate
+
 extension TimeLogViewController: UITextViewDelegate {
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         // TODO: переделать анимацию
-        UIView.animate(withDuration: 0.5) {
+        UIView.animate(withDuration: AnimationDuration.slow) {
             self.hourDatePickerHightConstraint.constant = 0
             self.view.layoutIfNeeded()
         }
@@ -155,6 +215,8 @@ extension TimeLogViewController: UITextViewDelegate {
     }
 }
 
+
+// MARK: - KeyboardHandlerDataSource
 
 extension TimeLogViewController: KeyboardHandlerDataSource {
     func containerScrollView() -> UIScrollView? {

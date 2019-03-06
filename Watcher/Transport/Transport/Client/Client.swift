@@ -9,58 +9,71 @@
 import Alamofire
 
 // TODO: вынести в настройки
-// TODO: вынести константы
 // TODO: сохранять куки авторизации в приложении
 // TODO: сделать shared session
 
 /// Клиент для выполнения запросов
-public final class Client: ApiClient, EventMonitor {
+public final class Client: ApiClient {
     
     // MARK: - Public Methods
     
     public init() {}
     
+    
     public func request<Request>(
         with request: Request,
-        completionHandler: @escaping CompletionHandler)
+        completionHandler: @escaping (RequestResult<Request.Item>) -> Void )
         where Request: Endpoint {
+        
         do {
             var httpRequest = try request.request()
-            httpRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            httpRequest.addValue(HttpContentType.json, forHTTPHeaderField: HttpHeaderKey.contentType)
         
             AF.request(httpRequest)
                 .validate(statusCode: 200..<300)
-                .validate(contentType: ["application/json"])
+                .validate(contentType: [HttpContentType.json])
                 .responseJSON { (response) in
                     switch response.result {
                     case .success:
-                        completionHandler(.success(response))
-                        
-                    case .failure(let error):
-                        print(error.localizedDescription)
+                        let json = response.result.value
+                        do {
+                            let data = try JSONSerialization.data(withJSONObject: json!)
+                            
+                            do {
+                                let pointOfInteres = try request.parse(response: data)
+                                self.setCookiesIfNeededForResponse(response)
+                                completionHandler(pointOfInteres)
+                            } catch {
+                                completionHandler(.error(ApiClientError.invalidParseData(data)))
+                            }
+                        } catch {
+                            completionHandler(.error(ApiClientError.invalidSerializationObject(json)))
+                        }
+                    case .failure:
+                        // TODO: обработать коды ошибок, обрабатывать сообщения сервера
+                        completionHandler(RequestResult.error(ApiClientError.failedAnswer))
                     }
                 }
         } catch {
-            print("Ошибка составления запроса")
+            completionHandler(RequestResult.error(ApiClientError.invalidRequest))
         }
     }
     
     
-    /// Функция устанавливает cookie для передачи с последующими запросами
-    ///
-    /// - Parameter cookies: cookie
-    public func setCookies(cookies: [HTTPCookie]) {
-        let domain = cookies.first?.domain
-        Session.default.sessionConfiguration.httpCookieStorage?.setCookies(
-            cookies,
-            for: URL(fileURLWithPath: domain!),
-            mainDocumentURL: URL(fileURLWithPath: domain!))
-    }
+    // MARK: - Private Methods
     
-    public func urlSession(
-        _ session: URLSession,
-        task: URLSessionTask,
-        didFinishCollecting metrics: URLSessionTaskMetrics) {
-        print(metrics)
+    private func setCookiesIfNeededForResponse(_ response: DataResponse<Any>) {
+        if
+            let headerFields = response.response?.allHeaderFields as? [String: String],
+            let url = response.request?.url,
+            headerFields[HttpHeaderKey.setCoookie] != nil {
+            
+            let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
+            
+            Session.default.sessionConfiguration.httpCookieStorage?.setCookies(
+                cookies,
+                for: url,
+                mainDocumentURL: url)
+        }
     }
 }

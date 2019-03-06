@@ -12,44 +12,30 @@ import XCTest
 
 class TimeLogEndpointTests: XCTestCase {
 
-    func testLoggedTimeRequest() {
+    func testLoggedTimeRequest() throws {
         //given
-        let timeToLog = TimeLog(projectId: 20, minutesSpent: 20, date: "14-12-2012", description: "my lovely endpoint")
+        let timeToLog = TimeToLog(
+            projectId: 20,
+            minutesSpent: 20,
+            date: "14-12-2012",
+            description: "my lovely endpoint")
         let endpoint = TimeLogEndpoint(timeLog: timeToLog)
         
         //when
-        do {
-            let request = try endpoint.request()
-            
-            
-            //then
-            // страаашно
-            do {
-                var urlComponents = URLComponents()
-                urlComponents.scheme = "https"
-                urlComponents.host = "watcher.intern.redmadrobot.com"
-                urlComponents.path = "/api/v1/logged-time/"
-                
-                let url = try urlComponents.asURL()
-                let encoder = JSONEncoder()
-                encoder.keyEncodingStrategy = .convertToSnakeCase
-                let expectedBody = try encoder.encode(timeToLog)
-                
-                do {
-                    var expectedRequest = try URLRequest(url: url, method: .post)
-                    expectedRequest.httpBody = expectedBody
-                    XCTAssertEqual(expectedRequest, request)
-                } catch {
-                    XCTFail("Ошибка при создании URLRequest списания часов")
-                }
-                
-            } catch {
-                XCTFail("Ошибка при создании URL запроса списания часов")
-            }
-            
-        } catch {
-            XCTFail("Ошибка создания запроса списания часов")
-        }
+        let request = try endpoint.request()
+        let components = URLComponents(url: request.url!, resolvingAgainstBaseURL: true)
+        
+        //then
+        var expectedComponents = URLComponents()
+        expectedComponents.scheme = "https"
+        expectedComponents.host = "watcher.intern.redmadrobot.com"
+        expectedComponents.path = "/api/v1/logged-time/"
+        let expectedHttpMethod = HTTPMethod.post
+        
+        XCTAssertEqual(expectedComponents.scheme, components?.scheme)
+        XCTAssertEqual(expectedComponents.host, components?.host)
+        XCTAssertEqual(expectedComponents.path, components?.path)
+        XCTAssertEqual(request.httpMethod, expectedHttpMethod.rawValue)
     }
 
 }

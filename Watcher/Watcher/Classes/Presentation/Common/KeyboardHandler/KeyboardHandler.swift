@@ -56,6 +56,7 @@ final class KeyboardHandler {
             object: nil)
     }
     
+    
     @objc fileprivate func deRegisterKeyboardNotifications() {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidHideNotification, object: nil)
@@ -77,10 +78,10 @@ final class KeyboardHandler {
             scrollView.scrollIndicatorInsets = contentInsets
             
             aRect.size.height -= keyboardSize.height
-            let activeViewRect: CGRect? = activeView.frame
-            let activeViewOrigin: CGPoint? = activeViewRect?.origin
-            if !aRect.contains(activeViewOrigin!) {
-                scrollView.scrollRectToVisible(activeViewRect!, animated: true)
+            let activeViewRect = activeView.frame
+            let activeViewOrigin = activeViewRect.origin
+            if !aRect.contains(activeViewOrigin) {
+                scrollView.scrollRectToVisible(activeViewRect, animated: true)
             }
         }
     }

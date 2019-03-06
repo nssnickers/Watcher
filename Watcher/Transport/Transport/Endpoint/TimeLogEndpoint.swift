@@ -9,6 +9,10 @@
 import Alamofire
 import Foundation
 
+struct TimeLogAPIResponse<Content>: Codable where Content: Codable {
+    let loggedTime: Content
+}
+
 public struct TimeLogEndpoint: Endpoint {
     
     // MARK: - Types
@@ -17,18 +21,22 @@ public struct TimeLogEndpoint: Endpoint {
     
     // MARK: - Private Properties
     
-    private let encoder = JSONEncoder()
+    private let encoder: JSONEncoder
     
-    private let decoder = JSONDecoder()
+    private let decoder: JSONDecoder
     
-    private let timeLog: TimeLog
+    private let timeLog: TimeToLog
+    
     
     // MARK: - Initializers
     
-    public init(timeLog: TimeLog) {
+    public init(
+        timeLog: TimeToLog,
+        encoder: JSONEncoder = CodingManager.jsonEncoder,
+        decoder: JSONDecoder = CodingManager.jsonDecoder) {
         self.timeLog = timeLog
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        self.encoder = encoder
+        self.decoder = decoder
     }
     
     
@@ -36,11 +44,12 @@ public struct TimeLogEndpoint: Endpoint {
     
     public func request() throws -> URLRequest {
         var urlComponents = URLComponents()
-        urlComponents.scheme = "https"
-        urlComponents.host = "watcher.intern.redmadrobot.com"
-        urlComponents.path = "/api/v1/logged-time/"
+        urlComponents.scheme = Api.Url.scheme
+        urlComponents.host = Api.Url.host
+        urlComponents.path = Api.Url.path
         
-        let url = try urlComponents.asURL()
+        var url = try urlComponents.asURL()
+        url.appendPathComponent(Api.WorkTime.log)
         
         var request = URLRequest(url: url)
         request.httpMethod = HTTPMethod.post.rawValue
@@ -53,8 +62,8 @@ public struct TimeLogEndpoint: Endpoint {
     
     
     public func parse(response: Data) throws -> RequestResult<Item> {
-        let decodedResponse = try decoder.decode((APIResponse<Item>).self, from: response)
-        let loggedTime = decodedResponse.data["loggedTime"]!
+        let decodedResponse = try decoder.decode((APIResponse<TimeLogAPIResponse<Item>>).self, from: response)
+        let loggedTime = decodedResponse.data.loggedTime
         
         return .success(loggedTime)
     }
