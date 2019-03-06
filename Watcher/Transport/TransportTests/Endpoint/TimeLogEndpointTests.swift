@@ -14,7 +14,11 @@ class TimeLogEndpointTests: XCTestCase {
 
     func testLoggedTimeRequest() throws {
         //given
-        let timeToLog = TimeLog(projectId: 20, minutesSpent: 20, date: "14-12-2012", description: "my lovely endpoint")
+        let timeToLog = TimeToLog(
+            projectId: 20,
+            minutesSpent: 20,
+            date: "14-12-2012",
+            description: "my lovely endpoint")
         let endpoint = TimeLogEndpoint(timeLog: timeToLog)
         
         //when

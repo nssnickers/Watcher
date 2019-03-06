@@ -34,17 +34,27 @@ class AuthViewController: UIViewController {
     
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         view.addSubview(activityIndicator)
-        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
         
         keyboardHandler = KeyboardHandler(withDelegate: self)
-        keyboardHandler?.startKeyboardHandling()
         
         employeLoginButton.layer.borderColor = Colors.pastelRed?.cgColor
         disableLoginButton()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        keyboardHandler?.startKeyboardHandling()
+    }
+    
+    
+    override func viewWillLayoutSubviews() {
+        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
     }
     
     
@@ -52,14 +62,15 @@ class AuthViewController: UIViewController {
     
     @IBAction private func loginButtonDidTapped(_ sender: Any) {
         activityIndicator.startAnimating()
+        
         self.authService.loginWithEmail(
             emailTextField.text ?? "",
             password: passwordTextField.text ?? "",
             completion: { (result) in
                 self.activityIndicator.stopAnimating()
                 switch result {
-                case .error(let error):
-                    self.showAlertWithError(error)
+                case .error:
+                    self.showAlertWithError(Alert.serverUnavailable)
                 case .success:
                     let mainViewController = MainViewController(nibName: nil, bundle: nil)
                     self.present(mainViewController, animated: true, completion: nil)

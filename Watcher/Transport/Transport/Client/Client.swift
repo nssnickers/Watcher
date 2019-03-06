@@ -13,7 +13,7 @@ import Alamofire
 // TODO: сделать shared session
 
 /// Клиент для выполнения запросов
-public final class Client: ApiClient, EventMonitor {
+public final class Client: ApiClient {
     
     // MARK: - Public Methods
     
@@ -24,6 +24,7 @@ public final class Client: ApiClient, EventMonitor {
         with request: Request,
         completionHandler: @escaping (RequestResult<Request.Item>) -> Void )
         where Request: Endpoint {
+        
         do {
             var httpRequest = try request.request()
             httpRequest.addValue(HttpContentType.json, forHTTPHeaderField: HttpHeaderKey.contentType)
@@ -43,19 +44,18 @@ public final class Client: ApiClient, EventMonitor {
                                 self.setCookiesIfNeededForResponse(response)
                                 completionHandler(pointOfInteres)
                             } catch {
-                                print("Ошибка парсинга JSON: \(data)")
-                                completionHandler(.error(NSLocalizedString("service unavailable", comment: "")))
+                                completionHandler(.error(ApiClientError.invalidParseData(data)))
                             }
                         } catch {
-                            print("Ошибка сериализации JSON: \(json ?? "")")
-                            completionHandler(.error(NSLocalizedString("service unavailable", comment: "")))
+                            completionHandler(.error(ApiClientError.invalidSerializationObject(json)))
                         }
-                    case .failure(let error):
-                        print(error.localizedDescription)
+                    case .failure:
+                        // TODO: обработать коды ошибок, обрабатывать сообщения сервера
+                        completionHandler(RequestResult.error(ApiClientError.failedAnswer))
                     }
                 }
         } catch {
-            print("Ошибка составления запроса")
+            completionHandler(RequestResult.error(ApiClientError.invalidRequest))
         }
     }
     

@@ -47,8 +47,14 @@ struct Colors {
     /// Красный
     static let red = UIColor(named: "orangeyRed")
     
+    /// Белый
+    static let white = UIColor(named: "white")
+    
     /// Приглушенный красный
     static let pastelRed = UIColor(named: "pastelOrangeyRed")
+    
+    /// Серебряный
+    static let silver = UIColor(named: "silver")
 }
 
 // MARK: - Alert
@@ -61,6 +67,18 @@ struct Alert {
     
     /// Название действия
     static let actionTitle = NSLocalizedString("ОК", comment: "")
+    
+    /// Ошибка авторизации
+    static let serverUnavailable = NSLocalizedString("service unavailable", comment: "")
+    
+    /// Невозможно залогировать время
+    static let logTimeUnavailable = NSLocalizedString("cant log time", comment: "")
+    
+    /// Невозможно получить список проектов
+    static let projectsUnavailable = NSLocalizedString("cant obtain projects", comment: "")
+    
+    /// Невозможно обновить списанное время
+    static let updateTimeUnavailable = NSLocalizedString("cant update log time", comment: "")
 }
 
 // MARK: - Длительность анимаций

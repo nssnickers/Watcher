@@ -17,6 +17,21 @@ struct DateFormatterManager {
         return dateFormatter
     }
     
+    static var dateTimeDateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        
+        return dateFormatter
+    }
+    
+    static var fullDateTimeDateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "YYYY-MM-DD'T'HH:mm:ss.SSSSSSZZZZZ"
+        
+        return dateFormatter
+    }
+    
+    
     static var dayDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd"

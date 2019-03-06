@@ -16,16 +16,16 @@ public struct Project: Codable {
     public var id: Int
     
     /// За деньги?
-    var isCommercial: Bool
+    public var isCommercial: Bool
     
     /// В архиве?
-    var isArchived: Bool
+    public var isArchived: Bool
     
     /// Имя
     public var name: String
     
     /// Массив менеджеров проекта
-    var managers: [User]?
+    public var managers: [User]?
 }
 
 // MARK: - Equatable

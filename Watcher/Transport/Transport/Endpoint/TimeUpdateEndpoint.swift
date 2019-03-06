@@ -1,19 +1,19 @@
 //
-//  TimeLogEndpoint.swift
-//  Watcher
+//  TimeUpdateEndpoint.swift
+//  Transport
 //
-//  Created by Маргарита on 19/02/2019.
+//  Created by Маргарита on 04/03/2019.
 //  Copyright © 2019 Маргарита. All rights reserved.
 //
 
 import Alamofire
 import Foundation
 
-struct TimeLogAPIResponse<Content>: Codable where Content: Codable {
+struct TimeUpdateAPIResponse<Content>: Codable where Content: Codable {
     let loggedTime: Content
 }
 
-public struct TimeLogEndpoint: Endpoint {
+public struct TimeUpdateEndpoint: Endpoint {
     
     // MARK: - Types
     
@@ -25,16 +25,20 @@ public struct TimeLogEndpoint: Endpoint {
     
     private let decoder: JSONDecoder
     
-    private let timeLog: TimeToLog
+    private let timeUpdate: TimeToUpdate
+    
+    private let timeIdentifier: Int
     
     
     // MARK: - Initializers
     
     public init(
-        timeLog: TimeToLog,
+        timeIdentifier: Int,
+        timeToUpdate: TimeToUpdate,
         encoder: JSONEncoder = CodingManager.jsonEncoder,
         decoder: JSONDecoder = CodingManager.jsonDecoder) {
-        self.timeLog = timeLog
+        self.timeUpdate = timeToUpdate
+        self.timeIdentifier = timeIdentifier
         self.encoder = encoder
         self.decoder = decoder
     }
@@ -48,13 +52,15 @@ public struct TimeLogEndpoint: Endpoint {
         urlComponents.host = Api.Url.host
         urlComponents.path = Api.Url.path
         
+        let path = Api.WorkTime.update.replacingOccurrences(of: Api.Macros.updateTimeId, with: "\(timeIdentifier)")
+        
         var url = try urlComponents.asURL()
-        url.appendPathComponent(Api.WorkTime.log)
+        url.appendPathComponent(path)
         
         var request = URLRequest(url: url)
-        request.httpMethod = HTTPMethod.post.rawValue
+        request.httpMethod = HTTPMethod.patch.rawValue
         
-        let jsonParameters = try encoder.encode(timeLog)
+        let jsonParameters = try encoder.encode(timeUpdate)
         request.httpBody = jsonParameters
         
         return request

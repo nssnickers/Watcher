@@ -24,6 +24,7 @@ public struct AuthOutstaffEndpoint: Endpoint {
     private let outstaffAuth: OutstaffAuth
     
     private let encoder: JSONEncoder
+    
     private let decoder: JSONDecoder
     
     // MARK: - Initializers

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="DayCellIdentifier" id="gTV-IL-0wX" customClass="DayCollectionViewCell" customModule="Watcher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="332" height="409"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="332" height="409"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="06.02" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GQ2-bt-6qU" userLabel="Date Label">
+                        <rect key="frame" x="0.0" y="0.0" width="31.5" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="R2F-cC-PCT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="14"/>
+                        <color key="textColor" name="charcoalGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Среда" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IMa-fs-mvd" userLabel="Week day Label">
+                        <rect key="frame" x="0.0" y="20" width="50.5" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="vO0-eh-7tj"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                        <color key="textColor" name="charcoalGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="8 ч" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xde-oa-9X9" userLabel="Work Hour Label">
+                        <rect key="frame" x="308" y="20" width="24" height="23"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="8xh-YN-e4N"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                        <color key="textColor" name="charcoalGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dLu-WA-SOd" userLabel="Log Work Button">
+                        <rect key="frame" x="0.0" y="54" width="332" height="48"/>
+                        <color key="backgroundColor" name="orangeyRed"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="wyn-Hs-eD7"/>
+                        </constraints>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <state key="normal" image="icnPlus">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="6"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                <integer key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <action selector="logWorkButtonDidTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ikx-Yv-B39"/>
+                        </connections>
+                    </button>
+                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SRR-Is-45u" userLabel="Work Collection View">
+                        <rect key="frame" x="0.0" y="110" width="332" height="299"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="8" minimumInteritemSpacing="8" id="dKr-L0-i4t">
+                            <size key="itemSize" width="332" height="64"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                    </collectionView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="SRR-Is-45u" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="3xw-Na-zgB"/>
+                <constraint firstItem="dLu-WA-SOd" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" id="53J-aM-Ikf"/>
+                <constraint firstItem="xde-oa-9X9" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="5F3-Mb-MNQ"/>
+                <constraint firstItem="xde-oa-9X9" firstAttribute="centerY" secondItem="IMa-fs-mvd" secondAttribute="centerY" id="GSc-aG-fLQ"/>
+                <constraint firstItem="dLu-WA-SOd" firstAttribute="top" secondItem="IMa-fs-mvd" secondAttribute="bottom" constant="11" id="Ljq-Yg-U5q"/>
+                <constraint firstItem="SRR-Is-45u" firstAttribute="width" secondItem="ZTg-uK-7eu" secondAttribute="width" id="LnO-3c-DZB"/>
+                <constraint firstItem="SRR-Is-45u" firstAttribute="top" secondItem="dLu-WA-SOd" secondAttribute="bottom" constant="8" id="SKR-p8-5NU"/>
+                <constraint firstItem="GQ2-bt-6qU" firstAttribute="top" secondItem="ZTg-uK-7eu" secondAttribute="top" id="T4p-9G-ZZE"/>
+                <constraint firstItem="dLu-WA-SOd" firstAttribute="trailing" secondItem="ZTg-uK-7eu" secondAttribute="trailing" id="YEM-S2-aDy"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="GQ2-bt-6qU" secondAttribute="leading" id="dm2-GZ-WUc"/>
+                <constraint firstItem="SRR-Is-45u" firstAttribute="bottom" secondItem="ZTg-uK-7eu" secondAttribute="bottom" id="hne-qb-zRZ"/>
+                <constraint firstItem="IMa-fs-mvd" firstAttribute="top" secondItem="GQ2-bt-6qU" secondAttribute="bottom" constant="2" id="jgS-qV-Rkx"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="leading" secondItem="IMa-fs-mvd" secondAttribute="leading" id="o6a-eE-HUp"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="152" height="242"/>
+            <connections>
+                <outlet property="dateLabel" destination="GQ2-bt-6qU" id="Ji6-Td-WVO"/>
+                <outlet property="logWorkButton" destination="dLu-WA-SOd" id="rVt-X4-CSW"/>
+                <outlet property="weekDayLabel" destination="IMa-fs-mvd" id="qiJ-Ga-QCa"/>
+                <outlet property="workCollectionView" destination="SRR-Is-45u" id="1IC-XA-Gii"/>
+                <outlet property="workHourLabel" destination="xde-oa-9X9" id="ePy-EY-hse"/>
+            </connections>
+            <point key="canvasLocation" x="105.59999999999999" y="178.56071964017991"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="icnPlus" width="24" height="24"/>
+        <namedColor name="charcoalGrey">
+            <color red="0.22699999809265137" green="0.23499999940395355" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="orangeyRed">
+            <color red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

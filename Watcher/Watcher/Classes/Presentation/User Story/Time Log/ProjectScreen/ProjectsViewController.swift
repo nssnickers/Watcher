@@ -27,30 +27,57 @@ final class ProjectsViewController: UIViewController {
     
     private var projects: [Project] = []
     
+    private var isLoadingProjects = false
+    
+    public var date: String?
+    
     // MARK: - Lifecycle
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
         projectsTableView.register(
             UINib(nibName: projectCellNibName, bundle: nil),
             forCellReuseIdentifier: projectCellReuseIdentifier)
         
         view.addSubview(activityIndicator)
-        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
-        activityIndicator.startAnimating()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        isLoadingProjects = true
         
         projectService.obtainProjectsWithCompletion { (result) in
-            self.activityIndicator.stopAnimating()
+            self.isLoadingProjects = false
+            if self.activityIndicator.isAnimating {
+                self.activityIndicator.stopAnimating()
+            }
+            
             
             switch result {
-            case .error(let error):
-                self.showAlertWithError(error)
+            case .error:
+                self.showAlertWithError(Alert.projectsUnavailable)
             case .success(let newProjects):
                 self.projects = newProjects
                 self.projectsTableView.reloadData()
             }
         }
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        if isLoadingProjects {
+            activityIndicator.startAnimating()
+        }
+    }
+    
+    
+    override func viewWillLayoutSubviews() {
+        activityIndicator.center = CGPoint(x: view.frame.size.width * 0.5, y: view.frame.size.height * 0.5)
     }
     
     
@@ -106,6 +133,7 @@ extension ProjectsViewController: UITableViewDelegate {
         let expense = TimeLogViewController(nibName: nil, bundle: nil)
         let project = projects[indexPath.item]
         
+        expense.date = date
         expense.project = project
         self.present(expense, animated: true, completion: nil)
     }

@@ -8,6 +8,7 @@
 
 import Foundation
 
+
 public struct CodingManager {
     
     public static var jsonEncoder: JSONEncoder {
@@ -20,6 +21,28 @@ public struct CodingManager {
     public static var jsonDecoder: JSONDecoder {
         let decoder = JSONDecoder()
         decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .custom({ (decoder) -> Date in
+            let container = try decoder.singleValueContainer()
+            let dateString = try container.decode(String.self)
+            var date: Date?
+            
+            if dateString.count == 10 {
+                date = DateFormatterManager.baseDateFormatter.date(from: dateString)
+            } else if dateString.count == 20 {
+                date = DateFormatterManager.dateTimeDateFormatter.date(from: dateString)
+            } else {
+                date = DateFormatterManager.fullDateTimeDateFormatter.date(from: dateString)
+            }
+            
+            guard let dateValue = date else {
+                throw DecodingError.dataCorruptedError(
+                    in: container,
+                    debugDescription: "Cannot decode date string \(dateString)")
+            }
+            
+            return dateValue
+            
+        })
         
         return decoder
     }

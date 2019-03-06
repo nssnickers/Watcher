@@ -14,7 +14,7 @@ import Foundation
 /// - error: неудачно, вернуть ошибку
 public enum RequestResult<Content> {
     case success(Content)
-    case error(String)
+    case error(ApiClientError)
 }
 
 public protocol ApiClient {
