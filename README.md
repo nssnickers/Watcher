@@ -8,12 +8,12 @@
 
 Задание | Cтатус выполнения
 ------------ | -------------
-Базовая часть | :heavy_minus_sign:
+Базовая часть (не успела прикрутить лоадер) | :white_check_mark:
 Бесконечный скролл слайдера | :heavy_minus_sign:
-Отступы в слайдере по дизайну | :heavy_minus_sign:
+Отступы в слайдере по дизайну | :white_check_mark:
 UI-тесты | :heavy_minus_sign:
 Snapshot-тесты | :heavy_minus_sign:
-3D-Touch | :heavy_minus_sign:
+3D-Touch | :white_check_mark:
 UML | :heavy_minus_sign:
 
 TODO:
