@@ -14,7 +14,7 @@ import Foundation
 /// - pending: в обработке
 /// - approved: списано
 /// - rejected: отклонено
-enum LoggedTimeStatus: String, Codable {
+public enum LoggedTimeStatus: String, Codable {
     case pending
     case approved
     case rejected
@@ -22,13 +22,13 @@ enum LoggedTimeStatus: String, Codable {
 
 
 /// Комментарий к записи о списании часов
-struct LoggedTimeComment: Codable {
+public struct LoggedTimeComment: Codable {
     
     /// Комментарий
-    let text: String
+    public let text: String
     
     /// Время создания
-    let createdAt: String
+    public let createdAt: String
 }
 
 
@@ -38,35 +38,35 @@ public struct LoggedTime: Codable {
     // MARK: - Pulic Properties
     
     /// ID залогированного времени
-    let id: Int
+    public let id: Int
     
     /// ID проекта
-    let projectId: Int
+    public let projectId: Int
     
     /// ID пользователя
-    let userId: Int
+    public let userId: Int?
     
     /// Списанное время в минутах
-    let minutesSpent: Int
+    public let minutesSpent: Int
     
     /// Проект
-    let project: Project
+    public let project: Project?
     
     /// Дата
-    let date: String
+    public let date: String
     
     /// Статус обработки списанного времени
-    let status: LoggedTimeStatus
+    public let status: LoggedTimeStatus
     
     /// Описание
-    let description: String
+    public let description: String
     
     /// Дата создания лога
-    let createdAt: String
+    public let createdAt: String
     
     /// Дата последнего обновления
-    let updatedAt: String
+    public let updatedAt: String
     
     /// Массив комментариев
-    let comments: [LoggedTimeComment]?
+    public let comments: [LoggedTimeComment]?
 }

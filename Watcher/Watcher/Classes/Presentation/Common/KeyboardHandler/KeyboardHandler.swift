@@ -78,10 +78,10 @@ final class KeyboardHandler {
             scrollView.scrollIndicatorInsets = contentInsets
             
             aRect.size.height -= keyboardSize.height
-            let activeViewRect: CGRect? = activeView.frame
-            let activeViewOrigin: CGPoint? = activeViewRect?.origin
-            if !aRect.contains(activeViewOrigin!) {
-                scrollView.scrollRectToVisible(activeViewRect!, animated: true)
+            let activeViewRect = activeView.frame
+            let activeViewOrigin = activeViewRect.origin
+            if !aRect.contains(activeViewOrigin) {
+                scrollView.scrollRectToVisible(activeViewRect, animated: true)
             }
         }
     }

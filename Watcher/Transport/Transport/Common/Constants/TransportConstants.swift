@@ -51,6 +51,12 @@ struct Api {
         
     }
     
+    struct Macros {
+        
+        /// Макрос для id списания, которое хотим обновить
+        static let updateTimeId = "{logged_time_id}"
+    }
+    
     
     /// Запросы на аутентификацию
     struct Auth {
@@ -66,6 +72,12 @@ struct Api {
         /// Списать часы
         static let log = "logged-time/"
         
+        /// Обновить часы
+        static let update = "logged-time/{logged_time_id}"
+        
+        /// Получить списанные часы по дням во временном диапазоне
+        static let days = "days/"
+        
     }
     
     
@@ -75,4 +87,5 @@ struct Api {
         /// Получить список проектов
         static let obtainAll = "projects/"
     }
+    
 }

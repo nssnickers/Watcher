@@ -21,16 +21,12 @@ public struct ProjectEndpoint: Endpoint {
     
     // MARK: - Private Properties
     
-    private let encoder = JSONEncoder()
-    
-    private let decoder = JSONDecoder()
-    
+    private let decoder: JSONDecoder
     
     // MARK: - Initializers
     
-    public init() {
-        encoder.keyEncodingStrategy = .convertToSnakeCase
-        decoder.keyDecodingStrategy = .convertFromSnakeCase
+    public init(decoder: JSONDecoder = CodingManager.jsonDecoder) {
+        self.decoder = decoder
     }
     
     

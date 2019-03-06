@@ -9,7 +9,7 @@
 import Foundation
 
 /// Структура для сериализации запроса к серверу
-public struct TimeLog: Codable {
+public struct TimeToLog: Codable {
     
     /// ID проекта, на который тратилось время
     let projectId: Int
@@ -17,7 +17,7 @@ public struct TimeLog: Codable {
     /// Потраченные минуты
     let minutesSpent: Int
     
-    /// Дата
+    /// Дата в формате yyyy-MM-dd
     let date: String
     
     /// Описание
