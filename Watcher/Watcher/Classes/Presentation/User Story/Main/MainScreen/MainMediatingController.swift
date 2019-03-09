@@ -56,6 +56,7 @@ final class MainMediatingController {
                     switch result {
                     case .success(let weekDays):
                         let weekModel = self.weekMapper.mapWeekFromDays(weekDays, monthDays: monthDays)
+                        self.weekStorage.setWeek(weekModel)
                         self.delegate?.updateInterfaceWithWeek(weekModel)
                     case .error:
                         self.delegate?.alertWithMessage("") //TODO: нормальная обработка ошибок
