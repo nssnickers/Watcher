@@ -38,12 +38,26 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupChilds()
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mediatingController.loadWeekForRange()
+    }
+    
+    
+    // MARK: - Private Methods
+    
+    private func setupChilds() {
         let layout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 12
         layout.scrollDirection = .horizontal
         layout.sectionInset.right = 16
         layout.sectionInset.left = 16
-        layout.itemSize = CGSize(width: 332, height: 500)
+        layout.itemSize = CGSize(width: 332, height: 409)
         layout.sectionFootersPinToVisibleBounds = true
         
         mediatingController.delegate = self
@@ -61,13 +75,6 @@ final class MainViewController: UIViewController {
             let weekViewController = weekViewController {
             addChildViewController(weekViewController, to: dayViewContainer)
         }
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        mediatingController.loadWeekForRange()
     }
 }
 

@@ -77,7 +77,10 @@ class WeekCollectionViewController: UICollectionViewController {
         var currentCellOffset = collectionView?.contentOffset
         currentCellOffset!.x += collectionView.frame.size.width / 2
         let indexPath = collectionView?.indexPathForItem(at: currentCellOffset!)
-        collectionView?.scrollToItem(at: indexPath!, at: .centeredHorizontally, animated: true)
+        
+        if let indexPath = indexPath {
+            collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
     }
     
     
