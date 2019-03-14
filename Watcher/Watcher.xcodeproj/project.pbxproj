@@ -37,6 +37,8 @@
 		B26396CB222F22750002ACC7 /* WeekStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26396CA222F22750002ACC7 /* WeekStorage.swift */; };
 		B26396CD222F26C90002ACC7 /* MainMediatingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26396CC222F26C90002ACC7 /* MainMediatingController.swift */; };
 		B26396D0222F2A330002ACC7 /* RangeCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26396CF222F2A330002ACC7 /* RangeCalculator.swift */; };
+		B26396D42235A1920002ACC7 /* DynamicHeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26396D22235A1920002ACC7 /* DynamicHeightViewController.swift */; };
+		B26396D52235A1920002ACC7 /* DynamicHeightViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B26396D32235A1920002ACC7 /* DynamicHeightViewController.xib */; };
 		B29D61FF222D02060079BD72 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D61FE222D02060079BD72 /* DayViewModel.swift */; };
 		B29D6201222D05290079BD72 /* LogViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D6200222D05290079BD72 /* LogViewModel.swift */; };
 		B2D666B9222724AC0083FEC3 /* WeekModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D666B8222724AC0083FEC3 /* WeekModel.swift */; };
@@ -126,6 +128,8 @@
 		B26396CA222F22750002ACC7 /* WeekStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekStorage.swift; sourceTree = "<group>"; };
 		B26396CC222F26C90002ACC7 /* MainMediatingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMediatingController.swift; sourceTree = "<group>"; };
 		B26396CF222F2A330002ACC7 /* RangeCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeCalculator.swift; sourceTree = "<group>"; };
+		B26396D22235A1920002ACC7 /* DynamicHeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicHeightViewController.swift; sourceTree = "<group>"; };
+		B26396D32235A1920002ACC7 /* DynamicHeightViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DynamicHeightViewController.xib; sourceTree = "<group>"; };
 		B29D61FE222D02060079BD72 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		B29D6200222D05290079BD72 /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		B2D666B8222724AC0083FEC3 /* WeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekModel.swift; sourceTree = "<group>"; };
@@ -467,6 +471,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B26396D62235A19A0002ACC7 /* DynamicHeightViewController */ = {
+			isa = PBXGroup;
+			children = (
+				B26396D22235A1920002ACC7 /* DynamicHeightViewController.swift */,
+				B26396D32235A1920002ACC7 /* DynamicHeightViewController.xib */,
+			);
+			path = DynamicHeightViewController;
+			sourceTree = "<group>";
+		};
 		B29D61FD222D01E40079BD72 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -615,6 +628,7 @@
 				B2FC63B82219952600DECB91 /* KeyboardHandler */,
 				B253DB4A2212F774001A1EDF /* Validator */,
 				B2D666CA2229BD5B0083FEC3 /* ViewController.swift */,
+				B26396D62235A19A0002ACC7 /* DynamicHeightViewController */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -748,6 +762,7 @@
 				B20C36842218CCC5007B5F6B /* TimeLogViewController.xib in Resources */,
 				B253DB342210E0CD001A1EDF /* SourceSansPro-SemiBold.ttf in Resources */,
 				B253DB3A2210E0CD001A1EDF /* SourceSansPro-Regular.ttf in Resources */,
+				B26396D52235A1920002ACC7 /* DynamicHeightViewController.xib in Resources */,
 				B253DB352210E0CD001A1EDF /* SourceSansPro-Italic.ttf in Resources */,
 				B2EC2CD522167FA70016E1A1 /* AuthViewController.xib in Resources */,
 				B253DB0A22109C57001A1EDF /* Assets.xcassets in Resources */,
@@ -861,6 +876,7 @@
 				B2D666B9222724AC0083FEC3 /* WeekModel.swift in Sources */,
 				B2D66712222BFD940083FEC3 /* LogCollectionViewCell.swift in Sources */,
 				B29D6201222D05290079BD72 /* LogViewModel.swift in Sources */,
+				B26396D42235A1920002ACC7 /* DynamicHeightViewController.swift in Sources */,
 				B29D61FF222D02060079BD72 /* DayViewModel.swift in Sources */,
 				B20A7CD4221A133600C28814 /* TimeLogService.swift in Sources */,
 				B2E8B755221595FA007FA08D /* ProjectService.swift in Sources */,
