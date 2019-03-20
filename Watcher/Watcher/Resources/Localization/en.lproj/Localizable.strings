@@ -12,3 +12,10 @@
 "ОК" = "Ok";
 "Неверный формат логина" = "Invalid login format";
 "Слишком короткий пароль" = "Password is too short";
+"monday" = "mo";
+"tuesday" = "tu";
+"wednesday" = "we";
+"thursday" = "th";
+"friday" = "fr";
+"saturday" = "sa";
+"sunday" = "su";

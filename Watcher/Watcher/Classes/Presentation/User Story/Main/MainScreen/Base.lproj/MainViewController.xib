@@ -43,6 +43,9 @@
                                         <constraint firstAttribute="width" secondItem="edu-Vg-xXx" secondAttribute="height" multiplier="1:1" id="poH-Ig-vYW"/>
                                     </constraints>
                                     <state key="normal" image="icnCalendar"/>
+                                    <connections>
+                                        <action selector="calendarButtonTapped:" destination="-1" eventType="touchUpInside" id="bZ6-AF-vt0"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xbn-0n-25w" userLabel="Profile Button">
                                     <rect key="frame" x="16" y="9" width="24" height="24"/>
@@ -85,6 +88,9 @@
                     <state key="normal" title="Отпуск">
                         <color key="titleColor" name="charcoalGrey"/>
                     </state>
+                    <connections>
+                        <action selector="vacationDidTapped:" destination="-1" eventType="touchUpInside" id="dLR-3k-V3r"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cb3-JR-gaP">
                     <rect key="frame" x="82" y="629" width="59" height="20"/>
@@ -95,6 +101,9 @@
                     <state key="normal" title="Болезнь">
                         <color key="titleColor" name="charcoalGrey"/>
                     </state>
+                    <connections>
+                        <action selector="sickDidTapped:" destination="-1" eventType="touchUpInside" id="XmD-XG-olF"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKC-18-K2N">
                     <rect key="frame" x="157" y="629" width="85" height="20"/>

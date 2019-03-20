@@ -29,7 +29,7 @@ class WeekStorage {
     }
     
     
-    func setWeek(_ week: WeekModel) -> Bool {
+    func setWeek(_ week: WeekModel) {
         let encoder = JSONEncoder()
         
         if let encodedWeek = try? encoder.encode(week) {
@@ -37,9 +37,6 @@ class WeekStorage {
             let weekKey = "\(week.fromDate)-\(week.toDate)"
             
             defaults.set(encodedWeek, forKey: weekKey)
-            return true
         }
-        
-        return false
     }
 }

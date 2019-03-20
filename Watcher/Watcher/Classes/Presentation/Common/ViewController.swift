@@ -9,16 +9,32 @@
 import Foundation
 import UIKit
 
+// MARK: - Расширение отвечает за работу с дочерними контроллерами
 extension UIViewController {
     
+    // MARK: - Public Methods
+    
+    /// Добавление дочернего контроллера
+    ///
+    /// - Parameters:
+    ///   - childController: контроллер, который хотим добавить
+    ///   - viewContainer: контейнер родительского контроллера, в который хотим добавить дочерний контроллер
     public func addChildViewController(_ childController: UIViewController, to viewContainer: UIView) {
+        
         addChild(childController)
-        childController.view.frame = CGRect(
-            x: 0.0,
-            y: 0.0,
-            width: viewContainer.frame.size.width,
-            height: viewContainer.frame.size.height)
         viewContainer.addSubview(childController.view)
+        
+        childController.view.translatesAutoresizingMaskIntoConstraints = false
+        let bottom = childController.view.bottomAnchor.constraint(
+            equalTo: viewContainer.bottomAnchor)
+        let leading = childController.view.leadingAnchor.constraint(
+            equalTo: viewContainer.leadingAnchor)
+        let trailing = childController.view.trailingAnchor.constraint(
+            equalTo: viewContainer.trailingAnchor)
+        let height = childController.view.heightAnchor.constraint(
+            equalTo: viewContainer.heightAnchor)
+        NSLayoutConstraint.activate([bottom, leading, trailing, height])
+        
         childController.didMove(toParent: self)
     }
     

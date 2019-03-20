@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DynamicHeightViewController" customModule="Watcher" customModuleProvider="target">
+            <connections>
+                <outlet property="containerView" destination="TwB-EQ-GEc" id="QGC-rc-ezJ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8dI-E2-ZGL" userLabel="Black View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="lVw-2h-9CV" appends="YES" id="5nz-QS-OeF"/>
+                    </connections>
+                </view>
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="500" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="663" translatesAutoresizingMaskIntoConstraints="NO" id="1Bn-Do-1V4" userLabel="Rounded View">
+                    <rect key="frame" x="0.0" y="36" width="375" height="647"/>
+                    <subviews>
+                        <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="500" insetsLayoutMarginsFromSafeArea="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMS-oO-xi1">
+                            <rect key="frame" x="0.0" y="24" width="375" height="607"/>
+                            <subviews>
+                                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="375" placeholderIntrinsicHeight="607" translatesAutoresizingMaskIntoConstraints="NO" id="TwB-EQ-GEc" userLabel="Container View">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="607"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="TwB-EQ-GEc" firstAttribute="centerX" secondItem="GMS-oO-xi1" secondAttribute="centerX" id="B9E-3l-MTf"/>
+                                <constraint firstItem="TwB-EQ-GEc" firstAttribute="top" secondItem="GMS-oO-xi1" secondAttribute="top" id="DJQ-gy-dtT"/>
+                                <constraint firstItem="TwB-EQ-GEc" firstAttribute="height" secondItem="GMS-oO-xi1" secondAttribute="height" priority="750" id="UJ7-oi-RS1"/>
+                                <constraint firstAttribute="bottom" secondItem="TwB-EQ-GEc" secondAttribute="bottom" id="Vl3-52-yz9"/>
+                                <constraint firstAttribute="trailing" secondItem="TwB-EQ-GEc" secondAttribute="trailing" id="eGy-se-cl5"/>
+                                <constraint firstItem="TwB-EQ-GEc" firstAttribute="leading" secondItem="GMS-oO-xi1" secondAttribute="leading" id="lPC-4F-hTp"/>
+                            </constraints>
+                        </scrollView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="GMS-oO-xi1" firstAttribute="top" secondItem="1Bn-Do-1V4" secondAttribute="top" constant="24" id="9sF-nV-uHS"/>
+                        <constraint firstItem="GMS-oO-xi1" firstAttribute="leading" secondItem="1Bn-Do-1V4" secondAttribute="leading" id="BpL-KM-5IM"/>
+                        <constraint firstAttribute="trailing" secondItem="GMS-oO-xi1" secondAttribute="trailing" id="Yvg-md-o5q"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="GMS-oO-xi1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="3B0-xa-fsI"/>
+                <constraint firstItem="1Bn-Do-1V4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="48k-PR-vWw"/>
+                <constraint firstAttribute="trailing" secondItem="8dI-E2-ZGL" secondAttribute="trailing" id="A2u-si-Dof"/>
+                <constraint firstItem="8dI-E2-ZGL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BtI-7x-9gd"/>
+                <constraint firstAttribute="bottom" secondItem="8dI-E2-ZGL" secondAttribute="bottom" id="Bzo-ek-zY3"/>
+                <constraint firstItem="1Bn-Do-1V4" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="16" id="C7T-5C-5YK"/>
+                <constraint firstItem="8dI-E2-ZGL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ewl-Ym-rTL"/>
+                <constraint firstItem="1Bn-Do-1V4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="f9b-Ts-vG6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="1Bn-Do-1V4" secondAttribute="top" priority="750" id="pIP-Bv-C9D"/>
+                <constraint firstItem="1Bn-Do-1V4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="xRK-f8-KL4"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="154.27286356821591"/>
+        </view>
+        <tapGestureRecognizer id="lVw-2h-9CV">
+            <connections>
+                <action selector="disableAreaDidTapped:" destination="-1" id="Fl6-1R-iCO"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+</document>

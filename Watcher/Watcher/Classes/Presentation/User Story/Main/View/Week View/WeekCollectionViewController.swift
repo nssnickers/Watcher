@@ -19,17 +19,8 @@ class WeekCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        collectionView?.register(
-            UINib(nibName: dayCollectionViewCell, bundle: nil),
-            forCellWithReuseIdentifier: reuseIdentifier)
-
-        collectionView?.backgroundColor = Colors.white
-        collectionView.showsVerticalScrollIndicator = false
-        collectionView.showsHorizontalScrollIndicator = false
-        
-        if UIScreen.main.traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
+        setupCollection()
+        register3DTouch()
     }
     
     
@@ -43,6 +34,15 @@ class WeekCollectionViewController: UICollectionViewController {
     public func setupWithDays(_ days: [DayViewModel]) {
         self.days = days
         collectionView.reloadData()
+    }
+    
+    
+    public func selectItemWithDate(_ date: Date) {
+        var item = Calendar.current.dateComponents([.weekday], from: date).weekday!
+        item = (item + 7 - 2) % 7
+        
+        let indexPath = IndexPath(item: item, section: 0)
+        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
     }
     
     
@@ -73,12 +73,43 @@ class WeekCollectionViewController: UICollectionViewController {
         // swiftlint:enable force_cast
         
         if let day = days?[indexPath.item] {
-            let logDataSource = LogDataSource(logs: day.logModels ?? [])
+            let logDataSource = LogDataSource(logs: day.logModels)
             cell.setupWithDayModel(day, dataSource: logDataSource)
             cell.delegate = self
         }
         
         return cell
+    }
+    
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var currentCellOffset = collectionView?.contentOffset
+        currentCellOffset!.x += collectionView.frame.size.width / 2
+        let indexPath = collectionView?.indexPathForItem(at: currentCellOffset!)
+        
+        if let indexPath = indexPath {
+            collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }
+    }
+    
+    
+    // MARK: - Private Properties
+    
+    private func setupCollection() {
+        collectionView?.register(
+            UINib(nibName: dayCollectionViewCell, bundle: nil),
+            forCellWithReuseIdentifier: reuseIdentifier)
+        
+        collectionView?.backgroundColor = Colors.white
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+    }
+    
+    
+    private func register3DTouch() {
+        if UIScreen.main.traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
     }
 }
 
@@ -129,7 +160,7 @@ extension WeekCollectionViewController: UIViewControllerPreviewingDelegate {
         
         timeLogViewController.preferredContentSize = .zero
         
-        if let logModel = days?[collectionViewIndexPath.item].logModels?[logItem] {
+        if let logModel = days?[collectionViewIndexPath.item].logModels[logItem] {
             timeLogViewController.logModel = logModel
         }
         

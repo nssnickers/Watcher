@@ -88,4 +88,11 @@ struct Api {
         static let obtainAll = "projects/"
     }
     
+    
+    /// Запросы для работы с производственным календарем
+    struct Calendar {
+        
+        /// Получить дни производственного календаря из заданного диапазона
+        static let obtain = "calendar/"
+    }
 }
