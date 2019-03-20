@@ -55,4 +55,18 @@ struct RangeCalculator {
         
         return getWeekByDate(dayPreviusWeek)
     }
+    
+    
+    func getNextMonthByDate(_ date: Date) -> LogTimeRange {
+        let nextMonthDate = gregorian.date(byAdding: .month, value: 1, to: date)! //TODO: обработка ошибок
+        
+        return getMonthByDate(nextMonthDate)
+    }
+    
+    
+    func getPreviusMonthByDate(_ date: Date) -> LogTimeRange {
+        let previusMonthDate = gregorian.date(byAdding: .month, value: -1, to: date)! //TODO: обработка ошибок
+        
+        return getMonthByDate(previusMonthDate)
+    }
 }

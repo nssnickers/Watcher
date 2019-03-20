@@ -16,6 +16,8 @@ final class DynamicHeightViewController: UIViewController {
     /// Контент вью контроллер, определяет поведение и внешний вид контента
     var containerViewController: UIViewController?
     
+    private var swipeInteractionController: SwipeInteractionController?
+    
     override var modalPresentationStyle: UIModalPresentationStyle {
         get {
             return .overCurrentContext
@@ -34,13 +36,15 @@ final class DynamicHeightViewController: UIViewController {
         super.viewDidLoad()
         
         setupChilds()
+        
+        swipeInteractionController = SwipeInteractionController(viewController: self, containerView: containerView)
     }
     
     
     // MARK: - IBAction
     
     @IBAction private func disableAreaDidTapped(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+//        dismiss(animated: true, completion: nil)
     }
     
     

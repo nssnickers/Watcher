@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CalendarDayReuseIdentifier" id="gTV-IL-0wX" customClass="CalendarCellCollectionViewCell" customModule="Watcher" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="53" height="48"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="53" height="48"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mRi-rO-AOM" userLabel="Circle View">
+                        <rect key="frame" x="8.5" y="6" width="36" height="36"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="mRi-rO-AOM" secondAttribute="height" multiplier="1:1" id="YAA-8C-vk7"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="18"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="31" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-hZ-z5H">
+                        <rect key="frame" x="18.5" y="16" width="16" height="16"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="16" id="oy7-kg-6DB"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="16"/>
+                        <color key="textColor" red="0.66799789669999998" green="0.47512125970000002" blue="0.25860109930000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="highlightedColor" name="white"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="Tag-hZ-z5H" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0Ua-z3-ehP"/>
+                <constraint firstItem="Tag-hZ-z5H" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="Aur-9o-c5T"/>
+                <constraint firstItem="mRi-rO-AOM" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.75" id="AvS-o0-rDD"/>
+                <constraint firstItem="mRi-rO-AOM" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="KGT-AS-h3w"/>
+                <constraint firstItem="Tag-hZ-z5H" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="N7W-Z5-b50"/>
+                <constraint firstItem="Tag-hZ-z5H" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gTV-IL-0wX" secondAttribute="top" constant="16" id="c9z-dk-lZS"/>
+                <constraint firstItem="mRi-rO-AOM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="f2b-41-UJG"/>
+            </constraints>
+            <size key="customSize" width="98" height="96"/>
+            <connections>
+                <outlet property="circleView" destination="mRi-rO-AOM" id="v1b-RW-MjE"/>
+                <outlet property="dayLabel" destination="Tag-hZ-z5H" id="n0w-hi-srh"/>
+            </connections>
+            <point key="canvasLocation" x="-108.8" y="26.086956521739133"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

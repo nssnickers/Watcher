@@ -31,41 +31,17 @@ final class MainMediatingController {
     
     // MARK: - Public Methods
     
+    public func loadWeekForDate(_ date: Date? = Date()) {
+        let weekRange = rangeCalculator.getWeekByDate(date!)
+        
+        loadDataWithWeekRange(weekRange) {
+            self.delegate?.selectItemWithDate(date!)
+        }
+    }
+    
+    
     public func loadWeekForRange(_ range: LogTimeRange? = nil) {
-        let currentDate = Date()
-        let monthRange = rangeCalculator.getMonthByDate(currentDate)
-        
-        if range != nil {
-            self.range = range
-        } else {
-            self.range = rangeCalculator.getWeekByDate(currentDate)
-        }
-        
-        if self.range != nil,
-            let weekFromPersistency = weekStorage.getWeekByRange(self.range!) {
-            delegate?.updateInterfaceWithWeek(weekFromPersistency)
-        }
-        
-        delegate?.startLoadingAnimation()
-        
-        logService.obtainLogForRange(monthRange) { (result) in
-            switch result {
-            case .success(let monthDays):
-                
-                self.logService.obtainLogForRange(range, { (result) in
-                    switch result {
-                    case .success(let weekDays):
-                        let weekModel = self.weekMapper.mapWeekFromDays(weekDays, monthDays: monthDays)
-                        self.weekStorage.setWeek(weekModel)
-                        self.delegate?.updateInterfaceWithWeek(weekModel)
-                    case .error:
-                        self.delegate?.alertWithMessage("") //TODO: нормальная обработка ошибок
-                    }
-                })
-            case .error:
-                self.delegate?.alertWithMessage("") //TODO: нормальная обработка ошибок
-            }
-        }
+        loadDataWithWeekRange(range)
     }
     
     
@@ -91,10 +67,56 @@ final class MainMediatingController {
         
         loadWeekForRange(range)
     }
+    
+    
+    // MARK: - Private Methods
+    
+    private func loadDataWithWeekRange(_ range: LogTimeRange?, success: (() -> Void)? = nil) {
+        let currentDate = Date()
+        let monthRange = rangeCalculator.getMonthByDate(currentDate)
+        
+        var weekRange = range
+        if weekRange == nil {
+            weekRange = rangeCalculator.getWeekByDate(currentDate)
+        }
+        
+        self.range = weekRange
+        
+        if self.range != nil,
+            let weekFromPersistency = weekStorage.getWeekByRange(self.range!) {
+            delegate?.updateInterfaceWithWeek(weekFromPersistency)
+        }
+        
+        delegate?.startLoadingAnimation()
+        
+        logService.obtainLogForRange(monthRange) { (result) in
+            switch result {
+            case .success(let monthDays):
+                
+                self.logService.obtainLogForRange(weekRange, { (result) in
+                    switch result {
+                    case .success(let weekDays):
+                        let weekModel = self.weekMapper.mapWeekFromDays(weekDays, monthDays: monthDays)
+                        self.weekStorage.setWeek(weekModel)
+                        self.delegate?.updateInterfaceWithWeek(weekModel)
+                        
+                        if let success = success {
+                            success()
+                        }
+                    case .error:
+                        self.delegate?.alertWithMessage("") //TODO: нормальная обработка ошибок
+                    }
+                })
+            case .error:
+                self.delegate?.alertWithMessage("") //TODO: нормальная обработка ошибок
+            }
+        }
+    }
 }
 
 protocol MainMediatingControllerDelegate: class {
     func updateInterfaceWithWeek(_ week: WeekModel)
+    func selectItemWithDate(_ date: Date)
     func startLoadingAnimation()
     func stopLoadingAnimation()
     func alertWithMessage(_ message: String)

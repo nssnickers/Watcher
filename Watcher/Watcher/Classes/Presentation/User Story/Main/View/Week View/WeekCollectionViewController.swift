@@ -37,6 +37,15 @@ class WeekCollectionViewController: UICollectionViewController {
     }
     
     
+    public func selectItemWithDate(_ date: Date) {
+        var item = Calendar.current.dateComponents([.weekday], from: date).weekday!
+        item = (item + 7 - 2) % 7
+        
+        let indexPath = IndexPath(item: item, section: 0)
+        collectionView?.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+    }
+    
+    
     // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {

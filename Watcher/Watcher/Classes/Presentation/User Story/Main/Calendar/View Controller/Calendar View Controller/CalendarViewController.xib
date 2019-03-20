@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Bold.ttf">
+            <string>SourceSansPro-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CalendarViewController" customModule="Watcher" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonView" destination="byu-AM-l78" id="TkB-Vp-DMo"/>
+                <outlet property="buttonViewHeight" destination="cAn-Jq-Wfc" id="BMe-vq-S2s"/>
+                <outlet property="logTimeButton" destination="9Pu-3P-DSp" id="EZU-uV-sas"/>
+                <outlet property="monthContainerView" destination="374-xk-gen" id="1T0-k0-e2C"/>
+                <outlet property="monthToggleContainerView" destination="La0-oz-snh" id="Lj0-pV-0iI"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="455"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="La0-oz-snh" userLabel="Month Toggle Container View">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="80" id="BPr-pG-xxH"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="374-xk-gen" userLabel="Month Container View">
+                    <rect key="frame" x="0.0" y="86" width="375" height="369"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="750" constant="270" id="xBo-Ww-IIS"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="byu-AM-l78" userLabel="Button View">
+                    <rect key="frame" x="0.0" y="455" width="375" height="0.0"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pu-3P-DSp">
+                            <rect key="frame" x="16" y="16" width="343" height="35"/>
+                            <color key="backgroundColor" name="orangeyRed"/>
+                            <constraints>
+                                <constraint firstAttribute="height" relation="lessThanOrEqual" priority="999" constant="48" id="OJ6-k8-SAd"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="SourceSansPro-Bold" family="Source Sans Pro" pointSize="18"/>
+                            <state key="normal" title="Списать">
+                                <color key="titleColor" name="white"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                    <integer key="value" value="16"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="logTimeButtonDidTapped:" destination="-1" eventType="touchUpInside" id="2PE-zy-4Qi"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9Pu-3P-DSp" secondAttribute="trailing" constant="16" id="EMH-sW-tQq"/>
+                        <constraint firstItem="9Pu-3P-DSp" firstAttribute="leading" secondItem="byu-AM-l78" secondAttribute="leading" constant="16" id="Hca-md-8Oe"/>
+                        <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="9Pu-3P-DSp" secondAttribute="bottom" constant="16" id="Yo7-DY-kbC"/>
+                        <constraint firstAttribute="height" id="cAn-Jq-Wfc" userLabel="height = 0"/>
+                        <constraint firstItem="9Pu-3P-DSp" firstAttribute="top" secondItem="byu-AM-l78" secondAttribute="top" constant="16" id="mBA-JG-qh3"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="byu-AM-l78" firstAttribute="top" secondItem="374-xk-gen" secondAttribute="bottom" id="265-p2-TeL"/>
+                <constraint firstItem="374-xk-gen" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="EAF-kz-cwy"/>
+                <constraint firstItem="La0-oz-snh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="JaX-Wb-7Ik"/>
+                <constraint firstAttribute="trailing" secondItem="374-xk-gen" secondAttribute="trailing" id="QPU-bx-13s"/>
+                <constraint firstItem="La0-oz-snh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="UR1-L2-Sbe"/>
+                <constraint firstItem="374-xk-gen" firstAttribute="top" secondItem="La0-oz-snh" secondAttribute="bottom" constant="6" id="UhK-ki-TQR"/>
+                <constraint firstAttribute="bottom" secondItem="byu-AM-l78" secondAttribute="bottom" id="V5x-vM-rwp"/>
+                <constraint firstAttribute="trailing" secondItem="La0-oz-snh" secondAttribute="trailing" id="cC0-Kb-eCg"/>
+                <constraint firstItem="byu-AM-l78" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hvp-dE-gaf"/>
+                <constraint firstAttribute="trailing" secondItem="byu-AM-l78" secondAttribute="trailing" id="i6b-7V-eA8"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-103.2" y="103.89805097451276"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="orangeyRed">
+            <color red="1" green="0.26666666666666666" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="white">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

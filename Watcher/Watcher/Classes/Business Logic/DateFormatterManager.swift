@@ -38,6 +38,13 @@ struct DateFormatterManager {
         return dateFormatter
     }
     
+    static var monthYearDateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMMM, yyyy"
+        
+        return dateFormatter
+    }
+    
     static var dayLiteralMonthDateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd MMMM"

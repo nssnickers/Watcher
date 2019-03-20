@@ -49,6 +49,49 @@ final class MainViewController: UIViewController {
     }
     
     
+    // MARK: - IBAction
+    
+    
+    fileprivate func presentCalendarViewControllerWith(_ presenter: CalendarPresenter) {
+        
+        let calendarViewController = CalendarViewController(nibName: nil, bundle: nil)
+        calendarViewController.presenter = presenter
+        
+        presenter.viewController = calendarViewController
+        
+        let dynamicRootController = DynamicHeightViewController(nibName: nil, bundle: nil)
+        dynamicRootController.containerViewController = calendarViewController
+        present(dynamicRootController, animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func vacationDidTapped(_ sender: Any) {
+        /// id для отпуска
+        let vacationProjectId = 18
+        
+        let presenter = ActivityPresenter(with: vacationProjectId)
+        presentCalendarViewControllerWith(presenter)
+        
+    }
+    
+    
+    @IBAction func sickDidTapped(_ sender: Any) {
+        /// id для болезни
+        let sickProjectId = 19
+        
+        let presenter = ActivityPresenter(with: sickProjectId)
+        presentCalendarViewControllerWith(presenter)
+    }
+    
+    
+    @IBAction func calendarButtonTapped(_ sender: Any) {
+        let presenter = SelectDatePresenter()
+        presenter.delegate = self
+        
+        presentCalendarViewControllerWith(presenter)
+    }
+    
+    
     // MARK: - Private Methods
     
     private func setupChilds() {
@@ -98,19 +141,27 @@ extension MainViewController: RangeDelegate {
 
 extension MainViewController: MainMediatingControllerDelegate {
     
+    func selectItemWithDate(_ date: Date) {
+        weekViewController?.selectItemWithDate(date)
+    }
+    
+    
     func startLoadingAnimation() {
         // TODO: реализовать
     }
+    
     
     func stopLoadingAnimation() {
         // TODO: реализовать
     }
     
+    
     func alertWithMessage(_ message: String) {
         // TODO: реализовать
     }
     
-    public func updateInterfaceWithWeek(_ week: WeekModel) {
+    
+    func updateInterfaceWithWeek(_ week: WeekModel) {
         let rangeVeiwModel = RangeViewModel(weekModel: week)
         rangeViewController?.setupWithModel(rangeVeiwModel)
         
@@ -118,5 +169,13 @@ extension MainViewController: MainMediatingControllerDelegate {
             return DayViewModel(day: day)
         })
         weekViewController?.setupWithDays(dayViewModels)
+    }
+}
+
+
+extension MainViewController: SelectDatePresenterDelegate {
+    
+    func selectDate(_ date: Date) {
+        mediatingController.loadWeekForDate(date)
     }
 }

@@ -55,6 +55,12 @@ struct Colors {
     
     /// Серебряный
     static let silver = UIColor(named: "silver")
+    
+    /// Угольно-серый
+    static let charcoalGrey = UIColor(named: "charcoalGrey")
+    
+    /// Облачно-голубой
+    static let cloudyBlue = UIColor(named: "cloudyBlue")
 }
 
 // MARK: - Alert
