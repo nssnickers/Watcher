@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SourceSansPro-Regular.ttf">
+            <string>SourceSansPro-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MonthToggleViewController" customModule="Watcher" customModuleProvider="target">
+            <connections>
+                <outlet property="monthLabel" destination="jXW-eU-WaC" id="wni-ZE-Ef1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="gsQ-ym-iOJ"/>
+                <outlet property="weekDayCollection" destination="y2s-4p-0ru" id="WuA-mE-uIc"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zzn-BY-IFr" userLabel="Next Month Button">
+                    <rect key="frame" x="335" y="0.0" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="JUu-5e-rNi"/>
+                        <constraint firstAttribute="width" secondItem="zzn-BY-IFr" secondAttribute="height" multiplier="1:1" id="ShJ-ri-ior"/>
+                    </constraints>
+                    <state key="normal" image="icnArrowForward"/>
+                    <connections>
+                        <action selector="nextMonthButtonTapped:" destination="-1" eventType="touchUpInside" id="Su5-1y-d7l"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFY-gw-bnL" userLabel="Previus Month Button">
+                    <rect key="frame" x="16" y="0.0" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="24" id="7kX-Ld-gvp"/>
+                        <constraint firstAttribute="width" secondItem="wFY-gw-bnL" secondAttribute="height" multiplier="1:1" id="d15-gg-j98"/>
+                    </constraints>
+                    <state key="normal" image="icnArrowBack"/>
+                    <connections>
+                        <action selector="previusMonthButtonTapped:" destination="-1" eventType="touchUpInside" id="1BA-m8-MX3"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Февраль, 2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jXW-eU-WaC" userLabel="Month Year Label">
+                    <rect key="frame" x="131.5" y="0.0" width="112.5" height="18"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="18" id="u1a-Cy-pv0"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="18"/>
+                    <color key="textColor" name="charcoalGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u41-e1-wVb" userLabel="UnderLine View">
+                    <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                    <color key="backgroundColor" name="silver"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="0oT-Md-amX"/>
+                    </constraints>
+                </view>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" prefetchingEnabled="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2s-4p-0ru" userLabel="Week Day Collection View">
+                    <rect key="frame" x="2" y="47" width="371" height="20"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="1Ln-rN-IfQ">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Tnv-tM-bvl"/>
+                        <outlet property="delegate" destination="-1" id="wCh-7h-Jgw"/>
+                    </connections>
+                </collectionView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="zzn-BY-IFr" secondAttribute="trailing" constant="16" id="2CY-h8-wY6"/>
+                <constraint firstItem="jXW-eU-WaC" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="7ef-aV-Chn"/>
+                <constraint firstItem="wFY-gw-bnL" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="82e-L9-GvX"/>
+                <constraint firstItem="zzn-BY-IFr" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="9qL-5e-rbm"/>
+                <constraint firstItem="jXW-eU-WaC" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="CKL-hv-U69"/>
+                <constraint firstItem="y2s-4p-0ru" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="47" id="E4J-5l-ew3"/>
+                <constraint firstAttribute="trailing" secondItem="y2s-4p-0ru" secondAttribute="trailing" constant="2" id="FLT-lm-h2o"/>
+                <constraint firstItem="u41-e1-wVb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HNu-j8-dWR"/>
+                <constraint firstItem="y2s-4p-0ru" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="2" id="bIc-NY-HWV"/>
+                <constraint firstAttribute="bottom" secondItem="u41-e1-wVb" secondAttribute="bottom" id="jlw-fV-w0s"/>
+                <constraint firstItem="u41-e1-wVb" firstAttribute="top" secondItem="y2s-4p-0ru" secondAttribute="bottom" constant="12" id="naZ-He-eGr"/>
+                <constraint firstAttribute="trailing" secondItem="u41-e1-wVb" secondAttribute="trailing" id="xtb-nr-Zp6"/>
+                <constraint firstItem="wFY-gw-bnL" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="zh7-TS-TLl"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="143.19999999999999" y="154.72263868065968"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icnArrowBack" width="24" height="24"/>
+        <image name="icnArrowForward" width="24" height="24"/>
+        <namedColor name="charcoalGrey">
+            <color red="0.22699999809265137" green="0.23499999940395355" blue="0.24699999392032623" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="silver">
+            <color red="0.83137254901960789" green="0.85098039215686272" blue="0.87450980392156863" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

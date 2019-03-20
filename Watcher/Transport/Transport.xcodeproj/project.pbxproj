@@ -23,6 +23,8 @@
 		B23C1232221CBEAA00D7D2BE /* TimeLogEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C1218221CBB1000D7D2BE /* TimeLogEndpoint.swift */; };
 		B23C1233221CBEAE00D7D2BE /* ProjectEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C1219221CBB1000D7D2BE /* ProjectEndpoint.swift */; };
 		B23C1234221CBEB200D7D2BE /* ApiResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C122A221CBB8200D7D2BE /* ApiResponse.swift */; };
+		B25AF474223BD0540007D454 /* CalendarEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AF473223BD0540007D454 /* CalendarEndpoint.swift */; };
+		B25AF476223BD1320007D454 /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AF475223BD1320007D454 /* CalendarDay.swift */; };
 		B25F6159222EA93600FB6CCE /* ApiClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F6158222EA93600FB6CCE /* ApiClientError.swift */; };
 		B29D6205222D8B330079BD72 /* TimeToUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D6204222D8B330079BD72 /* TimeToUpdate.swift */; };
 		B29D6207222D8BA00079BD72 /* TimeUpdateEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D6206222D8BA00079BD72 /* TimeUpdateEndpoint.swift */; };
@@ -74,6 +76,8 @@
 		B23C1227221CBB6F00D7D2BE /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		B23C1228221CBB6F00D7D2BE /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		B23C122A221CBB8200D7D2BE /* ApiResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResponse.swift; sourceTree = "<group>"; };
+		B25AF473223BD0540007D454 /* CalendarEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarEndpoint.swift; sourceTree = "<group>"; };
+		B25AF475223BD1320007D454 /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		B25F6158222EA93600FB6CCE /* ApiClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientError.swift; sourceTree = "<group>"; };
 		B29D6204222D8B330079BD72 /* TimeToUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToUpdate.swift; sourceTree = "<group>"; };
 		B29D6206222D8BA00079BD72 /* TimeUpdateEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpdateEndpoint.swift; sourceTree = "<group>"; };
@@ -173,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				B23C1217221CBB1000D7D2BE /* AuthOutstaffEndpoint.swift */,
+				B25AF473223BD0540007D454 /* CalendarEndpoint.swift */,
 				B2EA145B22268D75000F5A5D /* ObtainLogEndpoint.swift */,
 				B23C1219221CBB1000D7D2BE /* ProjectEndpoint.swift */,
 				B23C1218221CBB1000D7D2BE /* TimeLogEndpoint.swift */,
@@ -192,6 +197,7 @@
 		B23C121B221CBB3A00D7D2BE /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B25AF475223BD1320007D454 /* CalendarDay.swift */,
 				B2EA145922268BC5000F5A5D /* Day.swift */,
 				B23C121D221CBB3A00D7D2BE /* LoggedTime.swift */,
 				B2EA145D22268E53000F5A5D /* LogTimeRange.swift */,
@@ -431,10 +437,12 @@
 				B29D6205222D8B330079BD72 /* TimeToUpdate.swift in Sources */,
 				B29D6207222D8BA00079BD72 /* TimeUpdateEndpoint.swift in Sources */,
 				B2EA146722271334000F5A5D /* CodingManager.swift in Sources */,
+				B25AF476223BD1320007D454 /* CalendarDay.swift in Sources */,
 				B23C122F221CBE8D00D7D2BE /* ApiClient.swift in Sources */,
 				B23C1223221CBB3A00D7D2BE /* User.swift in Sources */,
 				B2EA145A22268BC5000F5A5D /* Day.swift in Sources */,
 				B25F6159222EA93600FB6CCE /* ApiClientError.swift in Sources */,
+				B25AF474223BD0540007D454 /* CalendarEndpoint.swift in Sources */,
 				B23C1230221CBE9000D7D2BE /* Endpoint.swift in Sources */,
 				B23C1215221CBAFC00D7D2BE /* Client.swift in Sources */,
 				B23C1233221CBEAE00D7D2BE /* ProjectEndpoint.swift in Sources */,

@@ -9,31 +9,38 @@
 import Foundation
 import Transport
 
+/// Вью модель для залогированного времени
 struct LogViewModel {
     
-    public var projectNameLabel: String {
-        return log.project?.name ?? ""
-    }
+    /// Название проекта
+    let projectNameLabel: String
     
-    public var descriptionLabel: String {
-        return log.description
-    }
+    /// Описание
+    let descriptionLabel: String
     
-    public var spentHourLabel: String {
-        return "\(Double(log.minutesSpent) / 60.0)" + " ч"
-    }
+    /// Списанные часы
+    let spentHourLabel: String
     
-    public var identifier: Int {
-        return log.id
-    }
+    /// айди лога
+    let identifier: Int
     
-    public var spentMinutes: Int {
-        return log.minutesSpent
-    }
+    /// Списанные минуты
+    let spentMinutes: Int
     
-    private var log: LoggedTime
     
+    /// Инициализатор вью модели списанного времени
+    ///
+    /// - Parameter log: модель списанного времени
     init(log: LoggedTime) {
-        self.log = log
+        projectNameLabel = log.project?.name ?? ""
+        
+        descriptionLabel = log.description
+        
+        let spentHour = Double(log.minutesSpent) / 60.0
+        spentHourLabel = String(format: "%.1f ч", spentHour)
+        
+        identifier = log.id
+        
+        spentMinutes = log.minutesSpent
     }
 }

@@ -9,48 +9,51 @@
 import Foundation
 import Transport
 
+
+/// День недели
 struct DayViewModel {
     
-    public var dayMonthDateLabel: String {
-        let date = DateFormatterManager.baseDateFormatter.date(from: day.date)!
-        return DateFormatterManager.dayMonthDateFormatter.string(from: date)
-    }
+    /// Дата в формате "dd.MM"
+    let dayMonthDateLabel: String
     
-    public var weekDayLabel: String {
-        let date = DateFormatterManager.baseDateFormatter.date(from: day.date)!
-        return DateFormatterManager.weekDayLiteralDateFormatter.string(from: date).capitalized
-    }
+    /// Локализированный день недели
+    let weekDayLabel: String
     
-    public var remainingHourLabel: String {
+    /// Количество списаных часов за эту неделю
+    let remainingHourLabel: String
+    
+    /// Рабочий ли это день
+    let isAddLogButtonEnabled: Bool
+    
+    /// Дата в формате YYYY-MM-DD
+    let date: String
+    
+    /// Модели для отображения списаного времени
+    let logModels: [LogViewModel]
+    
+    
+    /// Инициализатор вью модели дня
+    ///
+    /// - Parameter day: день Day
+    init(day: Day) {
+        let date = DateFormatterManager.baseDateFormatter.date(from: day.date)!
+        
+        dayMonthDateLabel = DateFormatterManager.dayMonthDateFormatter.string(from: date)
+        weekDayLabel = DateFormatterManager.weekDayLiteralDateFormatter.string(from: date).capitalized
+        
         let remainingMinets = day.loggedTimeRecords.reduce(0) { (result, log) -> Int in
             log.minutesSpent + result
         }
-        
         let remainingHour = Double(remainingMinets) / 60.0
+        remainingHourLabel = String(format: "%.1f", remainingHour) + " ч"
         
-        return String(format: "%.1f", remainingHour) + " ч"
-    }
-    
-    public var isAddLogButtonEnabled: Bool {
-        let currentDate = Date()
-        let date = DateFormatterManager.baseDateFormatter.date(from: day.date)! //TODO: обработка ошибок
+        isAddLogButtonEnabled = day.isWorking && date <= Date()
         
-        return day.isWorking && date <= currentDate
-    }
-    
-    public var date: String {
-        return day.date
-    }
-    
-    public var logModels: [LogViewModel]? {
-        return day.loggedTimeRecords.map({ (log) -> LogViewModel in
+        
+        self.date = day.date
+        
+        logModels = day.loggedTimeRecords.map({ (log) -> LogViewModel in
             return LogViewModel(log: log)
         })
-    }
-    
-    private var day: Day
-    
-    init(day: Day) {
-        self.day = day
     }
 }

@@ -27,10 +27,10 @@ final class RangeViewController: UIViewController {
     
     
     public func setupWithModel(_ model: RangeViewModel) {
-        weekProgressLabel?.text = model.weekSpentTime
-        dateRangeLabel?.text = model.timeRange
+        weekProgressLabel?.text = model.weekSpentTimeLabel
+        dateRangeLabel?.text = model.timeRangeLabel
         logProgressView.progress = Float(model.weekSpentTimePercent)
-        monthProgressWiew?.text = model.monthExpectedTime
+        monthProgressWiew?.text = model.monthExpectedTimeLabel
     }
     
     

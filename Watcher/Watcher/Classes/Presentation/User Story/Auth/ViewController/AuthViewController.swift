@@ -21,7 +21,7 @@ class AuthViewController: UIViewController {
     private var activityIndicator = UIActivityIndicatorView(style: .gray)
     private var activeTextField: UITextField?
     private var keyboardHandler: KeyboardHandler?
-    
+        
     // MARK: - IBOutlet
     
     @IBOutlet private weak var employeLoginButton: UIButton!
