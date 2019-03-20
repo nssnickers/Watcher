@@ -8,10 +8,10 @@
 
 Задание | Cтатус выполнения
 ------------ | -------------
-Базовая часть  | :heavy_minus_sign:
+Базовая часть  | :white_check_mark:
 Интерактивное закрытие экрана | :heavy_minus_sign:
-Анимация кнопки “Заполнить” | :heavy_minus_sign:
-Анимация выбора периода | :heavy_minus_sign:
+Анимация кнопки “Заполнить” | :white_check_mark:
+Анимация выбора периода | :white_check_mark:
 Loader | :heavy_minus_sign:
 
 TODO:
