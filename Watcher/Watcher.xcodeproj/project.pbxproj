@@ -66,10 +66,19 @@
 		B2D6670F222BF96F0083FEC3 /* DayCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D6670D222BF96F0083FEC3 /* DayCollectionViewCell.xib */; };
 		B2D66712222BFD940083FEC3 /* LogCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D66710222BFD940083FEC3 /* LogCollectionViewCell.swift */; };
 		B2D66713222BFD940083FEC3 /* LogCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2D66711222BFD940083FEC3 /* LogCollectionViewCell.xib */; };
+		B2DB705E224A51A0006D553F /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB705D224A51A0006D553F /* DAO.swift */; };
+		B2DB7060224A523F006D553F /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2DB705F224A523F006D553F /* Entity.swift */; };
 		B2E8B74C22156AF3007FA08D /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B74A22156AF3007FA08D /* ProjectsViewController.swift */; };
 		B2E8B755221595FA007FA08D /* ProjectService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B754221595FA007FA08D /* ProjectService.swift */; };
 		B2E8B75922160946007FA08D /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E8B75722160946007FA08D /* ProjectTableViewCell.swift */; };
 		B2E8B75A22160946007FA08D /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2E8B75822160946007FA08D /* ProjectTableViewCell.xib */; };
+		B2E9677D224A595E00C35358 /* RealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9677C224A595E00C35358 /* RealmDAO.swift */; };
+		B2E9677F224A5B6800C35358 /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9677E224A5B6800C35358 /* RealmEntity.swift */; };
+		B2E96781224A8D6B00C35358 /* RealmTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E96780224A8D6B00C35358 /* RealmTranslator.swift */; };
+		B2E96788224A975D00C35358 /* CookieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E96787224A975D00C35358 /* CookieRealm.swift */; };
+		B2E9678A224A99CD00C35358 /* CookieTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E96789224A99CD00C35358 /* CookieTranslator.swift */; };
+		B2E9678C224A9A3D00C35358 /* CookieProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9678B224A9A3D00C35358 /* CookieProperties.swift */; };
+		B2E9678F224AB39900C35358 /* CookieStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2E9678E224AB39900C35358 /* CookieStorage.swift */; };
 		B2EA1454222069C5000F5A5D /* PresentationConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA1453222069C5000F5A5D /* PresentationConstants.swift */; };
 		B2EA145722267C07000F5A5D /* RangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA145522267C06000F5A5D /* RangeViewController.swift */; };
 		B2EA145822267C07000F5A5D /* RangeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B2EA145622267C07000F5A5D /* RangeViewController.xib */; };
@@ -182,10 +191,19 @@
 		B2D6670D222BF96F0083FEC3 /* DayCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayCollectionViewCell.xib; sourceTree = "<group>"; };
 		B2D66710222BFD940083FEC3 /* LogCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2D66711222BFD940083FEC3 /* LogCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LogCollectionViewCell.xib; sourceTree = "<group>"; };
+		B2DB705D224A51A0006D553F /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		B2DB705F224A523F006D553F /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		B2E8B74A22156AF3007FA08D /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
 		B2E8B754221595FA007FA08D /* ProjectService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectService.swift; sourceTree = "<group>"; };
 		B2E8B75722160946007FA08D /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		B2E8B75822160946007FA08D /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		B2E9677C224A595E00C35358 /* RealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDAO.swift; sourceTree = "<group>"; };
+		B2E9677E224A5B6800C35358 /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
+		B2E96780224A8D6B00C35358 /* RealmTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTranslator.swift; sourceTree = "<group>"; };
+		B2E96787224A975D00C35358 /* CookieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRealm.swift; sourceTree = "<group>"; };
+		B2E96789224A99CD00C35358 /* CookieTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieTranslator.swift; sourceTree = "<group>"; };
+		B2E9678B224A9A3D00C35358 /* CookieProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieProperties.swift; sourceTree = "<group>"; };
+		B2E9678E224AB39900C35358 /* CookieStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieStorage.swift; sourceTree = "<group>"; };
 		B2EA1453222069C5000F5A5D /* PresentationConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationConstants.swift; sourceTree = "<group>"; };
 		B2EA145522267C06000F5A5D /* RangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RangeViewController.swift; sourceTree = "<group>"; };
 		B2EA145622267C07000F5A5D /* RangeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RangeViewController.xib; sourceTree = "<group>"; };
@@ -389,6 +407,7 @@
 		B253DB1B2210C283001A1EDF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B2E9678D224AB38C00C35358 /* Common */,
 				B26396C9222F21780002ACC7 /* Persistency */,
 				B253DB1F2210C311001A1EDF /* Application */,
 				B253DB202210C345001A1EDF /* Business Logic */,
@@ -561,6 +580,8 @@
 			isa = PBXGroup;
 			children = (
 				B26396CA222F22750002ACC7 /* WeekStorage.swift */,
+				B2E96782224A95E200C35358 /* DAO */,
+				B2E9677B224A594F00C35358 /* RealmDAO */,
 			);
 			path = Persistency;
 			sourceTree = "<group>";
@@ -705,6 +726,68 @@
 				B2E8B75822160946007FA08D /* ProjectTableViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		B2E9677B224A594F00C35358 /* RealmDAO */ = {
+			isa = PBXGroup;
+			children = (
+				B2E96783224A970D00C35358 /* DAO */,
+				B2E96784224A971800C35358 /* Entity */,
+				B2E96786224A973800C35358 /* Objects */,
+				B2E96785224A971F00C35358 /* Translator */,
+			);
+			path = RealmDAO;
+			sourceTree = "<group>";
+		};
+		B2E96782224A95E200C35358 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				B2DB705D224A51A0006D553F /* DAO.swift */,
+				B2DB705F224A523F006D553F /* Entity.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		B2E96783224A970D00C35358 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9677C224A595E00C35358 /* RealmDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		B2E96784224A971800C35358 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9677E224A5B6800C35358 /* RealmEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B2E96785224A971F00C35358 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				B2E96780224A8D6B00C35358 /* RealmTranslator.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		B2E96786224A973800C35358 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9678B224A9A3D00C35358 /* CookieProperties.swift */,
+				B2E96787224A975D00C35358 /* CookieRealm.swift */,
+				B2E96789224A99CD00C35358 /* CookieTranslator.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B2E9678D224AB38C00C35358 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				B2E9678E224AB39900C35358 /* CookieStorage.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		B2EA1452222069C5000F5A5D /* Constants */ = {
@@ -993,12 +1076,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Watcher/Pods-Watcher-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1068,12 +1155,16 @@
 				B2FC63BB22199AC700DECB91 /* KeyboardHandler.swift in Sources */,
 				B25F6156222E613A00FB6CCE /* LogDataSource.swift in Sources */,
 				B26396CB222F22750002ACC7 /* WeekStorage.swift in Sources */,
+				B2DB705E224A51A0006D553F /* DAO.swift in Sources */,
 				B269488C223FCEFF000EA8AC /* SwipeInteractionController.swift in Sources */,
 				B2D6670E222BF96F0083FEC3 /* DayCollectionViewCell.swift in Sources */,
 				B2F3B0392240E47C00CC7AAF /* MonthToggleController.swift in Sources */,
 				B2296FD62215532F003F9228 /* MainViewController.swift in Sources */,
 				B25AF481223BD39D0007D454 /* MonthViewController.swift in Sources */,
+				B2E9678A224A99CD00C35358 /* CookieTranslator.swift in Sources */,
+				B2E96788224A975D00C35358 /* CookieRealm.swift in Sources */,
 				B2EA1454222069C5000F5A5D /* PresentationConstants.swift in Sources */,
+				B2E9678C224A9A3D00C35358 /* CookieProperties.swift in Sources */,
 				B2E8B74C22156AF3007FA08D /* ProjectsViewController.swift in Sources */,
 				B2F3B0352240E46600CC7AAF /* CalendarController.swift in Sources */,
 				B253DB4122116674001A1EDF /* AuthViewController.swift in Sources */,
@@ -1086,12 +1177,17 @@
 				B26396CD222F26C90002ACC7 /* MainMediatingController.swift in Sources */,
 				B2D666B9222724AC0083FEC3 /* WeekModel.swift in Sources */,
 				B2D66712222BFD940083FEC3 /* LogCollectionViewCell.swift in Sources */,
+				B2E9677F224A5B6800C35358 /* RealmEntity.swift in Sources */,
+				B2DB7060224A523F006D553F /* Entity.swift in Sources */,
 				B2F3B0232240274400CC7AAF /* ActivityPresenter.swift in Sources */,
 				B29D6201222D05290079BD72 /* LogViewModel.swift in Sources */,
 				B26396D42235A1920002ACC7 /* DynamicHeightViewController.swift in Sources */,
 				B29D61FF222D02060079BD72 /* DayViewModel.swift in Sources */,
+				B2E9677D224A595E00C35358 /* RealmDAO.swift in Sources */,
+				B2E9678F224AB39900C35358 /* CookieStorage.swift in Sources */,
 				B20A7CD4221A133600C28814 /* TimeLogService.swift in Sources */,
 				B25AF485223C374A0007D454 /* WeekDayCalendarCollectionViewCell.swift in Sources */,
+				B2E96781224A8D6B00C35358 /* RealmTranslator.swift in Sources */,
 				B2E8B755221595FA007FA08D /* ProjectService.swift in Sources */,
 				B253DB482212AE9D001A1EDF /* AuthService.swift in Sources */,
 				B2F3B03D2240EA5700CC7AAF /* WeekDay.swift in Sources */,
