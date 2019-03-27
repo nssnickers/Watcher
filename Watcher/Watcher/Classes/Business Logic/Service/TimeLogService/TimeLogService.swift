@@ -53,6 +53,7 @@ final class TimeLogService {
         completion: LogTimesCompletion?) {
         
         var error: ApiClientError?
+        
         var loggedTime: [LoggedTime] = []
         
         DispatchQueue.global(qos: .background).async {
@@ -81,13 +82,13 @@ final class TimeLogService {
                 }
             }
             
-            group.wait()
-            
-            if error != nil {
-                completion?(.error(error!))
-            } else {
-                completion?(.success(loggedTime))
-            }
+            group.notify(queue: .main, execute: {
+                if error != nil {
+                    completion?(.error(error!))
+                } else {
+                    completion?(.success(loggedTime))
+                }
+            })
         }
     }
 }
