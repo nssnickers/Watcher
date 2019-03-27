@@ -19,6 +19,42 @@ final class TimeLogService {
     
     private let client = Client()
     
+    private let errorQueue = DispatchQueue(label: "watcher.threadsafe.error.queue", attributes: .concurrent)
+    
+    private let logQueue = DispatchQueue(label: "watcher.threadsafe.logs.queue", attributes: .concurrent)
+    
+    private var _error: ApiClientError?
+    
+    private var _loggedTime: [LoggedTime] = []
+    
+    var error: ApiClientError? {
+        get {
+            var error: ApiClientError?
+            
+            errorQueue.sync {
+                error = _error
+            }
+            
+            return error
+        }
+        
+        set(newError) {
+            errorQueue.async(flags: .barrier) {
+                self._error = newError
+            }
+        }
+    }
+    
+    var loggedTime: [LoggedTime] {
+        var logged: [LoggedTime] = []
+        
+        logQueue.sync {
+            logged = _loggedTime
+        }
+        
+        return logged
+    }
+    
     
     // MARK: - Public Methods
     
@@ -52,10 +88,6 @@ final class TimeLogService {
         dates: [String],
         completion: LogTimesCompletion?) {
         
-        var error: ApiClientError?
-        
-        var loggedTime: [LoggedTime] = []
-        
         DispatchQueue.global(qos: .background).async {
             let group = DispatchGroup()
             
@@ -73,22 +105,29 @@ final class TimeLogService {
                 self.client.request(with: timeLogEndpoint) { (response) in
                     switch response {
                     case .error(let responseError):
-                            error = responseError
+                            self.error = responseError
                             group.leave()
                     case .success(let time):
-                        loggedTime.append(time)
+                        self.addLog(time)
                         group.leave()
                     }
                 }
             }
             
             group.notify(queue: .main, execute: {
-                if error != nil {
-                    completion?(.error(error!))
+                if self.error != nil {
+                    completion?(.error(self.error!))
                 } else {
-                    completion?(.success(loggedTime))
+                    completion?(.success(self.loggedTime))
                 }
             })
+        }
+    }
+    
+    
+    private func addLog(_ time: LoggedTime) {
+        logQueue.async(flags: .barrier) {
+            self._loggedTime.append(time)
         }
     }
 }
