@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CookieProperties: Entity {
+open class CookieProperties: Entity {
     
     var domain = ""
     var path = ""
@@ -50,8 +50,8 @@ class CookieProperties: Entity {
         commentURL = cookie.commentURL?.absoluteString
     }
     
-    required init() {
-        fatalError("init() has not been implemented")
+    required public init() {
+        super.init()
     }
     
     func properties() -> [HTTPCookiePropertyKey: Any] {

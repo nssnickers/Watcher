@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DAO <Model: Entity> {
+open class DAO <Model: Entity> {
     
     func create(_ entity: Model) throws {}
     

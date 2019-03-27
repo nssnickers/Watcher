@@ -8,7 +8,7 @@
 
 import Foundation
 
-@objc final class CookieStorage: HTTPCookieStorage {
+final class CookieStorage: HTTPCookieStorage {
     
     private var identifier = "default"
     
@@ -50,7 +50,7 @@ import Foundation
     
     override var cookies: [HTTPCookie]? {
         do {
-            let cookies = try dao.filter("storageIdentifier == \(identifier)")
+            let cookies = try dao.filter("storageIdentifier == '\(identifier)'")
             return cookies?.map({ (model) -> HTTPCookie in
                 return HTTPCookie(properties: model.properties())!
             })
@@ -63,7 +63,7 @@ import Foundation
     
     override func removeCookies(since date: Date) {
         do {
-            let cookies = try dao.filter("date > \(date) && storageIdentifier == \(identifier)")
+            let cookies = try dao.filter("date > \(date) AND storageIdentifier == '\(identifier)'")
             
             try cookies?.forEach({ (cookie) in
                 try dao.delete(cookie.identifier)
@@ -105,8 +105,8 @@ import Foundation
                 httpCookie: cookie,
                 identifier: cookieIdentifier,
                 storageIdentifier: identifier)
-            model.url = URL?.absoluteString ?? ""
-            model.documentUrl = mainDocumentURL?.absoluteString ?? ""
+            model.url = URL?.host ?? ""
+            model.documentUrl = mainDocumentURL?.host ?? ""
             
             do {
                 try dao.create(model)
@@ -119,12 +119,15 @@ import Foundation
     
     override func storeCookies(_ cookies: [HTTPCookie], for task: URLSessionTask) {
         cookies.forEach { (cookie) in
+            let url = task.originalRequest?.url?.host!
             let cookieIdentifier = "\(cookie.hash)_\(identifier)"
             let model = CookieProperties(
                 httpCookie: cookie,
                 identifier: cookieIdentifier,
                 storageIdentifier: identifier)
             model.taskIdentifier = task.taskIdentifier
+            model.url = url
+            
             
             do {
                 try dao.create(model)
@@ -140,7 +143,8 @@ import Foundation
         var cookies: [HTTPCookie]?
         
         do {
-            let filter = "storageIdentifier == \(identifier) && taskIdentifier == \(task.taskIdentifier)"
+            let url = task.originalRequest?.url?.host ?? ""
+            let filter = "storageIdentifier == '\(identifier)' AND url == '\(url)'"
             let models = try dao.filter(filter)
             cookies = models?.map({ (model) -> HTTPCookie in
                 return HTTPCookie(properties: model.properties())!
@@ -155,7 +159,8 @@ import Foundation
     
     override func cookies(for URL: URL) -> [HTTPCookie]? {
         do {
-            let cookies = try dao.filter("storageIdentifier == \(identifier) && url == \(URL.absoluteString)")
+            let host = URL.host!
+            let cookies = try dao.filter("storageIdentifier == '\(identifier)' AND url = '\(host)'")
             return cookies?.map({ (model) -> HTTPCookie in
                 return HTTPCookie(properties: model.properties())!
             })

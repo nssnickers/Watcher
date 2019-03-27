@@ -7,15 +7,11 @@
 //
 
 import Foundation
-import Realm
 import RealmSwift
 
+// swiftlint:disable force_try
+open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
 
-final class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
-    
-    // swiftlint:disable force_try
-    private var realm = try! Realm()
-    // swiftlint:enable force_try
     
     private let translator: RealmTranslator<RealmModel, Model>
     
@@ -26,16 +22,18 @@ final class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     
     
     override func create(_ entity: Model) throws {
-        // swiftlint:disable force_try
+        let realm = try! Realm()
+        
         try! realm.write {
-        // swiftlint:enable force_try
             let realmEntity = self.translator.getRealmEntityFromEntity(entity)
-            realm.add(realmEntity)
+            realm.add(realmEntity, update: true)
         }
     }
     
     
     override func read(_ entityId: String) throws -> Model? {
+        let realm = try! Realm()
+        
         guard let realmEntity = realm.object(ofType: RealmModel.self, forPrimaryKey: entityId) else {
             return nil
         }
@@ -45,6 +43,8 @@ final class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     
     
     override func update(_ entity: Model) throws {
+        let realm = try! Realm()
+        
         try realm.write {
             let realmEntity = self.translator.getRealmEntityFromEntity(entity)
             realm.create(RealmEntity.self, value: realmEntity, update: true)
@@ -53,6 +53,8 @@ final class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     
     
     override func delete(_ entityId: String) throws {
+        let realm = try! Realm()
+        
         guard let entity = try read(entityId) else {
             return
         }
@@ -63,8 +65,10 @@ final class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     
     
     func filter(_ filter: String) throws -> [Model]? {
+        let realm = try! Realm()
         let realmModels = realm.objects(RealmModel.self).filter(filter)
         
         return realmModels.map({ translator.getEntityFromRealmEntity($0) })
     }
 }
+// swiftlint:enable force_try

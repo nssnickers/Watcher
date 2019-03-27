@@ -8,18 +8,18 @@
 
 import Foundation
 
-class Entity: Hashable {
+open class Entity: Hashable {
     
     var identifier = ""
     
-    required init() {}
+    required public init() {}
     
-    func hash(into hasher: inout Hasher) {
+    public func hash(into hasher: inout Hasher) {
         hasher.combine(identifier)
     }
     
     
-    static func == (lhs: Entity, rhs: Entity) -> Bool {
+    public static func == (lhs: Entity, rhs: Entity) -> Bool {
         return lhs.identifier == rhs.identifier
     }
 }

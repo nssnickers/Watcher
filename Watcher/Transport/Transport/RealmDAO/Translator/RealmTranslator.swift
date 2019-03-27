@@ -8,8 +8,7 @@
 
 import Foundation
 
-
-class RealmTranslator <RLMModel: RealmEntity, Model: Entity> {
+open class RealmTranslator <RLMModel: RealmEntity, Model: Entity> {
     
     func getRealmEntityFromEntity(_ entity: Model) -> RLMModel {
         return RLMModel()

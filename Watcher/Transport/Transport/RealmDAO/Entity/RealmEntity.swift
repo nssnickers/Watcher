@@ -10,9 +10,9 @@ import Foundation
 import Realm
 import RealmSwift
 
-class RealmEntity: Object {
+open class RealmEntity: Object {
     
-    var identifier: String = ""
+    @objc dynamic open var identifier: String = ""
     
     
     public init(identifier: String) {
@@ -21,17 +21,19 @@ class RealmEntity: Object {
     }
     
     
-    required init() {
-        fatalError("init() has not been implemented")
+    required public init() {
+        self.identifier = ""
+        super.init()
     }
     
     
-    required init(realm: RLMRealm, schema: RLMObjectSchema) {
-        fatalError("init(realm:schema:) has not been implemented")
+    required public init(realm: RLMRealm, schema: RLMObjectSchema) {
+        self.identifier = ""
+        super.init(realm: realm, schema: schema)
     }
     
     
-    required init(value: Any, schema: RLMSchema) {
+    required public init(value: Any, schema: RLMSchema) {
         fatalError("init(value:schema:) has not been implemented")
     }
     
@@ -39,4 +41,5 @@ class RealmEntity: Object {
     override open class func primaryKey() -> String? {
         return "identifier"
     }
+    
 }
