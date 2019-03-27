@@ -8,16 +8,45 @@
 
 import Alamofire
 
-// TODO: вынести в настройки
-// TODO: сохранять куки авторизации в приложении
-// TODO: сделать shared session
-
 /// Клиент для выполнения запросов
-public final class Client: ApiClient {
+public final class Client: SessionDelegate, ApiClient {
+    
+    // MARK: - Private Properties
+    
+    private var session: Session?
     
     // MARK: - Public Methods
     
-    public init() {}
+    public init() {
+        super.init()
+        
+        let dispatchQueue = DispatchQueue(label: "watcher.alamofire.rootQueue")
+        let queue = OperationQueue()
+        queue.underlyingQueue = dispatchQueue
+        
+        let sessionConfiguration = URLSessionConfiguration.ephemeral
+        sessionConfiguration.httpCookieStorage = CookieStorage.shared
+        
+        let urlSession = URLSession(
+            configuration: sessionConfiguration,
+            delegate: self,
+            delegateQueue: queue)
+        
+        session = Session(
+            session: urlSession,
+            delegate: self,
+            rootQueue: dispatchQueue)
+    }
+    
+    
+    override public func urlSession(
+        _ session: URLSession,
+        task: URLSessionTask,
+        didFinishCollecting metrics: URLSessionTaskMetrics) {
+        super.urlSession(session, task: task, didFinishCollecting: metrics)
+        
+        print(metrics)
+    }
     
     
     public func request<Request>(
@@ -28,8 +57,7 @@ public final class Client: ApiClient {
         do {
             var httpRequest = try request.request()
             httpRequest.addValue(HttpContentType.json, forHTTPHeaderField: HttpHeaderKey.contentType)
-        
-            AF.request(httpRequest)
+            session?.request(httpRequest)
                 .validate(statusCode: 200..<300)
                 .validate(contentType: [HttpContentType.json])
                 .responseJSON { (response) in
@@ -70,10 +98,7 @@ public final class Client: ApiClient {
             
             let cookies = HTTPCookie.cookies(withResponseHeaderFields: headerFields, for: url)
             
-            Session.default.sessionConfiguration.httpCookieStorage?.setCookies(
-                cookies,
-                for: url,
-                mainDocumentURL: url)
+            session?.sessionConfiguration.httpCookieStorage?.setCookies(cookies, for: url, mainDocumentURL: url)
         }
     }
 }
