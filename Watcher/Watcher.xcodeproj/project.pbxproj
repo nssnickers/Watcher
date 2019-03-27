@@ -170,6 +170,9 @@
 		B263970F223BC39A0002ACC7 /* CalendarCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B2639710223BC39A0002ACC7 /* CalendarCellCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CalendarCellCollectionViewCell.xib; sourceTree = "<group>"; };
 		B269488B223FCEFF000EA8AC /* SwipeInteractionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeInteractionController.swift; sourceTree = "<group>"; };
+		B29364C7224AE98600D2BFFF /* Transport-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Transport-Swift.h"; sourceTree = "<group>"; };
+		B29364D2224AEDCC00D2BFFF /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = "../../../Library/Developer/Xcode/DerivedData/Watcher-fgphqdqptukppzgmyddzxvonocvf/Build/Products/Debug-iphoneos/RealmSwift.framework"; sourceTree = "<group>"; };
+		B29364D3224AEDCC00D2BFFF /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = "../../../Library/Developer/Xcode/DerivedData/Watcher-fgphqdqptukppzgmyddzxvonocvf/Build/Products/Debug-iphoneos/Realm.framework"; sourceTree = "<group>"; };
 		B29D61FE222D02060079BD72 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		B29D6200222D05290079BD72 /* LogViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewModel.swift; sourceTree = "<group>"; };
 		B2D666B8222724AC0083FEC3 /* WeekModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekModel.swift; sourceTree = "<group>"; };
@@ -248,6 +251,8 @@
 		ABBA70E78C11B6636572636C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B29364D2224AEDCC00D2BFFF /* RealmSwift.framework */,
+				B29364D3224AEDCC00D2BFFF /* Realm.framework */,
 				B21B0673221CC80E00D50CDB /* Alamofire.framework */,
 				8FC49B5125FDCAD8E09ACB64 /* Pods_Watcher.framework */,
 			);
@@ -358,6 +363,7 @@
 		B253DAF622109C56001A1EDF = {
 			isa = PBXGroup;
 			children = (
+				B29364C7224AE98600D2BFFF /* Transport-Swift.h */,
 				B253DB0122109C56001A1EDF /* Watcher */,
 				B2296FBD2213647E003F9228 /* WatcherTests */,
 				B253DB0022109C56001A1EDF /* Products */,
@@ -993,12 +999,16 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-Watcher/Pods-Watcher-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
