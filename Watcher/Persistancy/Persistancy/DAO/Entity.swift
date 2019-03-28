@@ -10,7 +10,7 @@ import Foundation
 
 open class Entity: Hashable {
     
-    var identifier = ""
+    public var identifier = ""
     
     required public init() {}
     

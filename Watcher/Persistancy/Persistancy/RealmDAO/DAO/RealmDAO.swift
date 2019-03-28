@@ -16,12 +16,12 @@ open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     private let translator: RealmTranslator<RealmModel, Model>
     
     
-    init(_ translator: RealmTranslator<RealmModel, Model>) {
+    public init(_ translator: RealmTranslator<RealmModel, Model>) {
         self.translator = translator
     }
     
     
-    override func create(_ entity: Model) throws {
+    override public func create(_ entity: Model) throws {
         let realm = try! Realm()
         
         try! realm.write {
@@ -31,7 +31,7 @@ open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     }
     
     
-    override func read(_ entityId: String) throws -> Model? {
+    override public func read(_ entityId: String) throws -> Model? {
         let realm = try! Realm()
         
         guard let realmEntity = realm.object(ofType: RealmModel.self, forPrimaryKey: entityId) else {
@@ -42,7 +42,7 @@ open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     }
     
     
-    override func update(_ entity: Model) throws {
+    override public func update(_ entity: Model) throws {
         let realm = try! Realm()
         
         try realm.write {
@@ -52,7 +52,7 @@ open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     }
     
     
-    override func delete(_ entityId: String) throws {
+    override public func delete(_ entityId: String) throws {
         let realm = try! Realm()
         
         guard let entity = try read(entityId) else {
@@ -64,7 +64,7 @@ open class RealmDAO<Model: Entity, RealmModel: RealmEntity>: DAO<Model> {
     }
     
     
-    func filter(_ filter: String) throws -> [Model]? {
+    public func filter(_ filter: String) throws -> [Model]? {
         let realm = try! Realm()
         let realmModels = realm.objects(RealmModel.self).filter(filter)
         

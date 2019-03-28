@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Persistancy
 
 final class CookieStorage: HTTPCookieStorage {
     
@@ -18,7 +19,7 @@ final class CookieStorage: HTTPCookieStorage {
     
     private static var privateSharedStorages: [String: CookieStorage]?
     
-    private let dao = RealmDAO(CookieTranslator())
+    private let dao: RealmDAO<CookieProperties, CookieRealm> = RealmDAO(CookieTranslator())
     
     
     override static var shared: CookieStorage {

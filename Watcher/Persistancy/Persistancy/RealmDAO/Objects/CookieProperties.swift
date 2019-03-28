@@ -10,25 +10,25 @@ import Foundation
 
 open class CookieProperties: Entity {
     
-    var domain = ""
-    var path = ""
-    var portList: String?
-    var name = ""
-    var value = ""
-    var version = 0
-    var expiresDate: Date?
-    var isSessionOnly = true
-    var isSecure = false
-    var comment: String?
-    var commentURL: String?
+    public var domain = ""
+    public var path = ""
+    public var portList: String?
+    public var name = ""
+    public var value = ""
+    public var version = 0
+    public var expiresDate: Date?
+    public var isSessionOnly = true
+    public var isSecure = false
+    public var comment: String?
+    public var commentURL: String?
     
-    var date = Date()
-    var storageIdentifier = ""
-    var url: String?
-    var documentUrl: String?
-    var taskIdentifier = 0
+    public var date = Date()
+    public var storageIdentifier = ""
+    public var url: String?
+    public var documentUrl: String?
+    public var taskIdentifier = 0
     
-    init(httpCookie cookie: HTTPCookie, identifier: String, storageIdentifier: String) {
+    public init(httpCookie cookie: HTTPCookie, identifier: String, storageIdentifier: String) {
         super.init()
         
         self.identifier = identifier
@@ -54,7 +54,7 @@ open class CookieProperties: Entity {
         super.init()
     }
     
-    func properties() -> [HTTPCookiePropertyKey: Any] {
+    public func properties() -> [HTTPCookiePropertyKey: Any] {
         var properties: [HTTPCookiePropertyKey: Any] = [:]
         
         properties[.domain] = domain

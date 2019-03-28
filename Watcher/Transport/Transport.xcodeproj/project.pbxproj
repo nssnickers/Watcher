@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0F5A48F154FCFFC0E2641780 /* Pods_TransportTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EBCA36485971E8B5A351AF6 /* Pods_TransportTests.framework */; };
 		B21B0672221CC57200D50CDB /* Pods_Watcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21B0671221CC57200D50CDB /* Pods_Watcher.framework */; };
+		B21FADD4224CE831009067A5 /* Pods_Persistancy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FADD3224CE831009067A5 /* Pods_Persistancy.framework */; };
 		B23C1204221CBAA300D7D2BE /* Transport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B23C11FA221CBAA300D7D2BE /* Transport.framework */; };
 		B23C120B221CBAA300D7D2BE /* Transport.h in Headers */ = {isa = PBXBuildFile; fileRef = B23C11FD221CBAA300D7D2BE /* Transport.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B23C1215221CBAFC00D7D2BE /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23C1214221CBAFC00D7D2BE /* Client.swift */; };
@@ -27,14 +28,6 @@
 		B25AF476223BD1320007D454 /* CalendarDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25AF475223BD1320007D454 /* CalendarDay.swift */; };
 		B25F6159222EA93600FB6CCE /* ApiClientError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B25F6158222EA93600FB6CCE /* ApiClientError.swift */; };
 		B29364B5224AE79C00D2BFFF /* CookieStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B293648A224AE1D800D2BFFF /* CookieStorage.swift */; };
-		B29364E9224AF46100D2BFFF /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364E6224AF45600D2BFFF /* DAO.swift */; };
-		B29364EA224AF46400D2BFFF /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364E7224AF45600D2BFFF /* Entity.swift */; };
-		B29364EB224AF46A00D2BFFF /* RealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364DB224AF44F00D2BFFF /* RealmDAO.swift */; };
-		B29364EC224AF46D00D2BFFF /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364DD224AF44F00D2BFFF /* RealmEntity.swift */; };
-		B29364ED224AF47100D2BFFF /* CookieProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364DF224AF44F00D2BFFF /* CookieProperties.swift */; };
-		B29364EE224AF47400D2BFFF /* CookieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364E0224AF44F00D2BFFF /* CookieRealm.swift */; };
-		B29364EF224AF47600D2BFFF /* CookieTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364E1224AF44F00D2BFFF /* CookieTranslator.swift */; };
-		B29364F0224AF47A00D2BFFF /* RealmTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29364E3224AF44F00D2BFFF /* RealmTranslator.swift */; };
 		B29D6205222D8B330079BD72 /* TimeToUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D6204222D8B330079BD72 /* TimeToUpdate.swift */; };
 		B29D6207222D8BA00079BD72 /* TimeUpdateEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B29D6206222D8BA00079BD72 /* TimeUpdateEndpoint.swift */; };
 		B2B07444221CD484005A1475 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B07443221CD484005A1475 /* Alamofire.framework */; };
@@ -42,6 +35,8 @@
 		B2B07449221CD735005A1475 /* AuthOutstaffEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B07448221CD735005A1475 /* AuthOutstaffEndpointTests.swift */; };
 		B2B0744B221CDA83005A1475 /* TimeLogEndpointTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B0744A221CDA83005A1475 /* TimeLogEndpointTests.swift */; };
 		B2B07456221FD785005A1475 /* TransportConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2B07455221FD785005A1475 /* TransportConstants.swift */; };
+		B2B5D7D8224CF4FB00656B94 /* Transport-Swift.h in Headers */ = {isa = PBXBuildFile; fileRef = B2B5D7D7224CF4FB00656B94 /* Transport-Swift.h */; };
+		B2B5D7DB224CF55E00656B94 /* Persistancy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2B5D7DA224CF55E00656B94 /* Persistancy.framework */; };
 		B2D666C02227442E0083FEC3 /* DateFormatterManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2D666BF2227442E0083FEC3 /* DateFormatterManager.swift */; };
 		B2EA145A22268BC5000F5A5D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA145922268BC5000F5A5D /* Day.swift */; };
 		B2EA145C22268D75000F5A5D /* ObtainLogEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EA145B22268D75000F5A5D /* ObtainLogEndpoint.swift */; };
@@ -68,6 +63,7 @@
 		A722E130690C9E3AB99CB457 /* Pods-Transport.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Transport.debug.xcconfig"; path = "Target Support Files/Pods-Transport/Pods-Transport.debug.xcconfig"; sourceTree = "<group>"; };
 		B21B066F221CC54E00D50CDB /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B21B0671221CC57200D50CDB /* Pods_Watcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Watcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FADD3224CE831009067A5 /* Pods_Persistancy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Persistancy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23C11FA221CBAA300D7D2BE /* Transport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Transport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B23C11FD221CBAA300D7D2BE /* Transport.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Transport.h; sourceTree = "<group>"; };
 		B23C11FE221CBAA300D7D2BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,15 +85,6 @@
 		B25AF475223BD1320007D454 /* CalendarDay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarDay.swift; sourceTree = "<group>"; };
 		B25F6158222EA93600FB6CCE /* ApiClientError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClientError.swift; sourceTree = "<group>"; };
 		B293648A224AE1D800D2BFFF /* CookieStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieStorage.swift; sourceTree = "<group>"; };
-		B29364C3224AE80200D2BFFF /* Transport-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Transport-Swift.h"; sourceTree = "<group>"; };
-		B29364DB224AF44F00D2BFFF /* RealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDAO.swift; sourceTree = "<group>"; };
-		B29364DD224AF44F00D2BFFF /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
-		B29364DF224AF44F00D2BFFF /* CookieProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieProperties.swift; sourceTree = "<group>"; };
-		B29364E0224AF44F00D2BFFF /* CookieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRealm.swift; sourceTree = "<group>"; };
-		B29364E1224AF44F00D2BFFF /* CookieTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieTranslator.swift; sourceTree = "<group>"; };
-		B29364E3224AF44F00D2BFFF /* RealmTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTranslator.swift; sourceTree = "<group>"; };
-		B29364E6224AF45600D2BFFF /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
-		B29364E7224AF45600D2BFFF /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
 		B29D6204222D8B330079BD72 /* TimeToUpdate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeToUpdate.swift; sourceTree = "<group>"; };
 		B29D6206222D8BA00079BD72 /* TimeUpdateEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeUpdateEndpoint.swift; sourceTree = "<group>"; };
 		B2B07443221CD484005A1475 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +92,8 @@
 		B2B07448221CD735005A1475 /* AuthOutstaffEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthOutstaffEndpointTests.swift; sourceTree = "<group>"; };
 		B2B0744A221CDA83005A1475 /* TimeLogEndpointTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeLogEndpointTests.swift; sourceTree = "<group>"; };
 		B2B07455221FD785005A1475 /* TransportConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransportConstants.swift; sourceTree = "<group>"; };
+		B2B5D7D7224CF4FB00656B94 /* Transport-Swift.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Transport-Swift.h"; sourceTree = "<group>"; };
+		B2B5D7DA224CF55E00656B94 /* Persistancy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Persistancy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2D666BF2227442E0083FEC3 /* DateFormatterManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterManager.swift; sourceTree = "<group>"; };
 		B2EA145922268BC5000F5A5D /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		B2EA145B22268D75000F5A5D /* ObtainLogEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObtainLogEndpoint.swift; sourceTree = "<group>"; };
@@ -118,6 +107,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B5D7DB224CF55E00656B94 /* Persistancy.framework in Frameworks */,
+				B21FADD4224CE831009067A5 /* Pods_Persistancy.framework in Frameworks */,
 				B21B0672221CC57200D50CDB /* Pods_Watcher.framework in Frameworks */,
 				D9098E498C2476FFF241F178 /* Pods_Transport.framework in Frameworks */,
 			);
@@ -151,6 +142,7 @@
 		B23C11F0221CBAA300D7D2BE = {
 			isa = PBXGroup;
 			children = (
+				B2B5D7D7224CF4FB00656B94 /* Transport-Swift.h */,
 				B23C11FC221CBAA300D7D2BE /* Transport */,
 				B23C1207221CBAA300D7D2BE /* TransportTests */,
 				B23C11FB221CBAA300D7D2BE /* Products */,
@@ -171,8 +163,6 @@
 		B23C11FC221CBAA300D7D2BE /* Transport */ = {
 			isa = PBXGroup;
 			children = (
-				B29364E8224AF45600D2BFFF /* DAO */,
-				B29364E5224AF44F00D2BFFF /* RealmDAO */,
 				B23C121A221CBB2500D7D2BE /* Client */,
 				B2B07453221FD75D005A1475 /* Common */,
 				B23C1216221CBB1000D7D2BE /* Endpoint */,
@@ -181,7 +171,6 @@
 				B23C1229221CBB8200D7D2BE /* Response */,
 				B23C11FD221CBAA300D7D2BE /* Transport.h */,
 				B23C11FE221CBAA300D7D2BE /* Info.plist */,
-				B29364C3224AE80200D2BFFF /* Transport-Swift.h */,
 			);
 			path = Transport;
 			sourceTree = "<group>";
@@ -257,60 +246,6 @@
 			path = Error;
 			sourceTree = "<group>";
 		};
-		B29364DC224AF44F00D2BFFF /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				B29364DB224AF44F00D2BFFF /* RealmDAO.swift */,
-			);
-			path = DAO;
-			sourceTree = "<group>";
-		};
-		B29364DE224AF44F00D2BFFF /* Entity */ = {
-			isa = PBXGroup;
-			children = (
-				B29364DD224AF44F00D2BFFF /* RealmEntity.swift */,
-			);
-			path = Entity;
-			sourceTree = "<group>";
-		};
-		B29364E2224AF44F00D2BFFF /* Objects */ = {
-			isa = PBXGroup;
-			children = (
-				B29364DF224AF44F00D2BFFF /* CookieProperties.swift */,
-				B29364E0224AF44F00D2BFFF /* CookieRealm.swift */,
-				B29364E1224AF44F00D2BFFF /* CookieTranslator.swift */,
-			);
-			path = Objects;
-			sourceTree = "<group>";
-		};
-		B29364E4224AF44F00D2BFFF /* Translator */ = {
-			isa = PBXGroup;
-			children = (
-				B29364E3224AF44F00D2BFFF /* RealmTranslator.swift */,
-			);
-			path = Translator;
-			sourceTree = "<group>";
-		};
-		B29364E5224AF44F00D2BFFF /* RealmDAO */ = {
-			isa = PBXGroup;
-			children = (
-				B29364DC224AF44F00D2BFFF /* DAO */,
-				B29364DE224AF44F00D2BFFF /* Entity */,
-				B29364E2224AF44F00D2BFFF /* Objects */,
-				B29364E4224AF44F00D2BFFF /* Translator */,
-			);
-			path = RealmDAO;
-			sourceTree = "<group>";
-		};
-		B29364E8224AF45600D2BFFF /* DAO */ = {
-			isa = PBXGroup;
-			children = (
-				B29364E6224AF45600D2BFFF /* DAO.swift */,
-				B29364E7224AF45600D2BFFF /* Entity.swift */,
-			);
-			path = DAO;
-			sourceTree = "<group>";
-		};
 		B2B07447221CD70E005A1475 /* Endpoint */ = {
 			isa = PBXGroup;
 			children = (
@@ -344,6 +279,8 @@
 		D861895749682A72EA446E16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B2B5D7DA224CF55E00656B94 /* Persistancy.framework */,
+				B21FADD3224CE831009067A5 /* Pods_Persistancy.framework */,
 				B2B07443221CD484005A1475 /* Alamofire.framework */,
 				B21B0671221CC57200D50CDB /* Pods_Watcher.framework */,
 				B21B066F221CC54E00D50CDB /* Alamofire.framework */,
@@ -360,6 +297,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B2B5D7D8224CF4FB00656B94 /* Transport-Swift.h in Headers */,
 				B23C120B221CBAA300D7D2BE /* Transport.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,6 +332,7 @@
 				B23C11FF221CBAA300D7D2BE /* Sources */,
 				B23C1200221CBAA300D7D2BE /* Frameworks */,
 				B23C1201221CBAA300D7D2BE /* Resources */,
+				DC5F0E726ADD81058F503A7E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -503,6 +442,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DC5F0E726ADD81058F503A7E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TransportTests/Pods-TransportTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TransportTests/Pods-TransportTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -514,20 +475,14 @@
 				B29D6205222D8B330079BD72 /* TimeToUpdate.swift in Sources */,
 				B29D6207222D8BA00079BD72 /* TimeUpdateEndpoint.swift in Sources */,
 				B2EA146722271334000F5A5D /* CodingManager.swift in Sources */,
-				B29364EB224AF46A00D2BFFF /* RealmDAO.swift in Sources */,
 				B25AF476223BD1320007D454 /* CalendarDay.swift in Sources */,
 				B23C122F221CBE8D00D7D2BE /* ApiClient.swift in Sources */,
 				B23C1223221CBB3A00D7D2BE /* User.swift in Sources */,
 				B2EA145A22268BC5000F5A5D /* Day.swift in Sources */,
 				B25F6159222EA93600FB6CCE /* ApiClientError.swift in Sources */,
 				B25AF474223BD0540007D454 /* CalendarEndpoint.swift in Sources */,
-				B29364F0224AF47A00D2BFFF /* RealmTranslator.swift in Sources */,
-				B29364EA224AF46400D2BFFF /* Entity.swift in Sources */,
 				B23C1230221CBE9000D7D2BE /* Endpoint.swift in Sources */,
-				B29364EE224AF47400D2BFFF /* CookieRealm.swift in Sources */,
 				B23C1215221CBAFC00D7D2BE /* Client.swift in Sources */,
-				B29364ED224AF47100D2BFFF /* CookieProperties.swift in Sources */,
-				B29364EC224AF46D00D2BFFF /* RealmEntity.swift in Sources */,
 				B23C1233221CBEAE00D7D2BE /* ProjectEndpoint.swift in Sources */,
 				B23C1231221CBEA400D7D2BE /* AuthOutstaffEndpoint.swift in Sources */,
 				B2B07456221FD785005A1475 /* TransportConstants.swift in Sources */,
@@ -539,9 +494,7 @@
 				B23C1234221CBEB200D7D2BE /* ApiResponse.swift in Sources */,
 				B29364B5224AE79C00D2BFFF /* CookieStorage.swift in Sources */,
 				B23C1221221CBB3A00D7D2BE /* OutstaffAuth.swift in Sources */,
-				B29364EF224AF47600D2BFFF /* CookieTranslator.swift in Sources */,
 				B23C1225221CBB3A00D7D2BE /* TimeToLog.swift in Sources */,
-				B29364E9224AF46100D2BFFF /* DAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,7 +697,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6FC8F29814080F15290856D6 /* Pods-TransportTests.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2M678956L;
 				INFOPLIST_FILE = TransportTests/Info.plist;
@@ -765,7 +718,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E11F19871AD1D824018E7830 /* Pods-TransportTests.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R2M678956L;
 				INFOPLIST_FILE = TransportTests/Info.plist;

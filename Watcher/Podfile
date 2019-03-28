@@ -1,20 +1,45 @@
 platform :ios, '12.0'
-workspace 'Watcher'
 use_frameworks!
+workspace 'Watcher'
+
+def common_pods
+  pod 'Alamofire', '~> 5.0.0-beta.2'
+  pod 'SwiftLint'
+end
+
+def persist_pods
+  pod 'RealmSwift'
+end
 
 target 'Watcher' do
   project 'Watcher'
   
-  pod 'Alamofire', '~> 5.0.0-beta.2'
-  pod 'SwiftLint'
-  pod 'RealmSwift'
+  common_pods
+  persist_pods
   
   target 'Transport' do
     project 'Transport/Transport'
     inherit! :search_paths
+    common_pods
     
     target 'TransportTests' do
       inherit! :search_paths
+      common_pods
+    end
+  end
+  
+  target 'Persistancy' do
+    project 'Persistancy/Persistancy'
+    
+    inherit! :search_paths
+    persist_pods
+  end
+end
+
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings['SWIFT_VERSION'] = '4.2'
     end
   end
 end
