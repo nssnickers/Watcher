@@ -9,7 +9,7 @@
 import Foundation
 import RealmSwift
 
-class CookieRealm: RealmEntity {
+open class CookieRealm: RealmEntity {
     
     @objc dynamic var storageIdentifier = ""
     @objc dynamic var date = Date()
