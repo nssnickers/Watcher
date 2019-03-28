@@ -8,7 +8,11 @@
 
 import Foundation
 
-class CookieTranslator: RealmTranslator<CookieRealm, CookieProperties> {
+open class CookieTranslator: RealmTranslator<CookieRealm, CookieProperties> {
+    
+    public override init() {
+        super.init()
+    }
     
     override func getRealmEntityFromEntity(_ entity: CookieProperties) -> CookieRealm {
         let realmCookie = CookieRealm(identifier: entity.identifier)

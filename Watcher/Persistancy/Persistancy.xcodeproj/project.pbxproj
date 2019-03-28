@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B21FADCA224CC6A6009067A5 /* Persistancy.h in Headers */ = {isa = PBXBuildFile; fileRef = B21FADC8224CC6A6009067A5 /* Persistancy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B21FADE3224CE85A009067A5 /* RealmTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADDD224CE848009067A5 /* RealmTranslator.swift */; };
+		B21FADE4224CE85D009067A5 /* CookieTranslator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADDB224CE848009067A5 /* CookieTranslator.swift */; };
+		B21FADE5224CE860009067A5 /* CookieRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADDA224CE848009067A5 /* CookieRealm.swift */; };
+		B21FADE6224CE863009067A5 /* CookieProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADD9224CE848009067A5 /* CookieProperties.swift */; };
+		B21FADE7224CE866009067A5 /* RealmEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADD7224CE848009067A5 /* RealmEntity.swift */; };
+		B21FADE8224CE869009067A5 /* RealmDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADD5224CE848009067A5 /* RealmDAO.swift */; };
+		B21FADE9224CE86C009067A5 /* Entity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADE1224CE84B009067A5 /* Entity.swift */; };
+		B21FADEA224CE86F009067A5 /* DAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B21FADE0224CE84B009067A5 /* DAO.swift */; };
+		B21FADF1224CED3C009067A5 /* Pods_Persistancy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FADF0224CED3C009067A5 /* Pods_Persistancy.framework */; };
+		B21FADF7224CEECF009067A5 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FADF6224CEECF009067A5 /* Realm.framework */; };
+		B21FADF9224CEECF009067A5 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FADF8224CEECF009067A5 /* RealmSwift.framework */; };
+		B21FADFB224CEEE8009067A5 /* Pods_Watcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B21FADFA224CEEE8009067A5 /* Pods_Watcher.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		46E81169DB581FA5CA860873 /* Pods-Persistancy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Persistancy.debug.xcconfig"; path = "Target Support Files/Pods-Persistancy/Pods-Persistancy.debug.xcconfig"; sourceTree = "<group>"; };
+		B21FADC5224CC6A6009067A5 /* Persistancy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Persistancy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FADC8224CC6A6009067A5 /* Persistancy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Persistancy.h; sourceTree = "<group>"; };
+		B21FADC9224CC6A6009067A5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B21FADD5224CE848009067A5 /* RealmDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDAO.swift; sourceTree = "<group>"; };
+		B21FADD7224CE848009067A5 /* RealmEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmEntity.swift; sourceTree = "<group>"; };
+		B21FADD9224CE848009067A5 /* CookieProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieProperties.swift; sourceTree = "<group>"; };
+		B21FADDA224CE848009067A5 /* CookieRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieRealm.swift; sourceTree = "<group>"; };
+		B21FADDB224CE848009067A5 /* CookieTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookieTranslator.swift; sourceTree = "<group>"; };
+		B21FADDD224CE848009067A5 /* RealmTranslator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmTranslator.swift; sourceTree = "<group>"; };
+		B21FADE0224CE84B009067A5 /* DAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DAO.swift; sourceTree = "<group>"; };
+		B21FADE1224CE84B009067A5 /* Entity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entity.swift; sourceTree = "<group>"; };
+		B21FADF0224CED3C009067A5 /* Pods_Persistancy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Persistancy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FADF6224CEECF009067A5 /* Realm.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Realm.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FADF8224CEECF009067A5 /* RealmSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B21FADFA224CEEE8009067A5 /* Pods_Watcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_Watcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9FFFD541CD4E18C6C3054C2 /* Pods-Persistancy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Persistancy.release.xcconfig"; path = "Target Support Files/Pods-Persistancy/Pods-Persistancy.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B21FADC2224CC6A6009067A5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21FADFB224CEEE8009067A5 /* Pods_Watcher.framework in Frameworks */,
+				B21FADF7224CEECF009067A5 /* Realm.framework in Frameworks */,
+				B21FADF9224CEECF009067A5 /* RealmSwift.framework in Frameworks */,
+				B21FADF1224CED3C009067A5 /* Pods_Persistancy.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9E77C23489C11053B8BC7557 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				46E81169DB581FA5CA860873 /* Pods-Persistancy.debug.xcconfig */,
+				B9FFFD541CD4E18C6C3054C2 /* Pods-Persistancy.release.xcconfig */,
+			);
+			name = Pods;
+			path = ../Pods;
+			sourceTree = "<group>";
+		};
+		B21FADBB224CC6A6009067A5 = {
+			isa = PBXGroup;
+			children = (
+				B21FADC7224CC6A6009067A5 /* Persistancy */,
+				B21FADC6224CC6A6009067A5 /* Products */,
+				B21FADEB224CED01009067A5 /* Frameworks */,
+				9E77C23489C11053B8BC7557 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		B21FADC6224CC6A6009067A5 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADC5224CC6A6009067A5 /* Persistancy.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B21FADC7224CC6A6009067A5 /* Persistancy */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADE2224CE84B009067A5 /* DAO */,
+				B21FADDF224CE848009067A5 /* RealmDAO */,
+				B21FADC8224CC6A6009067A5 /* Persistancy.h */,
+				B21FADC9224CC6A6009067A5 /* Info.plist */,
+			);
+			path = Persistancy;
+			sourceTree = "<group>";
+		};
+		B21FADD6224CE848009067A5 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADD5224CE848009067A5 /* RealmDAO.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		B21FADD8224CE848009067A5 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADD7224CE848009067A5 /* RealmEntity.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		B21FADDC224CE848009067A5 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADD9224CE848009067A5 /* CookieProperties.swift */,
+				B21FADDA224CE848009067A5 /* CookieRealm.swift */,
+				B21FADDB224CE848009067A5 /* CookieTranslator.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B21FADDE224CE848009067A5 /* Translator */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADDD224CE848009067A5 /* RealmTranslator.swift */,
+			);
+			path = Translator;
+			sourceTree = "<group>";
+		};
+		B21FADDF224CE848009067A5 /* RealmDAO */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADD6224CE848009067A5 /* DAO */,
+				B21FADD8224CE848009067A5 /* Entity */,
+				B21FADDC224CE848009067A5 /* Objects */,
+				B21FADDE224CE848009067A5 /* Translator */,
+			);
+			path = RealmDAO;
+			sourceTree = "<group>";
+		};
+		B21FADE2224CE84B009067A5 /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADE0224CE84B009067A5 /* DAO.swift */,
+				B21FADE1224CE84B009067A5 /* Entity.swift */,
+			);
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		B21FADEB224CED01009067A5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B21FADFA224CEEE8009067A5 /* Pods_Watcher.framework */,
+				B21FADF6224CEECF009067A5 /* Realm.framework */,
+				B21FADF8224CEECF009067A5 /* RealmSwift.framework */,
+				B21FADF0224CED3C009067A5 /* Pods_Persistancy.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		B21FADC0224CC6A6009067A5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21FADCA224CC6A6009067A5 /* Persistancy.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		B21FADC4224CC6A6009067A5 /* Persistancy */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B21FADCD224CC6A6009067A5 /* Build configuration list for PBXNativeTarget "Persistancy" */;
+			buildPhases = (
+				CDF3D1F6DD1CCFE18F9E7188 /* [CP] Check Pods Manifest.lock */,
+				B21FADC0224CC6A6009067A5 /* Headers */,
+				B21FADC1224CC6A6009067A5 /* Sources */,
+				B21FADC2224CC6A6009067A5 /* Frameworks */,
+				B21FADC3224CC6A6009067A5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Persistancy;
+			productName = Persistancy;
+			productReference = B21FADC5224CC6A6009067A5 /* Persistancy.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B21FADBC224CC6A6009067A5 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Маргарита";
+				TargetAttributes = {
+					B21FADC4224CC6A6009067A5 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+				};
+			};
+			buildConfigurationList = B21FADBF224CC6A6009067A5 /* Build configuration list for PBXProject "Persistancy" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B21FADBB224CC6A6009067A5;
+			productRefGroup = B21FADC6224CC6A6009067A5 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B21FADC4224CC6A6009067A5 /* Persistancy */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B21FADC3224CC6A6009067A5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDF3D1F6DD1CCFE18F9E7188 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Persistancy-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B21FADC1224CC6A6009067A5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B21FADEA224CE86F009067A5 /* DAO.swift in Sources */,
+				B21FADE6224CE863009067A5 /* CookieProperties.swift in Sources */,
+				B21FADE3224CE85A009067A5 /* RealmTranslator.swift in Sources */,
+				B21FADE9224CE86C009067A5 /* Entity.swift in Sources */,
+				B21FADE5224CE860009067A5 /* CookieRealm.swift in Sources */,
+				B21FADE7224CE866009067A5 /* RealmEntity.swift in Sources */,
+				B21FADE8224CE869009067A5 /* RealmDAO.swift in Sources */,
+				B21FADE4224CE85D009067A5 /* CookieTranslator.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B21FADCB224CC6A6009067A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B21FADCC224CC6A6009067A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		B21FADCE224CC6A6009067A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46E81169DB581FA5CA860873 /* Pods-Persistancy.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R2M678956L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) \"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\" \"${PODS_CONFIGURATION_BUILD_DIR}/Realm\" \"${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift\"";
+				INFOPLIST_FILE = Persistancy/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = margot.Persistancy;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B21FADCF224CC6A6009067A5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B9FFFD541CD4E18C6C3054C2 /* Pods-Persistancy.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = R2M678956L;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				"FRAMEWORK_SEARCH_PATHS[arch=*]" = "$(inherited) \"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\" \"${PODS_CONFIGURATION_BUILD_DIR}/Realm\" \"${PODS_CONFIGURATION_BUILD_DIR}/RealmSwift\"";
+				INFOPLIST_FILE = Persistancy/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = margot.Persistancy;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21FADBF224CC6A6009067A5 /* Build configuration list for PBXProject "Persistancy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21FADCB224CC6A6009067A5 /* Debug */,
+				B21FADCC224CC6A6009067A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B21FADCD224CC6A6009067A5 /* Build configuration list for PBXNativeTarget "Persistancy" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B21FADCE224CC6A6009067A5 /* Debug */,
+				B21FADCF224CC6A6009067A5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B21FADBC224CC6A6009067A5 /* Project object */;
+}
